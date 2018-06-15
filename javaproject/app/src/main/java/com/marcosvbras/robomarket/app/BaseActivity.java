@@ -58,4 +58,9 @@ public class BaseActivity extends AppCompatActivity implements BaseActivityCallb
         setSupportActionBar(findViewById(viewId));
         getSupportActionBar().setDisplayHomeAsUpEnabled(displayHomeAsUpEnabled);
     }
+
+    @Override
+    public void finishCurrentActivity() {
+        finish();
+    }
 }

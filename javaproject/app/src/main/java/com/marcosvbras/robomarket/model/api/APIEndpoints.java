@@ -19,6 +19,9 @@ public interface APIEndpoints {
     @GET(Constants.Api.LOGIN_ENDPOINT)
     Observable<User> login(@Query("username") String username, @Query("password") String password);
 
+    /*
+    * Returns a Session Token within Header and createdAt, objectId and sessionToken within Body.
+    * */
     @POST(Constants.Api.USER_CREATION_ENDPOINT)
     Observable<User> signup(@Body User user);
 

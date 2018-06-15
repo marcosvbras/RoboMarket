@@ -1,5 +1,8 @@
 package com.marcosvbras.robomarket.model.domains;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 public class User {
 
     private String objectId;
@@ -7,10 +10,18 @@ public class User {
     private String email;
     private String username;
     private String password;
+    @Expose(serialize = false)
     private String createdAt;
+    @Expose(serialize = false)
     private String updatedAt;
     private String emailVerified;
+    @Expose(serialize = false)
     private String sessionToken;
+    @SerializedName("avatar_url")
+    private String avatarUrl;
+    private String phone;
+    private String genre;
+    private String birth;
 
     public String getEmail() {
         return email;
@@ -82,5 +93,37 @@ public class User {
 
     public void setSessionToken(String sessionToken) {
         this.sessionToken = sessionToken;
+    }
+
+    public String getAvatarUrl() {
+        return avatarUrl;
+    }
+
+    public void setAvatarUrl(String avatarUrl) {
+        this.avatarUrl = avatarUrl;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getGenre() {
+        return genre;
+    }
+
+    public void setGenre(String genre) {
+        this.genre = genre;
+    }
+
+    public String getBirth() {
+        return birth;
+    }
+
+    public void setBirth(String birth) {
+        this.birth = birth;
     }
 }

@@ -1,9 +1,177 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".views.activities.RegisterActivity">
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.marcosvbras.robomarket.viewmodels.RegisterViewModel"/>
+    </data>
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:background="@drawable/gradient_background"
+        android:layout_height="match_parent">
 
-</android.support.constraint.ConstraintLayout>
+        <ScrollView
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:paddingTop="100dp"
+                android:paddingBottom="70dp"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingRight="16dp"
+                android:paddingLeft="16dp"
+                android:orientation="vertical">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="60dp"
+                        android:background="@drawable/rounded_corner_layout"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <com.rengwuxian.materialedittext.MaterialEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/hint_name"
+                            android:text="@={viewModel.name}"
+                            android:layout_marginTop="20dp"
+                            app:met_floatingLabel="highlight"
+                            app:met_primaryColor="@color/colorAccent"
+                            app:setError="@{viewModel.nameFieldError}" />
+
+                        <com.rengwuxian.materialedittext.MaterialEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/hint_birth"
+                            android:text="@={viewModel.birth}"
+                            app:met_primaryColor="@color/colorAccent"
+                            app:met_floatingLabel="highlight" />
+
+                        <com.rengwuxian.materialedittext.MaterialEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/hint_phone"
+                            android:text="@={viewModel.phone}"
+                            app:met_primaryColor="@color/colorAccent"
+                            app:met_floatingLabel="highlight" />
+
+                        <com.rengwuxian.materialedittext.MaterialEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/hint_genre"
+                            android:text="@={viewModel.genre}"
+                            app:met_primaryColor="@color/colorAccent"
+                            app:met_floatingLabel="highlight" />
+
+                        <com.rengwuxian.materialedittext.MaterialEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/hint_email"
+                            android:text="@={viewModel.email}"
+                            android:inputType="textEmailAddress"
+                            app:met_floatingLabel="highlight"
+                            app:met_primaryColor="@color/colorAccent"
+                            app:setError="@{viewModel.emailFieldError}" />
+
+                        <com.rengwuxian.materialedittext.MaterialEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/hint_username"
+                            android:text="@={viewModel.username}"
+                            app:met_floatingLabel="highlight"
+                            app:met_primaryColor="@color/colorAccent"
+                            app:setError="@{viewModel.usernameFieldError}" />
+
+                        <com.rengwuxian.materialedittext.MaterialEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/hint_password"
+                            android:inputType="textPassword"
+                            android:text="@={viewModel.password}"
+                            app:met_primaryColor="@color/colorAccent"
+                            app:met_floatingLabel="highlight"
+                            app:setError="@{viewModel.passwordFieldError}" />
+
+                        <com.rengwuxian.materialedittext.MaterialEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/hint_repeat_password"
+                            android:inputType="textPassword"
+                            android:text="@={viewModel.confirmPassword}"
+                            app:met_floatingLabel="highlight"
+                            app:met_primaryColor="@color/colorAccent"
+                            app:setError="@{viewModel.confirmPasswordFieldError}" />
+                    </LinearLayout>
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/profile_image"
+                        android:layout_width="110dp"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@drawable/marcos"
+                        android:layout_height="110dp"
+                        app:civ_border_width="2dp"
+                        app:civ_border_color="@android:color/white"/>
+                    <android.support.design.widget.FloatingActionButton
+                        android:id="@+id/fab_mini"
+                        android:clickable="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="50dp"
+                        android:layout_marginLeft="35dp"
+                        android:src="@android:drawable/ic_menu_gallery"
+                        android:tint="@android:color/white"
+                        app:fabSize="mini" />
+                    <!--<de.hdodenhof.circleimageview.CircleImageView-->
+                        <!--android:id="@+id/profile_image"-->
+                        <!--android:layout_width="96dp"-->
+                        <!--android:layout_gravity="center_horizontal"-->
+                        <!--android:src="@drawable/marcos"-->
+                        <!--android:layout_height="96dp"-->
+                        <!--app:url_image="@{viewModel.avatarUrl}"-->
+                        <!--app:civ_border_width="2dp"-->
+                        <!--app:civ_border_color="@android:color/white"/>-->
+                </FrameLayout>
+
+                <Button
+                    android:id="@+id/button_signup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/rounded_button"
+                    android:onClick="@{() -> viewModel.signup()}"
+                    android:text="@string/signup_button"
+                    android:textAllCaps="false" />
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:text="@string/already_member"
+                    android:textColor="@android:color/white" />
+
+                <Button
+                    android:id="@+id/button_signin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/rounded_button"
+                    android:onClick="@{() -> viewModel.signin()}"
+                    android:text="@string/signin_button"
+                    android:textAllCaps="false" />
+            </LinearLayout>
+        </ScrollView>
+    </android.support.constraint.ConstraintLayout>
+</layout>

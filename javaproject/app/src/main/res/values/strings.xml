@@ -8,10 +8,17 @@
     <string name="hint_username">Username</string>
     <string name="hint_name">Name</string>
     <string name="hint_password">Password</string>
+    <string name="hint_phone">Phone</string>
+    <string name="hint_genre">Genre</string>
+    <string name="hint_birth">Birth</string>
+    <string name="hint_repeat_password">Repeat Password</string>
     <string name="signin_button">Sign In</string>
     <string name="signup_button">Sign Up</string>
     <string name="register_button">Register</string>
     <string name="not_member">Not a member?</string>
+    <string name="already_member">Already a member?</string>
     <string name="ok">Ok</string>
     <string name="required_field">Required Field</string>
+    <string name="invalid_email_format">Invalid format</string>
+    <string name="different_passwords">Passwords don\'t match</string>
 </resources>

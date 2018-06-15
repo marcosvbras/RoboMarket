@@ -9,5 +9,6 @@ public interface BaseActivityCallback {
     void openActivity(Class<?> activity, boolean finishCurrentActivity);
     void openActivity(Class<?> activity, Bundle bundle, boolean finishCurrentActivity);
     void setToolbar(int viewId, boolean displayHomeAsUpEnabled);
+    void finishCurrentActivity();
 
 }

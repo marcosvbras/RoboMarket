@@ -1,15 +1,23 @@
 package com.marcosvbras.robomarket.views.activities;
 
-import android.support.v7.app.AppCompatActivity;
+import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 
 import com.marcosvbras.robomarket.R;
+import com.marcosvbras.robomarket.app.BaseActivity;
+import com.marcosvbras.robomarket.databinding.ActivityRegisterBinding;
+import com.marcosvbras.robomarket.viewmodels.RegisterViewModel;
 
-public class RegisterActivity extends AppCompatActivity {
+public class RegisterActivity extends BaseActivity {
+
+    private ActivityRegisterBinding activityRegisterBinding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register);
+        RegisterViewModel registerViewModel = new RegisterViewModel(this);
+        activityRegisterBinding = DataBindingUtil.setContentView(this, R.layout.activity_register);
+        activityRegisterBinding.setViewModel(registerViewModel);
+        activityRegisterBinding.executePendingBindings();
     }
 }
