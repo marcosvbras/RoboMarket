@@ -1,6 +1,10 @@
 package com.marcosvbras.robomarket.model.api;
 
+import com.marcosvbras.robomarket.app.RoboApplication;
+import com.marcosvbras.robomarket.utils.Constants;
+
 import java.io.IOException;
+import java.util.HashMap;
 
 import okhttp3.Interceptor;
 import okhttp3.Request;
@@ -10,28 +14,24 @@ class RequestInterceptor implements Interceptor {
 
     @Override
     public Response intercept(Chain chain) throws IOException {
-        Request request = chain.request();
+        // Setting Back4App Credentials
+        Request request = chain.request().newBuilder()
+                .header(Constants.Api.HEADER_APP_ID, Constants.Api.APP_ID)
+                .header(Constants.Api.HEADER_REST_API_KEY, Constants.Api.REST_API_KEY)
+                .method(chain.request().method(), chain.request().body())
+                .build();
 
-//        if(accessToken != null && client != null && uid != null) {
-//            Request modifiedRequest = request.newBuilder()
-//                    .header("Content-Type", "application/json")
-//                    .header(Constants.ACCESS_TOKEN_KEY, accessToken)
-//                    .header(Constants.CLIENT_KEY, client)
-//                    .header(Constants.UID_KEY, uid)
-//                    .method(request.method(), request.body())
-//                    .build();
-//            request = modifiedRequest;
-//        }
+        HashMap<String, String> credentials = RoboApplication.getInstance().getUserCredentials();
+        String sessionToken = credentials.get(Constants.Preferences.SESSION_TOKEN_KEY);
 
-        Response response = chain.proceed(request);
+        // Setting user session token if it exists
+        if(sessionToken != null) {
+            request = request.newBuilder()
+                    .header(Constants.Api.HEADER_SESSION_TOKEN, sessionToken)
+                    .method(request.method(), request.body())
+                    .build();
+        }
 
-//        if(response.code() == Constants.OK && response.headers() != null) {
-//            uid = response.headers().get(Constants.UID_KEY);
-//            accessToken = response.headers().get(Constants.ACCESS_TOKEN_KEY);
-//            client = response.headers().get(Constants.CLIENT_KEY);
-//            EnterpriseApp.getInstance().writeCredentials(accessToken, client, uid);
-//        }
-
-        return response;
+        return chain.proceed(request);
     }
 }
