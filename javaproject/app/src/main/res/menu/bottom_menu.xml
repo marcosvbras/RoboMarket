@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/item_sales"
+            android:checked="true"
+            android:icon="@drawable/ic_store_grey600_48dp"
+            android:title="@string/menu_sales" />
+        <item
+            android:id="@+id/item_robots"
+            android:icon="@drawable/ic_robot_grey600_48dp"
+            android:title="@string/menu_robots" />
+        <item
+            android:id="@+id/item_profile"
+            android:icon="@drawable/ic_account_grey600_48dp"
+            android:title="@string/menu_profile" />
+    </group>
+</menu>

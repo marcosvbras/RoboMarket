@@ -21,4 +21,7 @@
     <string name="required_field">Required Field</string>
     <string name="invalid_email_format">Invalid format</string>
     <string name="different_passwords">Passwords don\'t match</string>
+    <string name="menu_sales">Sales</string>
+    <string name="menu_robots">Robots</string>
+    <string name="menu_profile">Profile</string>
 </resources>

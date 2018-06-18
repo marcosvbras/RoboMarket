@@ -67,13 +67,17 @@
                             app:met_primaryColor="@color/colorAccent"
                             app:met_floatingLabel="highlight" />
 
-                        <com.rengwuxian.materialedittext.MaterialEditText
+                        <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="@string/hint_genre"
-                            android:text="@={viewModel.genre}"
-                            app:met_primaryColor="@color/colorAccent"
-                            app:met_floatingLabel="highlight" />
+                            android:text="@string/hint_genre"/>
+
+                        <Spinner
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:entries="@array/genre_list"
+                            android:onItemSelected="@{(parent, view, pos, id) -> viewModel.onGenreSelected(parent, view, pos, id)}">
+                        </Spinner>
 
                         <com.rengwuxian.materialedittext.MaterialEditText
                             android:layout_width="match_parent"
@@ -130,6 +134,7 @@
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="50dp"
                         android:layout_marginLeft="35dp"
+                        android:onClick="@{() -> viewModel.changeAvatarImg()}"
                         android:src="@android:drawable/ic_menu_gallery"
                         android:tint="@android:color/white"
                         app:fabSize="mini" />

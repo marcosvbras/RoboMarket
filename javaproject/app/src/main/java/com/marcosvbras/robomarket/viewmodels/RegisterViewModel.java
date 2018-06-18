@@ -3,15 +3,22 @@ package com.marcosvbras.robomarket.viewmodels;
 import android.annotation.SuppressLint;
 import android.databinding.ObservableField;
 import android.text.TextUtils;
+import android.util.Log;
 import android.util.Patterns;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 
 import com.marcosvbras.robomarket.R;
+import com.marcosvbras.robomarket.app.RoboApplication;
 import com.marcosvbras.robomarket.model.api.APIService;
 import com.marcosvbras.robomarket.model.domains.User;
+import com.marcosvbras.robomarket.utils.Constants;
 import com.marcosvbras.robomarket.utils.ErrorObservable;
 import com.marcosvbras.robomarket.views.activities.HomeActivity;
 import com.marcosvbras.robomarket.views.interfaces.BaseActivityCallback;
 
+import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
@@ -20,6 +27,7 @@ public class RegisterViewModel extends BaseViewModel {
 
     private BaseActivityCallback activityCallback;
     private Disposable disposable;
+    private int currentRobotId = 1;
     public ObservableField<String> email = new ObservableField<>();
     public ObservableField<String> username = new ObservableField<>();
     public ObservableField<String> password = new ObservableField<>();
@@ -37,7 +45,7 @@ public class RegisterViewModel extends BaseViewModel {
 
     public RegisterViewModel(BaseActivityCallback activityCallback) {
         this.activityCallback = activityCallback;
-        avatarUrl.set("https://robohash.org/9.png");
+        avatarUrl.set(Constants.Other.ROBOHASH_API + currentRobotId + Constants.Other.ROBOHASH_SET_2_PARAM);
     }
 
     @SuppressLint("CheckResult")
@@ -46,26 +54,29 @@ public class RegisterViewModel extends BaseViewModel {
             if(disposable != null && !disposable.isDisposed())
                 disposable.dispose();
 
-            User user = new User();
-            user.setBirth(birth.get());
-            user.setAvatarUrl(avatarUrl.get());
-            user.setEmail(email.get());
-            user.setGenre(genre.get());
-            user.setName(name.get());
-            user.setPassword(password.get());
-            user.setPhone(phone.get());
-            user.setUsername(username.get());
+            User newUser = new User();
+            newUser.setBirth(birth.get());
+            newUser.setAvatarUrl(avatarUrl.get());
+            newUser.setEmail(email.get());
+            newUser.setGenre(genre.get());
+            newUser.setName(name.get());
+            newUser.setPassword(password.get());
+            newUser.setPhone(phone.get());
+            newUser.setUsername(username.get());
 
-            APIService.getService().signup(user)
+            APIService.getService().signup(newUser)
+                    .flatMap(userResponse -> {
+                        RoboApplication.getInstance().writeUserCredentials(
+                                userResponse.getObjectId(), userResponse.getSessionToken());
+                        return APIService.getService().getUser(userResponse.getObjectId());
+                    })
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
                     .doOnSubscribe(d -> {
                         isLoading.set(true);
                         disposable = d;
                     })
-                    .subscribe(next -> {
-
-                    }, error -> {
+                    .subscribe(next -> RoboApplication.getInstance().setUser(next), error -> {
                         isLoading.set(false);
                         disposable.dispose();
                         disposable = null;
@@ -120,5 +131,14 @@ public class RegisterViewModel extends BaseViewModel {
         }
 
         return true;
+    }
+
+    public void onGenreSelected(AdapterView<?> parent, View view, int position, long id) {
+        genre.set((String)parent.getSelectedItem());
+    }
+
+    public void changeAvatarImg() {
+        currentRobotId++;
+        avatarUrl.set(Constants.Other.ROBOHASH_API + currentRobotId + Constants.Other.ROBOHASH_SET_2_PARAM);
     }
 }

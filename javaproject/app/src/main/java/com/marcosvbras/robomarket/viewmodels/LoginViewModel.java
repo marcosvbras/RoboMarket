@@ -7,6 +7,7 @@ import android.text.TextUtils;
 import com.marcosvbras.robomarket.R;
 import com.marcosvbras.robomarket.app.RoboApplication;
 import com.marcosvbras.robomarket.model.api.APIService;
+import com.marcosvbras.robomarket.utils.Constants;
 import com.marcosvbras.robomarket.utils.ErrorObservable;
 import com.marcosvbras.robomarket.views.activities.HomeActivity;
 import com.marcosvbras.robomarket.views.activities.RegisterActivity;
@@ -58,6 +59,7 @@ public class LoginViewModel extends BaseViewModel {
     }
 
     public void register() {
+//        activityCallback.openActivityForResult(RegisterActivity.class, null, Constants.Other.FINISH_LOGIN_ACTIVITY);
         activityCallback.openActivity(RegisterActivity.class, false);
     }
 

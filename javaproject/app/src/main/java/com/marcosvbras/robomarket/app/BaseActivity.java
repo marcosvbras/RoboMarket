@@ -8,6 +8,8 @@ import android.os.Bundle;
 import com.marcosvbras.robomarket.R;
 import com.marcosvbras.robomarket.views.interfaces.BaseActivityCallback;
 
+import java.util.concurrent.Callable;
+
 public class BaseActivity extends AppCompatActivity implements BaseActivityCallback {
 
     private AlertDialog.Builder alertDialog;
@@ -51,6 +53,16 @@ public class BaseActivity extends AppCompatActivity implements BaseActivityCallb
 
         if(finishCurrentActivity)
             finish();
+    }
+
+    @Override
+    public void openActivityForResult(Class<?> activity, Bundle bundle, int requestCode) {
+        Intent intent = new Intent(this, activity);
+
+        if(bundle != null)
+            intent.putExtras(bundle);
+
+        startActivityForResult(intent, requestCode);
     }
 
     @Override

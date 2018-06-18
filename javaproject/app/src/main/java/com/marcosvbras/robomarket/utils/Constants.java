@@ -25,6 +25,10 @@ public class Constants {
 
     public class Other {
         public static final String TAG = "robomarket";
+        public static final String ROBOHASH_API = "https://robohash.org/";
+        public static final String ROBOHASH_SET_1_PARAM = "?set=set1";
+        public static final String ROBOHASH_SET_2_PARAM = "?set=set2";
+        public static final int FINISH_LOGIN_ACTIVITY = 9000;
     }
 
     public class Code {
