@@ -1,6 +1,7 @@
 package com.marcosvbras.robomarket.utils;
 
 import android.databinding.BindingAdapter;
+import android.support.design.widget.BottomNavigationView;
 import android.widget.EditText;
 
 import com.bumptech.glide.Glide;
@@ -25,6 +26,12 @@ public class DataBinder {
     @BindingAdapter(value="url_image")
     public static void setAvatar(CircleImageView imageView, String url) {
         Glide.with(imageView.getContext()).load(url).into(imageView);
+    }
+
+    @BindingAdapter("onNavigationItemSelected")
+    public static void setOnNavigationItemSelectedListener(
+            BottomNavigationView view, BottomNavigationView.OnNavigationItemSelectedListener listener) {
+        view.setOnNavigationItemSelectedListener(listener);
     }
 
 //

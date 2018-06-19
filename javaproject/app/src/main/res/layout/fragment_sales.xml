@@ -3,7 +3,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.marcosvbras.robomarket.viewmodels.SalesViewModel"/>
+            type="com.marcosvbras.robomarket.home.viewmodel.SalesViewModel"/>
     </data>
     <android.support.constraint.ConstraintLayout
         xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"

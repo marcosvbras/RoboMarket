@@ -4,7 +4,7 @@ import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-import com.marcosvbras.robomarket.model.domains.User;
+import com.marcosvbras.robomarket.business.domain.User;
 import com.marcosvbras.robomarket.utils.Constants;
 
 import java.util.HashMap;

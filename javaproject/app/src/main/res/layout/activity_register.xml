@@ -5,7 +5,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.marcosvbras.robomarket.viewmodels.RegisterViewModel"/>
+            type="com.marcosvbras.robomarket.register.viewmodel.RegisterViewModel"/>
     </data>
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
@@ -150,12 +150,12 @@
                 </FrameLayout>
 
                 <Button
-                    android:id="@+id/button_signup"
+                    android:id="@+id/button_signUp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
                     android:background="@drawable/rounded_button"
-                    android:onClick="@{() -> viewModel.signup()}"
+                    android:onClick="@{() -> viewModel.signUp()}"
                     android:text="@string/signup_button"
                     android:textAllCaps="false" />
 
@@ -173,7 +173,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
                     android:background="@drawable/rounded_button"
-                    android:onClick="@{() -> viewModel.signin()}"
+                    android:onClick="@{() -> viewModel.signIn()}"
                     android:text="@string/signin_button"
                     android:textAllCaps="false" />
             </LinearLayout>

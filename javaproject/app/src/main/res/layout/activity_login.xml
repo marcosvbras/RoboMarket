@@ -5,13 +5,13 @@
     <data>
         <variable
             name="viewModel"
-            type="com.marcosvbras.robomarket.viewmodels.LoginViewModel" />
+            type="com.marcosvbras.robomarket.login.viewmodel.LoginViewModel" />
     </data>
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:background="@drawable/gradient_background"
         android:layout_height="match_parent"
-        tools:context=".views.activities.LoginActivity">
+        tools:context=".login.ui.LoginActivity">
 
         <LinearLayout
             android:id="@+id/linearLayout2"
@@ -56,7 +56,7 @@
             android:layout_marginEnd="16dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="28dp"
-            android:onClick="@{() -> viewModel.signin()}"
+            android:onClick="@{() -> viewModel.signIn()}"
             android:text="@string/signin_button"
             android:textAllCaps="false"
             android:background="@drawable/rounded_button"

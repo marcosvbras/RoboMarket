@@ -5,15 +5,15 @@
     <data>
         <variable
             name="viewModel"
-            type="com.marcosvbras.robomarket.viewmodels.HomeViewModel"/>
+            type="com.marcosvbras.robomarket.home.viewmodel.HomeViewModel"/>
     </data>
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".views.activities.HomeActivity">
+        tools:context=".home.ui.activity.HomeActivity">
 
         <include
-            android:id="@+id/include"
+            android:id="@+id/top_toolbar"
             layout="@layout/toolbar"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -27,16 +27,16 @@
             app:layout_constraintBottom_toTopOf="@+id/bottom_nav_view"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/include"/>
+            app:layout_constraintTop_toBottomOf="@+id/top_toolbar"/>
 
         <android.support.design.widget.BottomNavigationView
             android:id="@+id/bottom_nav_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:onNavigationItemSelected="@{(menuItem) -> viewModel.onNavigationClick(menuItem)}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:onNavigationItemSelected="@{(menu) -> viewModel.onNavigationItemSelected(menu)}"
             app:menu="@menu/bottom_menu" />
     </android.support.constraint.ConstraintLayout>
 </layout>

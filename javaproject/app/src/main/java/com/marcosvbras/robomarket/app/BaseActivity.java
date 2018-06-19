@@ -6,9 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.marcosvbras.robomarket.R;
-import com.marcosvbras.robomarket.views.interfaces.BaseActivityCallback;
-
-import java.util.concurrent.Callable;
+import com.marcosvbras.robomarket.interfaces.BaseActivityCallback;
 
 public class BaseActivity extends AppCompatActivity implements BaseActivityCallback {
 
