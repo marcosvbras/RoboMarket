@@ -27,6 +27,9 @@ public class Constants {
 
     public class Other {
         public static final String TAG = "robomarket";
+        public static final String ROBOTS_FRAGMENT_TAG = "robots";
+        public static final String PROFILE_FRAGMENT_TAG = "profile";
+        public static final String SALES_FRAGMENT_TAG = "sales";
         public static final String ROBOHASH_API = "https://robohash.org/";
         public static final String ROBOHASH_SET_1_PARAM = "?set=set1";
         public static final String ROBOHASH_SET_2_PARAM = "?set=set2";

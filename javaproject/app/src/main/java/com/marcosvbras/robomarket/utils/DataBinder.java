@@ -3,7 +3,6 @@ package com.marcosvbras.robomarket.utils;
 import android.databinding.BindingAdapter;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.widget.RecyclerView;
-import android.widget.EditText;
 
 import com.bumptech.glide.Glide;
 import com.marcosvbras.robomarket.business.domain.Robot;
@@ -47,10 +46,4 @@ public class DataBinder {
         }
     }
 
-//
-//    @BindingAdapter({"robotAdapter", "data"})
-//    public static void bindData(RecyclerView recyclerView, EnterpriseAdapter robotAdapter, List<Enterprise> list) {
-//        recyclerView.setAdapter(robotAdapter);
-//        robotAdapter.updateItems(list);
-//    }
 }

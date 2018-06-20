@@ -122,7 +122,7 @@
                         android:id="@+id/profile_image"
                         android:layout_width="110dp"
                         android:layout_gravity="center_horizontal"
-                        android:src="@drawable/marcos"
+                        app:url_image="@{viewModel.avatarUrl}"
                         android:layout_height="110dp"
                         app:civ_border_width="2dp"
                         app:civ_border_color="@android:color/white"/>
@@ -138,15 +138,6 @@
                         android:src="@android:drawable/ic_menu_gallery"
                         android:tint="@android:color/white"
                         app:fabSize="mini" />
-                    <!--<de.hdodenhof.circleimageview.CircleImageView-->
-                        <!--android:id="@+id/profile_image"-->
-                        <!--android:layout_width="96dp"-->
-                        <!--android:layout_gravity="center_horizontal"-->
-                        <!--android:src="@drawable/marcos"-->
-                        <!--android:layout_height="96dp"-->
-                        <!--app:url_image="@{viewModel.avatarUrl}"-->
-                        <!--app:civ_border_width="2dp"-->
-                        <!--app:civ_border_color="@android:color/white"/>-->
                 </FrameLayout>
 
                 <Button
