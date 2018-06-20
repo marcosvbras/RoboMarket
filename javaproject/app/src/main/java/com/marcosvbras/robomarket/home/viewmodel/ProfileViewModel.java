@@ -11,4 +11,13 @@ public class ProfileViewModel extends BaseViewModel {
         this.activityCallback = activityCallback;
     }
 
+    @Override
+    protected void onCleared() {
+        super.onCleared();
+    }
+
+    @Override
+    public void cleanupSubscriptions() {
+
+    }
 }

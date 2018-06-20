@@ -2,7 +2,10 @@ package com.marcosvbras.robomarket.business.api;
 
 import com.marcosvbras.robomarket.business.domain.Robot;
 import com.marcosvbras.robomarket.business.domain.User;
+import com.marcosvbras.robomarket.business.response.ListRobotResponse;
 import com.marcosvbras.robomarket.utils.Constants;
+
+import java.util.List;
 
 import io.reactivex.Observable;
 import retrofit2.http.Body;
@@ -52,8 +55,8 @@ public interface APIEndpoints {
 
     // Robots Endpoints
 
-    @GET(Constants.Api.LIST_ROBOTS_BY_USER_ENDPOINT)
-    Observable<Robot> listRobots();
+    @GET(Constants.Api.LIST_ROBOTS_ENDPOINT)
+    Observable<ListRobotResponse> listRobots(@Query("where") String condition);
 
     @GET(Constants.Api.ROBOT_ACTIONS_ENDPOINT)
     Observable<Robot> getRobot(@Path("objectId") String objectId);

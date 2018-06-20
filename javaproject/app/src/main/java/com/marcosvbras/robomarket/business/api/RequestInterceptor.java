@@ -1,6 +1,6 @@
 package com.marcosvbras.robomarket.business.api;
 
-import com.marcosvbras.robomarket.app.RoboApplication;
+import com.marcosvbras.robomarket.app.App;
 import com.marcosvbras.robomarket.utils.Constants;
 
 import java.io.IOException;
@@ -21,7 +21,7 @@ class RequestInterceptor implements Interceptor {
                 .method(chain.request().method(), chain.request().body())
                 .build();
 
-        HashMap<String, String> credentials = RoboApplication.getInstance().getUserCredentials();
+        HashMap<String, String> credentials = App.getInstance().getUserCredentials();
         String sessionToken = credentials.get(Constants.Preferences.SESSION_TOKEN_KEY);
 
         // Setting user session token if it exists

@@ -5,7 +5,7 @@ import android.databinding.ObservableField;
 import android.text.TextUtils;
 
 import com.marcosvbras.robomarket.R;
-import com.marcosvbras.robomarket.app.RoboApplication;
+import com.marcosvbras.robomarket.app.App;
 import com.marcosvbras.robomarket.business.model.UserModel;
 import com.marcosvbras.robomarket.utils.ErrorObservable;
 import com.marcosvbras.robomarket.viewmodels.BaseViewModel;
@@ -36,8 +36,8 @@ public class LoginViewModel extends BaseViewModel {
 
             userModel.login(username.get(), password.get())
                     .subscribe(next -> {
-                        RoboApplication.getInstance().setUser(next);
-                        RoboApplication.getInstance().writeUserCredentials(next.getObjectId(), next.getSessionToken());
+                        App.getInstance().setUser(next);
+                        App.getInstance().writeUserCredentials(next.getObjectId(), next.getSessionToken());
                     }, error -> {
                         isLoading.set(false);
                         cleanupSubscriptions();
@@ -72,7 +72,8 @@ public class LoginViewModel extends BaseViewModel {
         return true;
     }
 
-    private void cleanupSubscriptions() {
+    @Override
+    public void cleanupSubscriptions() {
         if(disposable != null && !disposable.isDisposed())
             disposable.dispose();
     }

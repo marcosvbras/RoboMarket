@@ -1,13 +1,32 @@
 package com.marcosvbras.robomarket.home.viewmodel;
 
+import android.annotation.SuppressLint;
+
+import com.marcosvbras.robomarket.app.App;
+import com.marcosvbras.robomarket.business.model.RobotsModel;
 import com.marcosvbras.robomarket.viewmodels.BaseViewModel;
 import com.marcosvbras.robomarket.interfaces.BaseActivityCallback;
+
+import io.reactivex.disposables.Disposable;
 
 public class SalesViewModel extends BaseViewModel {
 
     private BaseActivityCallback activityCallback;
+    private RobotsModel robotsModel;
+    private Disposable disposable;
 
     public SalesViewModel(BaseActivityCallback activityCallback) {
         this.activityCallback = activityCallback;
+        this.robotsModel = new RobotsModel();
+    }
+
+    @Override
+    protected void onCleared() {
+        super.onCleared();
+    }
+
+    @Override
+    public void cleanupSubscriptions() {
+
     }
 }

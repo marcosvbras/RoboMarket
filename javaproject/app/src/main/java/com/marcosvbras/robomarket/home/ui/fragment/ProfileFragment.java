@@ -10,9 +10,10 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.marcosvbras.robomarket.R;
+import com.marcosvbras.robomarket.app.BaseFragment;
 import com.marcosvbras.robomarket.databinding.FragmentProfileBinding;
 
-public class ProfileFragment extends Fragment {
+public class ProfileFragment extends BaseFragment {
 
     private FragmentProfileBinding fragmentProfileBinding;
     private View view;

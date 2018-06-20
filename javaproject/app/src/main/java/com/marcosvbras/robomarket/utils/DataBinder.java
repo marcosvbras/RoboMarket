@@ -2,10 +2,15 @@ package com.marcosvbras.robomarket.utils;
 
 import android.databinding.BindingAdapter;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v7.widget.RecyclerView;
 import android.widget.EditText;
 
 import com.bumptech.glide.Glide;
+import com.marcosvbras.robomarket.business.domain.Robot;
+import com.marcosvbras.robomarket.home.ui.adapter.RobotsAdapter;
 import com.rengwuxian.materialedittext.MaterialEditText;
+
+import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -34,10 +39,18 @@ public class DataBinder {
         view.setOnNavigationItemSelectedListener(listener);
     }
 
+    @BindingAdapter({"adapter", "data"})
+    public static void bindRobotRecycler(RecyclerView recyclerView, RobotsAdapter robotsAdapter, List<Robot> list) {
+        if(robotsAdapter != null) {
+            recyclerView.setAdapter(robotsAdapter);
+            robotsAdapter.updateItems(list);
+        }
+    }
+
 //
-//    @BindingAdapter({"adapter", "data"})
-//    public static void bindData(RecyclerView recyclerView, EnterpriseAdapter adapter, List<Enterprise> list) {
-//        recyclerView.setAdapter(adapter);
-//        adapter.updateItems(list);
+//    @BindingAdapter({"robotAdapter", "data"})
+//    public static void bindData(RecyclerView recyclerView, EnterpriseAdapter robotAdapter, List<Enterprise> list) {
+//        recyclerView.setAdapter(robotAdapter);
+//        robotAdapter.updateItems(list);
 //    }
 }

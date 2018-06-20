@@ -18,6 +18,4 @@ public interface BaseActivityCallback {
 
     void finishCurrentActivity();
 
-
-
 }

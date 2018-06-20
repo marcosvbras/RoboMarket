@@ -2,7 +2,7 @@ package com.marcosvbras.robomarket.intro.viewmodel;
 
 import android.annotation.SuppressLint;
 
-import com.marcosvbras.robomarket.app.RoboApplication;
+import com.marcosvbras.robomarket.app.App;
 import com.marcosvbras.robomarket.business.model.UserModel;
 import com.marcosvbras.robomarket.viewmodels.BaseViewModel;
 import com.marcosvbras.robomarket.home.ui.activity.HomeActivity;
@@ -27,7 +27,7 @@ public class SplashViewModel extends BaseViewModel {
         cleanupSubscriptions();
 
         userModel.getAuthenticatedUser()
-                .subscribe(next -> RoboApplication.getInstance().setUser(next), error -> {
+                .subscribe(next -> App.getInstance().setUser(next), error -> {
                     isLoading.set(false);
                     cleanupSubscriptions();
                     activityCallback.openActivity(LoginActivity.class, true);
@@ -47,7 +47,8 @@ public class SplashViewModel extends BaseViewModel {
         cleanupSubscriptions();
     }
 
-    private void cleanupSubscriptions() {
+    @Override
+    public void cleanupSubscriptions() {
         if(disposable != null && !disposable.isDisposed())
             disposable.dispose();
     }

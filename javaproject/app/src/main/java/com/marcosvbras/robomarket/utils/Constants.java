@@ -10,8 +10,8 @@ public class Constants {
         public static final String USER_ACTIONS_ENDPOINT = "users/{objectId}";
         public static final String AUTHENTICATED_USER_ENDPOINT = "users/me";
         public static final String PASSWORD_RESET_ENDPOINT = "requestPasswordReset";
-        public static final String LIST_ROBOTS_BY_USER_ENDPOINT = "classes/robots";
-        public static final String ROBOT_ACTIONS_ENDPOINT = "classes/robots/{objectId}";
+        public static final String LIST_ROBOTS_ENDPOINT = "classes/Robot";
+        public static final String ROBOT_ACTIONS_ENDPOINT = "classes/Robot/{objectId}";
         public static final String HEADER_APP_ID = "X-Parse-Application-Id";
         public static final String HEADER_REST_API_KEY = "X-Parse-REST-API-Key";
         public static final String HEADER_SESSION_TOKEN = "X-Parse-Session-Token";

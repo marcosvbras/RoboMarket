@@ -1,6 +1,6 @@
 package com.marcosvbras.robomarket.business.model;
 
-import com.marcosvbras.robomarket.app.RoboApplication;
+import com.marcosvbras.robomarket.app.App;
 import com.marcosvbras.robomarket.business.api.APIService;
 import com.marcosvbras.robomarket.business.domain.User;
 
@@ -25,7 +25,7 @@ public class UserModel {
     public Observable<User> signUp(User newUser) {
         return APIService.getService().signup(newUser)
                 .flatMap(userResponse -> {
-                    RoboApplication.getInstance().writeUserCredentials(
+                    App.getInstance().writeUserCredentials(
                             userResponse.getObjectId(), userResponse.getSessionToken());
                     return APIService.getService().getUser(userResponse.getObjectId());
                 })

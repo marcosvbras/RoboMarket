@@ -40,4 +40,14 @@ public class HomeViewModel extends BaseViewModel {
 
         return true;
     }
+
+    @Override
+    protected void onCleared() {
+        super.onCleared();
+    }
+
+    @Override
+    public void cleanupSubscriptions() {
+
+    }
 }

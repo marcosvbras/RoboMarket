@@ -9,13 +9,13 @@ import com.marcosvbras.robomarket.utils.Constants;
 
 import java.util.HashMap;
 
-public class RoboApplication extends Application {
+public class App extends Application {
 
-    private static RoboApplication instance;
+    private static App instance;
 
     private User user;
 
-    public static RoboApplication getInstance() {
+    public static App getInstance() {
         return instance;
     }
 

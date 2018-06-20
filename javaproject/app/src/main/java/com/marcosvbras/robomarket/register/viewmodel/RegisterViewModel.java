@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.AdapterView;
 
 import com.marcosvbras.robomarket.R;
-import com.marcosvbras.robomarket.app.RoboApplication;
+import com.marcosvbras.robomarket.app.App;
 import com.marcosvbras.robomarket.business.model.UserModel;
 import com.marcosvbras.robomarket.business.domain.User;
 import com.marcosvbras.robomarket.utils.Constants;
@@ -60,7 +60,7 @@ public class RegisterViewModel extends BaseViewModel {
             newUser.setUsername(username.get());
 
             userModel.signUp(newUser)
-                    .subscribe(next -> RoboApplication.getInstance().setUser(next), error -> {
+                    .subscribe(next -> App.getInstance().setUser(next), error -> {
                         isLoading.set(false);
                         cleanupSubscriptions();
                         activityCallback.showErrorDialog(error.getMessage());
@@ -133,7 +133,8 @@ public class RegisterViewModel extends BaseViewModel {
         cleanupSubscriptions();
     }
 
-    private void cleanupSubscriptions() {
+    @Override
+    public void cleanupSubscriptions() {
         if(disposable != null && !disposable.isDisposed())
             disposable.dispose();
     }

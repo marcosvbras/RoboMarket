@@ -14,7 +14,7 @@
 
         <include
             android:id="@+id/top_toolbar"
-            layout="@layout/toolbar"
+            layout="@layout/partial_toolbar"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
