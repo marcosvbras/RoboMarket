@@ -5,8 +5,6 @@ import com.marcosvbras.robomarket.business.domain.User;
 import com.marcosvbras.robomarket.business.response.ListRobotResponse;
 import com.marcosvbras.robomarket.utils.Constants;
 
-import java.util.List;
-
 import io.reactivex.Observable;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
@@ -55,7 +53,7 @@ public interface APIEndpoints {
 
     // Robots Endpoints
 
-    @GET(Constants.Api.LIST_ROBOTS_ENDPOINT)
+    @GET(Constants.Api.ROBOTS_ROOT_ENDPOINT)
     Observable<ListRobotResponse> listRobots(@Query("where") String condition, @Query("order") String order,
                                              @Query("limit") int limit, @Query("skip") int skip);
 
