@@ -56,7 +56,8 @@ public interface APIEndpoints {
     // Robots Endpoints
 
     @GET(Constants.Api.LIST_ROBOTS_ENDPOINT)
-    Observable<ListRobotResponse> listRobots(@Query("where") String condition);
+    Observable<ListRobotResponse> listRobots(@Query("where") String condition, @Query("order") String order,
+                                             @Query("limit") int limit, @Query("skip") int skip);
 
     @GET(Constants.Api.ROBOT_ACTIONS_ENDPOINT)
     Observable<Robot> getRobot(@Path("objectId") String objectId);

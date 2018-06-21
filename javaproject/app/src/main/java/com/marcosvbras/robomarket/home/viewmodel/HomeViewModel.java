@@ -1,8 +1,6 @@
 package com.marcosvbras.robomarket.home.viewmodel;
 
-import android.app.FragmentManager;
 import android.support.annotation.NonNull;
-import android.support.v4.app.Fragment;
 import android.view.MenuItem;
 
 import com.marcosvbras.robomarket.R;
@@ -19,14 +17,12 @@ public class HomeViewModel extends BaseViewModel {
     private SalesFragment salesFragment;
     private RobotsFragment robotsFragment;
     private ProfileFragment profileFragment;
-    private Fragment currentFragment;
 
     public HomeViewModel(HomeActivityCallbacks activityCallback) {
         this.activityCallback = activityCallback;
-        this.salesFragment = new SalesFragment();
-        this.robotsFragment = new RobotsFragment();
-        this.profileFragment = new ProfileFragment();
-        currentFragment = salesFragment;
+        salesFragment = new SalesFragment();
+        robotsFragment = new RobotsFragment();
+        profileFragment = new ProfileFragment();
         this.activityCallback.replaceFragment(salesFragment, Constants.Other.SALES_FRAGMENT_TAG);
     }
 

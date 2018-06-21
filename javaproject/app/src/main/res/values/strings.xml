@@ -24,6 +24,9 @@
     <string name="menu_sales">Sales</string>
     <string name="menu_robots">Robots</string>
     <string name="menu_profile">Profile</string>
+    <string name="menu_item_logout">Log Out</string>
+    <string name="menu_item_add">Add</string>
+    <string name="menu_item_search">Search</string>
     <string name="item_field_model">Model:</string>
     <string name="item_field_quantity">Quantity:</string>
     <string name="item_field_price">Price:</string>

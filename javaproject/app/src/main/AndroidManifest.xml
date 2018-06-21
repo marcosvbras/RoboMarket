@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.marcosvbras.robomarket">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:name=".app.App"
@@ -12,7 +12,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <activity android:name=".intro.ui.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,7 +22,8 @@
         <activity android:name=".login.ui.LoginActivity" />
         <activity android:name=".app.BaseActivity" />
         <activity android:name=".register.ui.RegisterActivity" />
-        <activity android:name=".home.ui.activity.HomeActivity"></activity>
+        <activity android:name=".home.ui.activity.HomeActivity" />
+        <activity android:name=".createrobot.ui.CreateRobotActivity"></activity>
     </application>
 
 </manifest>
