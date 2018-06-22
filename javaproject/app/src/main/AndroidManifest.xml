@@ -23,7 +23,8 @@
         <activity android:name=".app.BaseActivity" />
         <activity android:name=".register.ui.RegisterActivity" />
         <activity android:name=".home.ui.activity.HomeActivity" />
-        <activity android:name=".createrobot.ui.CreateRobotActivity"></activity>
+        <activity android:name=".createrobot.ui.CreateRobotActivity" />
+        <activity android:name=".profile.ui.EditProfileActivity"></activity>
     </application>
 
 </manifest>

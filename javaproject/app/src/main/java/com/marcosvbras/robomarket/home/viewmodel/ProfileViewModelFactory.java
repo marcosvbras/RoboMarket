@@ -4,22 +4,23 @@ import android.arch.lifecycle.ViewModel;
 import android.arch.lifecycle.ViewModelProvider;
 import android.support.annotation.NonNull;
 
+import com.marcosvbras.robomarket.interfaces.BaseActivityCallback;
 import com.marcosvbras.robomarket.interfaces.BaseFragmentCallback;
 
 import javax.inject.Inject;
 
 public class ProfileViewModelFactory implements ViewModelProvider.Factory {
 
-    private final BaseFragmentCallback fragmentCallback;
+    private final BaseActivityCallback activityCallback;
 
     @Inject
-    public ProfileViewModelFactory(@NonNull BaseFragmentCallback fragmentCallback) {
-        this.fragmentCallback = fragmentCallback;
+    public ProfileViewModelFactory(@NonNull BaseActivityCallback activityCallback) {
+        this.activityCallback = activityCallback;
     }
 
     @NonNull
     @Override
     public <T extends ViewModel> T create(@NonNull Class<T> modelClass) {
-        return (T) new ProfileViewModel(fragmentCallback);
+        return (T) new ProfileViewModel(activityCallback);
     }
 }

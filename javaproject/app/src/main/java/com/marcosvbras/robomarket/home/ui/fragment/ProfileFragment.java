@@ -14,10 +14,12 @@ import com.marcosvbras.robomarket.R;
 import com.marcosvbras.robomarket.app.App;
 import com.marcosvbras.robomarket.app.BaseFragment;
 import com.marcosvbras.robomarket.databinding.FragmentProfileBinding;
+import com.marcosvbras.robomarket.home.ui.activity.HomeActivity;
 import com.marcosvbras.robomarket.home.viewmodel.ProfileViewModel;
 import com.marcosvbras.robomarket.home.viewmodel.ProfileViewModelFactory;
+import com.marcosvbras.robomarket.interfaces.BaseActivityCallback;
 
-public class ProfileFragment extends BaseFragment {
+public class ProfileFragment extends BaseFragment implements BaseActivityCallback {
 
     private FragmentProfileBinding fragmentProfileBinding;
     private View view;
@@ -43,5 +45,38 @@ public class ProfileFragment extends BaseFragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         setRetainInstance(true);
+    }
+
+    @Override
+    public void showErrorDialog(String message) {
+        ((HomeActivity)getActivity()).showErrorDialog(message);
+    }
+
+    @Override
+    public void showErrorDialog(int message) {
+        ((HomeActivity)getActivity()).showErrorDialog(message);
+    }
+
+    @Override
+    public void openActivity(Class<?> activity, boolean finishCurrentActivity) {
+        ((HomeActivity)getActivity()).openActivity(activity, finishCurrentActivity);
+    }
+
+    @Override
+    public void openActivity(Class<?> activity, Bundle bundle, boolean finishCurrentActivity) {
+        ((HomeActivity)getActivity()).openActivity(activity, bundle, finishCurrentActivity);
+    }
+
+    @Override
+    public void openActivityForResult(Class<?> activity, Bundle bundle, int requestCode) {
+
+    }
+
+    @Override
+    public void setToolbar(int viewId, boolean displayHomeAsUpEnabled) {
+    }
+
+    @Override
+    public void finishCurrentActivity() {
     }
 }

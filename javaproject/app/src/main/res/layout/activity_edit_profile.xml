@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:tools="http://schemas.android.com/tools"
+<layout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
     <data>
         <variable
             name="viewModel"
-            type="com.marcosvbras.robomarket.register.viewmodel.RegisterViewModel"/>
+            type="com.marcosvbras.robomarket.profile.viewmodel.EditProfileViewModel"/>
     </data>
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -18,6 +18,13 @@
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
+            <include
+                android:id="@+id/top_toolbar"
+                layout="@layout/partial_transparent_toolbar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <FrameLayout
                 android:id="@+id/frameLayout"
@@ -97,26 +104,6 @@
                         app:met_floatingLabel="highlight"
                         app:met_primaryColor="@color/colorAccent"
                         app:setError="@{viewModel.usernameFieldError}" />
-
-                    <com.rengwuxian.materialedittext.MaterialEditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/hint_password"
-                        android:inputType="textPassword"
-                        android:text="@={viewModel.password}"
-                        app:met_floatingLabel="highlight"
-                        app:met_primaryColor="@color/colorAccent"
-                        app:setError="@{viewModel.passwordFieldError}" />
-
-                    <com.rengwuxian.materialedittext.MaterialEditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/hint_repeat_password"
-                        android:inputType="textPassword"
-                        android:text="@={viewModel.confirmPassword}"
-                        app:met_floatingLabel="highlight"
-                        app:met_primaryColor="@color/colorAccent"
-                        app:setError="@{viewModel.confirmPasswordFieldError}" />
                 </LinearLayout>
 
                 <de.hdodenhof.circleimageview.CircleImageView
@@ -143,50 +130,79 @@
                     app:fabSize="mini" />
             </FrameLayout>
 
-            <Button
-                android:id="@+id/button_signUp"
+            <LinearLayout
+                android:id="@+id/linearLayout"
                 android:layout_width="0dp"
-                android:layout_marginBottom="16dp"
-                android:layout_marginEnd="32dp"
-                android:layout_marginStart="32dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="24dp"
+                android:layout_marginStart="24dp"
                 android:layout_marginTop="40dp"
-                android:onClick="@{() -> viewModel.signUp()}"
-                android:text="@string/signup_button"
+                android:background="@drawable/rounded_corner_layout"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button_save">
+
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/hint_old_password"
+                    android:text="@={viewModel.newPassword}"
+                    app:met_floatingLabel="highlight"
+                    app:met_primaryColor="@color/colorAccent"
+                    app:setError="@{viewModel.oldPasswordFieldError}" />
+
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/hint_new_password"
+                    android:inputType="textPassword"
+                    android:text="@={viewModel.oldPassword}"
+                    app:met_floatingLabel="highlight"
+                    app:met_primaryColor="@color/colorAccent"
+                    app:setError="@{viewModel.newPasswordFieldError}" />
+
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/hint_repeat_password"
+                    android:inputType="textPassword"
+                    android:text="@={viewModel.confirmPassword}"
+                    app:met_floatingLabel="highlight"
+                    app:met_primaryColor="@color/colorAccent"
+                    app:setError="@{viewModel.confirmPasswordFieldError}" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/button_save"
                 style="@style/ButtonWhiteDefault"
-                app:layout_constraintBottom_toTopOf="@+id/textView"
+                android:layout_width="0dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:onClick="@{() -> viewModel.save()}"
+                android:text="@string/button_save"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
 
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:text="@string/already_member"
-                android:textColor="@android:color/white"
-                app:layout_constraintBottom_toTopOf="@+id/button_signin"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/button_signUp"
-                app:layout_constraintVertical_bias="0.87" />
-
             <Button
-                android:id="@+id/button_signin"
-                android:layout_width="0dp"
-                android:layout_marginBottom="28dp"
-                android:layout_marginEnd="32dp"
-                android:layout_marginStart="32dp"
-                android:onClick="@{() -> viewModel.signIn()}"
-                android:text="@string/signin_button"
+                android:id="@+id/button_change"
                 style="@style/ButtonWhiteDefault"
+                android:layout_width="0dp"
+                android:layout_marginBottom="40dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:onClick="@{() -> viewModel.changePassword()}"
+                android:text="@string/button_change_password"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
         </android.support.constraint.ConstraintLayout>
     </ScrollView>
 </layout>

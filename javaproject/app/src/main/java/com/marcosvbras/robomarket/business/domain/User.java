@@ -3,7 +3,7 @@ package com.marcosvbras.robomarket.business.domain;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class User {
+public class User implements Cloneable {
 
     private String objectId;
     private String name;
@@ -125,5 +125,15 @@ public class User {
 
     public void setBirth(String birth) {
         this.birth = birth;
+    }
+
+    public Object clone() {
+        try {
+            return super.clone();
+        } catch (CloneNotSupportedException e) {
+            e.printStackTrace();
+        }
+
+        return null;
     }
 }

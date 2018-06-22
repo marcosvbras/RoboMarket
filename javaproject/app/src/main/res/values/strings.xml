@@ -26,8 +26,14 @@
     <string name="menu_profile">Profile</string>
     <string name="menu_item_logout">Log Out</string>
     <string name="menu_item_add">Add</string>
+    <string name="button_edit_profile">Edit</string>
     <string name="menu_item_search">Search</string>
     <string name="item_field_model">Model:</string>
+    <string name="edit_profile_activity">Edit Profile</string>
     <string name="item_field_quantity">Quantity:</string>
     <string name="item_field_price">Price:</string>
+    <string name="hint_old_password">Old password</string>
+    <string name="hint_new_password">New password</string>
+    <string name="button_save">Save</string>
+    <string name="button_change_password">Change Password</string>
 </resources>

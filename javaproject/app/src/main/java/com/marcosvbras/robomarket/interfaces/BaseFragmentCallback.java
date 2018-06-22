@@ -1,4 +1,4 @@
 package com.marcosvbras.robomarket.interfaces;
 
-public interface BaseFragmentCallback {
+public interface BaseFragmentCallback extends BaseActivityCallback {
 }

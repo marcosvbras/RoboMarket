@@ -1,24 +1,24 @@
 package com.marcosvbras.robomarket.home.viewmodel;
 
-import android.databinding.ObservableField;
-
-import com.marcosvbras.robomarket.app.App;
-import com.marcosvbras.robomarket.business.domain.User;
-import com.marcosvbras.robomarket.interfaces.BaseFragmentCallback;
-import com.marcosvbras.robomarket.viewmodels.BaseViewModel;
 import com.marcosvbras.robomarket.interfaces.BaseActivityCallback;
+import com.marcosvbras.robomarket.profile.ui.EditProfileActivity;
+import com.marcosvbras.robomarket.viewmodels.BaseViewModel;
 
 public class ProfileViewModel extends BaseViewModel {
 
-    private BaseFragmentCallback fragmentCallback;
-//    public ObservableField<User> user = new ObservableField<>(App.getInstance().getUser());
+    private BaseActivityCallback activityCallback;
 
-    public ProfileViewModel(BaseFragmentCallback fragmentCallback) {
-        this.fragmentCallback = fragmentCallback;
+    public ProfileViewModel(BaseActivityCallback activityCallback) {
+        this.activityCallback = activityCallback;
+    }
+
+    public void edit() {
+        activityCallback.openActivity(EditProfileActivity.class, false);
     }
 
     @Override
     protected void onCleared() {
+        cleanupSubscriptions();
         super.onCleared();
     }
 

@@ -1,8 +1,5 @@
 package com.marcosvbras.robomarket.home.viewmodel;
 
-import android.annotation.SuppressLint;
-
-import com.marcosvbras.robomarket.app.App;
 import com.marcosvbras.robomarket.business.model.RobotsModel;
 import com.marcosvbras.robomarket.viewmodels.BaseViewModel;
 import com.marcosvbras.robomarket.interfaces.BaseActivityCallback;

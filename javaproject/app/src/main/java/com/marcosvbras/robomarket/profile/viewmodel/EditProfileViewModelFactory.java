@@ -1,26 +1,25 @@
-package com.marcosvbras.robomarket.home.viewmodel;
+package com.marcosvbras.robomarket.profile.viewmodel;
 
 import android.arch.lifecycle.ViewModel;
 import android.arch.lifecycle.ViewModelProvider;
 import android.support.annotation.NonNull;
 
 import com.marcosvbras.robomarket.interfaces.BaseActivityCallback;
-import com.marcosvbras.robomarket.interfaces.BaseFragmentCallback;
 
 import javax.inject.Inject;
 
-public class RobotsViewModelFactory implements ViewModelProvider.Factory {
+public class EditProfileViewModelFactory implements ViewModelProvider.Factory {
 
-    private final BaseActivityCallback activityCallback;
+    private BaseActivityCallback activityCallback;
 
     @Inject
-    public RobotsViewModelFactory(@NonNull BaseActivityCallback activityCallback) {
+    public EditProfileViewModelFactory(@NonNull BaseActivityCallback activityCallback) {
         this.activityCallback = activityCallback;
     }
 
     @NonNull
     @Override
     public <T extends ViewModel> T create(@NonNull Class<T> modelClass) {
-        return (T) new RobotsViewModel(activityCallback);
+        return (T) new EditProfileViewModel(activityCallback);
     }
 }

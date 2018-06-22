@@ -11,6 +11,7 @@ import com.marcosvbras.robomarket.business.domain.Robot;
 import com.marcosvbras.robomarket.business.model.RobotsModel;
 import com.marcosvbras.robomarket.createrobot.ui.CreateRobotActivity;
 import com.marcosvbras.robomarket.home.ui.adapter.RobotsAdapter;
+import com.marcosvbras.robomarket.interfaces.BaseActivityCallback;
 import com.marcosvbras.robomarket.interfaces.BaseFragmentCallback;
 import com.marcosvbras.robomarket.login.ui.LoginActivity;
 import com.marcosvbras.robomarket.utils.Constants;
@@ -23,15 +24,15 @@ import io.reactivex.disposables.Disposable;
 
 public class RobotsViewModel extends BaseViewModel implements View.OnClickListener {
 
-    private BaseFragmentCallback fragmentCallback;
+    private BaseActivityCallback activityCallback;
     private RobotsModel robotsModel;
     private Disposable disposable;
     public ObservableField<List<Robot>> listRobots = new ObservableField<>(new ArrayList<>());
     public ObservableField<RobotsAdapter> robotAdapter = new ObservableField<>(new RobotsAdapter(this));
     public ObservableField<Integer> skip = new ObservableField<>(0);
 
-    public RobotsViewModel(BaseFragmentCallback fragmentCallback) {
-        this.fragmentCallback = fragmentCallback;
+    public RobotsViewModel(BaseActivityCallback activityCallback) {
+        this.activityCallback = activityCallback;
         this.robotsModel = new RobotsModel();
         listRobots(null);
     }

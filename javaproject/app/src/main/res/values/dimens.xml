@@ -2,4 +2,5 @@
 <resources>
     <dimen name="rounded_layout_radius">10dp</dimen>
     <dimen name="circular_image_view">115dp</dimen>
+    <dimen name="default_layout_padding">16dp</dimen>
 </resources>

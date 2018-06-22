@@ -17,11 +17,25 @@
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"></style>
 
     <style name="TextProfileSection">
+        <item name="android:textStyle">bold</item>
         <item name="android:textSize">15sp</item>
     </style>
 
     <style name="TextProfileValue">
         <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="ButtonWhiteDefault">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:background">@drawable/default_white_button</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="ButtonBlueDefault">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:background">@drawable/default_blue_button</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@android:color/white</item>
     </style>
 
 </resources>
