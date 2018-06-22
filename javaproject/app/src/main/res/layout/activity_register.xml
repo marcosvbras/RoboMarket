@@ -53,8 +53,8 @@
                     <com.rengwuxian.materialedittext.MaterialEditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/hint_birth"
-                        android:text="@={viewModel.birth}"
+                        android:hint="@string/hint_address"
+                        android:text="@={viewModel.address}"
                         app:met_floatingLabel="highlight"
                         app:met_primaryColor="@color/colorAccent" />
 

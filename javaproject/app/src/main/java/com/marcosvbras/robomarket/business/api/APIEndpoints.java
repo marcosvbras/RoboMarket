@@ -3,6 +3,7 @@ package com.marcosvbras.robomarket.business.api;
 import com.marcosvbras.robomarket.business.domain.Robot;
 import com.marcosvbras.robomarket.business.domain.User;
 import com.marcosvbras.robomarket.business.response.ListRobotResponse;
+import com.marcosvbras.robomarket.business.response.UpdateResponse;
 import com.marcosvbras.robomarket.utils.Constants;
 
 import io.reactivex.Observable;
@@ -24,11 +25,11 @@ public interface APIEndpoints {
     /*
     * Returns a Session Token within Header and createdAt, objectId and sessionToken within Body.
     * */
-    @POST(Constants.Api.USER_CREATION_ENDPOINT)
+    @POST(Constants.Api.USERS_ROOT_ENDPOINT)
     Observable<User> signup(@Body User user);
 
     @PUT(Constants.Api.USER_ACTIONS_ENDPOINT)
-    Observable<User> updateUser(@Body User user);
+    Observable<UpdateResponse> updateUser(@Body User user, @Path("objectId") String userId);
 
     @GET(Constants.Api.USER_ACTIONS_ENDPOINT)
     Observable<User> getUser(@Path("objectId") String userId);

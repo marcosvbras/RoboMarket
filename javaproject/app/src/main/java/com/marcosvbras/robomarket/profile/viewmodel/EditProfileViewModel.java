@@ -1,11 +1,16 @@
 package com.marcosvbras.robomarket.profile.viewmodel;
 
+import android.annotation.SuppressLint;
 import android.databinding.ObservableField;
+import android.text.TextUtils;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.AdapterView;
 
+import com.marcosvbras.robomarket.R;
 import com.marcosvbras.robomarket.app.App;
 import com.marcosvbras.robomarket.business.domain.User;
+import com.marcosvbras.robomarket.business.model.UserModel;
 import com.marcosvbras.robomarket.interfaces.BaseActivityCallback;
 import com.marcosvbras.robomarket.utils.Constants;
 import com.marcosvbras.robomarket.utils.ErrorObservable;
@@ -19,20 +24,20 @@ public class EditProfileViewModel extends BaseViewModel {
 
     private BaseActivityCallback activityCallback;
     private Disposable disposable;
+    private User user;
+    private UserModel userModel;
     public ObservableField<String> email = new ObservableField<>();
     public ObservableField<String> username = new ObservableField<>();
     public ObservableField<String> name = new ObservableField<>();
     public ObservableField<String> phone = new ObservableField<>();
-    public ObservableField<String> birth = new ObservableField<>();
+    public ObservableField<String> address = new ObservableField<>();
     public ObservableField<String> password = new ObservableField<>();
     public ObservableField<String> newPassword = new ObservableField<>();
-    public ObservableField<String> oldPassword = new ObservableField<>();
     public ObservableField<String> confirmPassword = new ObservableField<>();
     public ObservableField<String> genre = new ObservableField<>();
     public ObservableField<String> avatarUrl = new ObservableField<>();
     public ErrorObservable emailFieldError = new ErrorObservable();
     public ErrorObservable newPasswordFieldError = new ErrorObservable();
-    public ErrorObservable oldPasswordFieldError = new ErrorObservable();
     public ErrorObservable confirmPasswordFieldError = new ErrorObservable();
     public ErrorObservable usernameFieldError = new ErrorObservable();
     public ErrorObservable nameFieldError = new ErrorObservable();
@@ -40,38 +45,73 @@ public class EditProfileViewModel extends BaseViewModel {
     public EditProfileViewModel(BaseActivityCallback activityCallback) {
         this.activityCallback = activityCallback;
         setUserData();
+        userModel = new UserModel();
     }
 
     private void setUserData() {
-        User user = (User) App.getInstance().getUser().clone();
+        user = (User) App.getInstance().getUser().clone();
         email.set(user.getEmail());
         username.set(user.getUsername());
         name.set(user.getName());
         phone.set(user.getPhone());
-        birth.set(user.getBirth());
+        address.set(user.getAddress());
         password.set(user.getPassword());
         genre.set(user.getGenre());
         avatarUrl.set(user.getAvatarUrl());
     }
 
+    @SuppressLint("CheckResult")
     public void save() {
         if(isInfoFormValid()) {
+            User newUserData = new User();
+            newUserData.setAvatarUrl(avatarUrl.get());
+            newUserData.setAddress(address.get());
+            if(!user.getEmail().equals(email.get()))
+                newUserData.setEmail(email.get());
+            newUserData.setGenre(genre.get());
+            newUserData.setName(name.get());
+            newUserData.setPhone(phone.get());
+            if(!user.getUsername().equals(username.get()))
+                newUserData.setUsername(username.get());
 
+            userModel.updateUser(newUserData, user.getObjectId())
+                    .subscribe(next -> App.getInstance().setUser(next), error -> {
+                        isLoading.set(false);
+                        cleanupSubscriptions();
+                        activityCallback.showDialogMessage(error.getMessage());
+                    }, () -> {
+                        isLoading.set(false);
+                        cleanupSubscriptions();
+                        activityCallback.finishCurrentActivity();
+                    }, d -> {
+                        isLoading.set(true);
+                        disposable = d;
+                    });
         }
     }
 
     public boolean isInfoFormValid() {
-        return false;
-    }
-
-    public boolean isPasswordFormValid() {
-        return false;
-    }
-
-    public void changePassword() {
-        if(isPasswordFormValid()) {
-
+        if(TextUtils.isEmpty(name.get())) {
+            nameFieldError.set(R.string.required_field);
+            return false;
         }
+
+        if(TextUtils.isEmpty(email.get())) {
+            emailFieldError.set(R.string.required_field);
+            return false;
+        }
+
+        if(!Patterns.EMAIL_ADDRESS.matcher(email.get()).matches()) {
+            emailFieldError.set(R.string.invalid_email_format);
+            return false;
+        }
+
+        if(TextUtils.isEmpty(username.get())) {
+            usernameFieldError.set(R.string.required_field);
+            return false;
+        }
+
+        return true;
     }
 
     public void onGenreSelected(AdapterView<?> parent, View view, int position, long id) {

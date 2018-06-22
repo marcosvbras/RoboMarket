@@ -17,12 +17,13 @@ import com.marcosvbras.robomarket.viewmodels.BaseViewModel;
 import com.marcosvbras.robomarket.home.ui.activity.HomeActivity;
 import com.marcosvbras.robomarket.interfaces.BaseActivityCallback;
 
+import java.util.Random;
+
 import io.reactivex.disposables.Disposable;
 
 public class RegisterViewModel extends BaseViewModel {
 
     private Disposable disposable;
-    private int currentRobotId = 1;
     private UserModel userModel;
     public ObservableField<String> email = new ObservableField<>();
     public ObservableField<String> username = new ObservableField<>();
@@ -31,7 +32,7 @@ public class RegisterViewModel extends BaseViewModel {
     public ObservableField<String> name = new ObservableField<>();
     public ObservableField<String> phone = new ObservableField<>();
     public ObservableField<String> genre = new ObservableField<>();
-    public ObservableField<String> birth = new ObservableField<>();
+    public ObservableField<String> address = new ObservableField<>();
     public ObservableField<String> avatarUrl = new ObservableField<>();
     public ErrorObservable emailFieldError = new ErrorObservable();
     public ErrorObservable passwordFieldError = new ErrorObservable();
@@ -42,7 +43,7 @@ public class RegisterViewModel extends BaseViewModel {
     public RegisterViewModel(BaseActivityCallback activityCallback) {
         this.activityCallback = activityCallback;
         userModel = new UserModel();
-        avatarUrl.set(Constants.Other.ROBOHASH_API + currentRobotId + Constants.Other.ROBOHASH_SET_2_PARAM);
+        changeAvatarImg();
     }
 
     @SuppressLint("CheckResult")
@@ -50,10 +51,11 @@ public class RegisterViewModel extends BaseViewModel {
         if(isFormValid()) {
             cleanupSubscriptions();
             User newUser = new User();
-            newUser.setBirth(birth.get());
+            newUser.setAddress(address.get());
             newUser.setAvatarUrl(avatarUrl.get());
             newUser.setEmail(email.get());
             newUser.setGenre(genre.get());
+            newUser.setAddress(address.get());
             newUser.setName(name.get());
             newUser.setPassword(password.get());
             newUser.setPhone(phone.get());
@@ -63,7 +65,7 @@ public class RegisterViewModel extends BaseViewModel {
                     .subscribe(next -> App.getInstance().setUser(next), error -> {
                         isLoading.set(false);
                         cleanupSubscriptions();
-                        activityCallback.showErrorDialog(error.getMessage());
+                        activityCallback.showDialogMessage(error.getMessage());
                     }, () -> {
                         isLoading.set(false);
                         cleanupSubscriptions();
@@ -123,8 +125,7 @@ public class RegisterViewModel extends BaseViewModel {
     }
 
     public void changeAvatarImg() {
-        currentRobotId++;
-        avatarUrl.set(Constants.Other.ROBOHASH_API + currentRobotId + Constants.Other.ROBOHASH_SET_2_PARAM);
+        avatarUrl.set(Constants.Other.ROBOHASH_API + new Random().nextInt(500) + Constants.Other.ROBOHASH_SET_2_PARAM);
     }
 
     @Override

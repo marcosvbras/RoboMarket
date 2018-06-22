@@ -4,9 +4,9 @@ import android.os.Bundle;
 
 public interface BaseActivityCallback {
 
-    void showErrorDialog(String message);
+    void showDialogMessage(String message);
 
-    void showErrorDialog(int message);
+    void showDialogMessage(int message);
 
     void openActivity(Class<?> activity, boolean finishCurrentActivity);
 

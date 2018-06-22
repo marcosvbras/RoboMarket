@@ -60,8 +60,8 @@
                     <com.rengwuxian.materialedittext.MaterialEditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/hint_birth"
-                        android:text="@={viewModel.birth}"
+                        android:hint="@string/hint_address"
+                        android:text="@={viewModel.address}"
                         app:met_floatingLabel="highlight"
                         app:met_primaryColor="@color/colorAccent" />
 
@@ -130,79 +130,22 @@
                     app:fabSize="mini" />
             </FrameLayout>
 
-            <LinearLayout
-                android:id="@+id/linearLayout"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="24dp"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="40dp"
-                android:background="@drawable/rounded_corner_layout"
-                android:gravity="center"
-                android:orientation="vertical"
-                android:padding="16dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/button_save">
-
-                <com.rengwuxian.materialedittext.MaterialEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/hint_old_password"
-                    android:text="@={viewModel.newPassword}"
-                    app:met_floatingLabel="highlight"
-                    app:met_primaryColor="@color/colorAccent"
-                    app:setError="@{viewModel.oldPasswordFieldError}" />
-
-                <com.rengwuxian.materialedittext.MaterialEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/hint_new_password"
-                    android:inputType="textPassword"
-                    android:text="@={viewModel.oldPassword}"
-                    app:met_floatingLabel="highlight"
-                    app:met_primaryColor="@color/colorAccent"
-                    app:setError="@{viewModel.newPasswordFieldError}" />
-
-                <com.rengwuxian.materialedittext.MaterialEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/hint_repeat_password"
-                    android:inputType="textPassword"
-                    android:text="@={viewModel.confirmPassword}"
-                    app:met_floatingLabel="highlight"
-                    app:met_primaryColor="@color/colorAccent"
-                    app:setError="@{viewModel.confirmPasswordFieldError}" />
-            </LinearLayout>
-
             <Button
                 android:id="@+id/button_save"
-                style="@style/ButtonWhiteDefault"
-                android:layout_width="0dp"
-                android:layout_marginEnd="24dp"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="24dp"
-                android:onClick="@{() -> viewModel.save()}"
-                android:text="@string/button_save"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
-
-            <Button
-                android:id="@+id/button_change"
                 style="@style/ButtonWhiteDefault"
                 android:layout_width="0dp"
                 android:layout_marginBottom="40dp"
                 android:layout_marginEnd="24dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="24dp"
-                android:onClick="@{() -> viewModel.changePassword()}"
-                android:text="@string/button_change_password"
+                android:onClick="@{() -> viewModel.save()}"
+                android:text="@string/button_save"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+                app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
+
         </android.support.constraint.ConstraintLayout>
     </ScrollView>
 </layout>

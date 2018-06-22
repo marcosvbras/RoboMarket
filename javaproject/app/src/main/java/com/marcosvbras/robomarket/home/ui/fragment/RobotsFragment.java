@@ -100,12 +100,12 @@ public class RobotsFragment extends BaseFragment implements BaseActivityCallback
     }
 
     @Override
-    public void showErrorDialog(String message) {
+    public void showDialogMessage(String message) {
 
     }
 
     @Override
-    public void showErrorDialog(int message) {
+    public void showDialogMessage(int message) {
 
     }
 

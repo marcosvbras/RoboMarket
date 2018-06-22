@@ -5,7 +5,6 @@ import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,7 +30,7 @@ public class ProfileFragment extends BaseFragment implements BaseActivityCallbac
                 inflater, R.layout.fragment_profile, container, false);
         view = fragmentProfileBinding.getRoot();
         fragmentProfileBinding.setViewModel(createViewModel());
-        fragmentProfileBinding.setUser(App.getInstance().getUser());
+        showInfo();
         setHasOptionsMenu(true);
         return view;
     }
@@ -41,6 +40,16 @@ public class ProfileFragment extends BaseFragment implements BaseActivityCallbac
                 .get(ProfileViewModel.class);
     }
 
+    public void showInfo() {
+        fragmentProfileBinding.setUser(App.getInstance().getUser());
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        showInfo();
+    }
+
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
@@ -48,13 +57,13 @@ public class ProfileFragment extends BaseFragment implements BaseActivityCallbac
     }
 
     @Override
-    public void showErrorDialog(String message) {
-        ((HomeActivity)getActivity()).showErrorDialog(message);
+    public void showDialogMessage(String message) {
+        ((HomeActivity)getActivity()).showDialogMessage(message);
     }
 
     @Override
-    public void showErrorDialog(int message) {
-        ((HomeActivity)getActivity()).showErrorDialog(message);
+    public void showDialogMessage(int message) {
+        ((HomeActivity)getActivity()).showDialogMessage(message);
     }
 
     @Override

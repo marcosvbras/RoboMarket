@@ -41,7 +41,7 @@ public class LoginViewModel extends BaseViewModel {
                     }, error -> {
                         isLoading.set(false);
                         cleanupSubscriptions();
-                        activityCallback.showErrorDialog(error.getMessage());
+                        activityCallback.showDialogMessage(error.getMessage());
                     }, () -> {
                         isLoading.set(false);
                         cleanupSubscriptions();

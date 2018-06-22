@@ -10,10 +10,6 @@ public class User implements Cloneable {
     private String email;
     private String username;
     private String password;
-    @Expose(serialize = false)
-    private String createdAt;
-    @Expose(serialize = false)
-    private String updatedAt;
     private String emailVerified;
     @Expose(serialize = false)
     private String sessionToken;
@@ -21,7 +17,7 @@ public class User implements Cloneable {
     private String avatarUrl;
     private String phone;
     private String genre;
-    private String birth;
+    private String address;
 
     public String getEmail() {
         return email;
@@ -45,22 +41,6 @@ public class User implements Cloneable {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public String getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(String createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public String getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public void setUpdatedAt(String updatedAt) {
-        this.updatedAt = updatedAt;
     }
 
     public String getEmailVerified() {
@@ -119,12 +99,12 @@ public class User implements Cloneable {
         this.genre = genre;
     }
 
-    public String getBirth() {
-        return birth;
+    public String getAddress() {
+        return address;
     }
 
-    public void setBirth(String birth) {
-        this.birth = birth;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public Object clone() {

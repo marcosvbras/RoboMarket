@@ -13,16 +13,16 @@ public class BaseActivity extends AppCompatActivity implements BaseActivityCallb
     private AlertDialog.Builder alertDialog;
 
     @Override
-    public void showErrorDialog(String message) {
-        showDialog(message);
+    public void showDialogMessage(String message) {
+        showAlertDialog(message);
     }
 
     @Override
-    public void showErrorDialog(int message) {
-        showDialog(getString(message));
+    public void showDialogMessage(int message) {
+        showAlertDialog(getString(message));
     }
 
-    private void showDialog(String message) {
+    private void showAlertDialog(String message) {
         if (alertDialog == null)
             alertDialog = new AlertDialog.Builder(this);
 

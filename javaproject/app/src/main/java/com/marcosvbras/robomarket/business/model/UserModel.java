@@ -33,8 +33,9 @@ public class UserModel {
                 .observeOn(AndroidSchedulers.mainThread());
     }
 
-    public Observable<User> updateUser(User user) {
-        return APIService.getService().updateUser(user)
+    public Observable<User> updateUser(User newData, String objectId) {
+        return APIService.getService().updateUser(newData, objectId)
+                .flatMap(userResponse -> APIService.getService().getUserByToken())
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread());
     }

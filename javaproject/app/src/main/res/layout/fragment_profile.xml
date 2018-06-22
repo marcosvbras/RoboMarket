@@ -169,7 +169,7 @@
                 android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="24dp"
-                android:text="@string/hint_birth"
+                android:text="@string/hint_address"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.089"
                 app:layout_constraintStart_toStartOf="parent"
@@ -183,7 +183,7 @@
                 android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
-                android:text="@{user.birth}"
+                android:text="@{user.address}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.14"
                 app:layout_constraintStart_toStartOf="parent"
@@ -193,16 +193,29 @@
                 android:id="@+id/button_edit"
                 style="@style/ButtonBlueDefault"
                 android:layout_width="0dp"
-                android:layout_marginBottom="24dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="48dp"
                 android:onClick="@{() -> viewModel.edit()}"
                 android:text="@string/button_edit_profile"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView15" />
+
+            <Button
+                android:id="@+id/button_password_reset"
+                style="@style/ButtonBlueDefault"
+                android:layout_width="0dp"
+                android:layout_marginBottom="40dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="24dp"
+                android:onClick="@{() -> viewModel.requestPasswordReset()}"
+                android:text="@string/button_request_password"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button_edit" />
 
         </android.support.constraint.ConstraintLayout>
     </ScrollView>
