@@ -6,6 +6,7 @@ import com.marcosvbras.robomarket.R;
 import com.marcosvbras.robomarket.app.App;
 import com.marcosvbras.robomarket.business.model.UserModel;
 import com.marcosvbras.robomarket.interfaces.BaseActivityCallback;
+import com.marcosvbras.robomarket.login.ui.LoginActivity;
 import com.marcosvbras.robomarket.profile.ui.EditProfileActivity;
 import com.marcosvbras.robomarket.viewmodels.BaseViewModel;
 
@@ -35,11 +36,26 @@ public class ProfileViewModel extends BaseViewModel {
 
                 }, error -> {
                     isLoading.set(false);
-                    cleanupSubscriptions();
                     activityCallback.showDialogMessage(R.string.sucessful_reset_password);
+                }, () -> isLoading.set(false), d -> {
+                    isLoading.set(true);
+                    disposable = d;
+                });
+    }
+
+    @SuppressLint("CheckResult")
+    public void deleteAccount() {
+        cleanupSubscriptions();
+
+        userModel.deleteUser(App.getInstance().getUser().getObjectId())
+                .subscribe(next -> {
+
+                }, error -> {
+                    isLoading.set(false);
+                    activityCallback.showDialogMessage(error.getMessage());
                 }, () -> {
                     isLoading.set(false);
-                    cleanupSubscriptions();
+                    activityCallback.openActivity(LoginActivity.class, true);
                 }, d -> {
                     isLoading.set(true);
                     disposable = d;

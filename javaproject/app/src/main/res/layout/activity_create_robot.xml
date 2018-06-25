@@ -1,21 +1,133 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <data>
         <variable
             name="viewModel"
             type="com.marcosvbras.robomarket.createrobot.viewmodel.CreateRobotViewModel"/>
     </data>
-    <android.support.constraint.ConstraintLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".createrobot.ui.CreateRobotActivity">
-        <include
-            android:id="@+id/top_toolbar"
-            layout="@layout/partial_toolbar"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </android.support.constraint.ConstraintLayout>
+        android:background="@drawable/gradient_background"
+        android:fillViewport="false"
+        android:orientation="vertical">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <include
+                android:id="@+id/top_toolbar"
+                layout="@layout/partial_transparent_toolbar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="24dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/rounded_corner_layout"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/top_toolbar">
+
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/hint_model"
+                    android:text="@={viewModel.model}"
+                    android:inputType="text"
+                    app:met_floatingLabel="highlight"
+                    app:met_primaryColor="@color/colorAccent"
+                    app:setError="@{viewModel.modelFieldError}" />
+
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/hint_manufacturer"
+                    android:inputType="text"
+                    android:text="@={viewModel.manufacturer}"
+                    app:setError="@{viewModel.manufacturerFieldError}"
+                    app:met_floatingLabel="highlight"
+                    app:met_primaryColor="@color/colorAccent" />
+
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/hint_year"
+                    android:inputType="numberSigned"
+                    android:text="@={viewModel.year}"
+                    app:met_floatingLabel="highlight"
+                    app:met_primaryColor="@color/colorAccent" />
+
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/hint_color"
+                    android:inputType="text"
+                    android:text="@={viewModel.color}"
+                    app:met_floatingLabel="highlight"
+                    app:met_primaryColor="@color/colorAccent" />
+
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/hint_quantity"
+                    android:text="@={viewModel.quantity}"
+                    android:inputType="numberSigned"
+                    app:met_floatingLabel="highlight"
+                    app:met_primaryColor="@color/colorAccent" />
+
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/hint_price"
+                    android:text="@={viewModel.price}"
+                    android:inputType="numberSigned"
+                    app:setError="@{viewModel.priceFieldError}"
+                    app:met_floatingLabel="highlight"
+                    app:met_primaryColor="@color/colorAccent" />
+
+                <ImageView
+                    android:scaleType="centerInside"
+                    android:layout_marginTop="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:onClick="@{() -> viewModel.changeAvatarImg()}"
+                    app:url_image="@{viewModel.imageUrl}"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:text="@string/hint_click_image" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/button_save"
+                style="@style/ButtonWhiteDefault"
+                android:layout_width="0dp"
+                android:layout_marginBottom="40dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:onClick="@{() -> viewModel.save()}"
+                android:text="@string/button_save"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+
+        </android.support.constraint.ConstraintLayout>
+    </ScrollView>
 </layout>

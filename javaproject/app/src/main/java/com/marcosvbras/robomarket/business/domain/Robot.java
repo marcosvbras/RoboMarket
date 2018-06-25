@@ -7,12 +7,12 @@ public class Robot {
     private String createdAt;
     private String model;
     private String color;
-    private String year;
+    private int year;
     private int price;
-    private String unitIdentification;
     private String manufacturer;
     private int quantity;
     private String imageUrl;
+    private String userId;
 
     public String getObjectId() {
         return objectId;
@@ -54,11 +54,11 @@ public class Robot {
         this.color = color;
     }
 
-    public String getYear() {
+    public int getYear() {
         return year;
     }
 
-    public void setYear(String year) {
+    public void setYear(int year) {
         this.year = year;
     }
 
@@ -68,14 +68,6 @@ public class Robot {
 
     public void setPrice(int price) {
         this.price = price;
-    }
-
-    public String getUnitIdentification() {
-        return unitIdentification;
-    }
-
-    public void setUnitIdentification(String unitIdentification) {
-        this.unitIdentification = unitIdentification;
     }
 
     public String getManufacturer() {
@@ -102,4 +94,11 @@ public class Robot {
         this.imageUrl = imageUrl;
     }
 
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
 }

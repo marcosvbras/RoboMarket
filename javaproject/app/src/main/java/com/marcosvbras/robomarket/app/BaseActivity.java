@@ -73,4 +73,14 @@ public class BaseActivity extends AppCompatActivity implements BaseActivityCallb
     public void finishCurrentActivity() {
         finish();
     }
+
+    @Override
+    public void setActivityResult(int resultCode) {
+        setResult(resultCode);
+    }
+
+    @Override
+    public void setActivityResult(int resultCode, Intent intent) {
+        setResult(resultCode, intent);
+    }
 }

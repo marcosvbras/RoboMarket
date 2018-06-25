@@ -67,4 +67,7 @@ public interface APIEndpoints {
     @PUT(Constants.Api.ROBOT_ACTIONS_ENDPOINT)
     Observable<Robot> deleteRobot(@Path("objectId") String objectId);
 
+    @POST(Constants.Api.ROBOTS_ROOT_ENDPOINT)
+    Observable<Robot> createRobot(@Body Robot robot);
+
 }

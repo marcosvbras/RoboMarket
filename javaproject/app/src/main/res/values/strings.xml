@@ -10,7 +10,14 @@
     <string name="hint_password">Password</string>
     <string name="hint_phone">Phone</string>
     <string name="hint_genre">Genre</string>
+    <string name="hint_click_image">Click on image to change it</string>
     <string name="hint_address">Address</string>
+    <string name="hint_model">Model</string>
+    <string name="hint_color">Color</string>
+    <string name="hint_year">Year</string>
+    <string name="hint_price">Price</string>
+    <string name="hint_manufacturer">Manufacturer</string>
+    <string name="hint_quantity">Quantity</string>
     <string name="hint_repeat_password">Repeat Password</string>
     <string name="signin_button">Sign In</string>
     <string name="signup_button">Sign Up</string>
@@ -33,6 +40,7 @@
     <string name="item_field_quantity">Quantity:</string>
     <string name="item_field_price">Price:</string>
     <string name="button_save">Save</string>
+    <string name="button_delete_account">Delete Account</string>
     <string name="button_request_password">Request Password Reset</string>
     <string name="sucessful_reset_password">A reset link was sent for your e-mail.</string>
 </resources>

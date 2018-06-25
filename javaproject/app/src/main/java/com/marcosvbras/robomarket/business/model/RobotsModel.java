@@ -9,23 +9,23 @@ import com.marcosvbras.robomarket.business.response.ListRobotResponse;
 import com.marcosvbras.robomarket.utils.Constants;
 
 import io.reactivex.Observable;
+import io.reactivex.ObservableSource;
 import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.functions.Function;
 import io.reactivex.schedulers.Schedulers;
 
 public class RobotsModel {
 
-    private String robotList = "{\"advertiser\": {\"__type\":\"Pointer\", \"className\":\"User\",\"" +
-            "objectId\":\"{objectId}\"}}";
-    private String robotFilter = "{\"model\":{\"$regex\":\"^{myQuery}\", \"$options\": \"i\"}, \"" +
-            "advertiser\": {\"__type\":\"Pointer\", \"className\":\"User\",\"objectId\":\"{objectId}\"}}";
+    private String robotList = "{\"userId\": \"{userId}\"}";
+    private String robotFilter = "{\"model\":{\"$regex\":\"^{myQuery}\", \"$options\": \"i\"}, \"userId\": \"{userId}\"}";
 
     public Observable<ListRobotResponse> listRobots(User user, String query, int skip) {
         String whereParameter;
 
         if(TextUtils.isEmpty(query))
-            whereParameter = robotList.replace("{objectId}", user.getObjectId());
+            whereParameter = robotList.replace("{userId}", user.getObjectId());
         else
-            whereParameter = robotFilter.replace("{objectId}", user.getObjectId())
+            whereParameter = robotFilter.replace("{userId}", user.getObjectId())
                 .replace("{myQuery}", query);
 
         return APIService.getService()
@@ -39,7 +39,9 @@ public class RobotsModel {
                 .observeOn(AndroidSchedulers.mainThread());
     }
 
-//    public Observable<Robot> createRobot(Robot robot) {
-//        return APIService.getService().
-//    }
+    public Observable<Robot> createRobot(Robot robot) {
+        return APIService.getService().createRobot(robot)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread());
+    }
 }

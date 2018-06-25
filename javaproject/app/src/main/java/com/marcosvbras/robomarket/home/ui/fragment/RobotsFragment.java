@@ -1,6 +1,7 @@
 package com.marcosvbras.robomarket.home.ui.fragment;
 
 import android.arch.lifecycle.ViewModelProviders;
+import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -26,6 +27,8 @@ import com.marcosvbras.robomarket.home.viewmodel.RobotsViewModelFactory;
 import com.marcosvbras.robomarket.interfaces.BaseActivityCallback;
 import com.marcosvbras.robomarket.login.ui.LoginActivity;
 import com.marcosvbras.robomarket.utils.Constants;
+
+import static android.app.Activity.RESULT_OK;
 
 public class RobotsFragment extends BaseFragment implements BaseActivityCallback {
 
@@ -88,7 +91,10 @@ public class RobotsFragment extends BaseFragment implements BaseActivityCallback
     public boolean onOptionsItemSelected(MenuItem item) {
         switch(item.getItemId()) {
             case R.id.menu_add:
-                ((HomeActivity)getActivity()).openActivity(CreateRobotActivity.class, false);
+                startActivityForResult(
+                        new Intent(getActivity().getBaseContext(), CreateRobotActivity.class),
+                        Constants.Other.NEW_ROBOT_REQUEST_CODE
+                );
                 break;
             case R.id.menu_logout:
                 App.getInstance().deleteCredentials();
@@ -97,6 +103,12 @@ public class RobotsFragment extends BaseFragment implements BaseActivityCallback
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if(requestCode == Constants.Other.NEW_ROBOT_REQUEST_CODE && resultCode == RESULT_OK)
+            fragmentRobotsBinding.getViewModel().listRobots(null);
     }
 
     @Override
@@ -132,5 +144,15 @@ public class RobotsFragment extends BaseFragment implements BaseActivityCallback
     @Override
     public void finishCurrentActivity() {
 
+    }
+
+    @Override
+    public void setActivityResult(int resultCode) {
+        ((HomeActivity)getActivity()).setActivityResult(resultCode);
+    }
+
+    @Override
+    public void setActivityResult(int resultCode, Intent intent) {
+        ((HomeActivity)getActivity()).setActivityResult(resultCode, intent);
     }
 }

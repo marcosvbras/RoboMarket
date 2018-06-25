@@ -37,6 +37,7 @@ public class Constants {
         public static final String ROBOHASH_SET_1_PARAM = "?set=set1";
         public static final String ROBOHASH_SET_2_PARAM = "?set=set2";
         public static final int FINISH_LOGIN_ACTIVITY = 9000;
+        public static final int NEW_ROBOT_REQUEST_CODE = 6000;
     }
 
     public class Code {

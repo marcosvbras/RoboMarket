@@ -1,5 +1,6 @@
 package com.marcosvbras.robomarket.interfaces;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 public interface BaseActivityCallback {
@@ -17,5 +18,9 @@ public interface BaseActivityCallback {
     void setToolbar(int viewId, boolean displayHomeAsUpEnabled);
 
     void finishCurrentActivity();
+
+    void setActivityResult(int resultCode);
+
+    void setActivityResult(int resultCode, Intent intent);
 
 }

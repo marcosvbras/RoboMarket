@@ -1,6 +1,7 @@
 package com.marcosvbras.robomarket.home.ui.fragment;
 
 import android.arch.lifecycle.ViewModelProviders;
+import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -87,5 +88,15 @@ public class ProfileFragment extends BaseFragment implements BaseActivityCallbac
 
     @Override
     public void finishCurrentActivity() {
+    }
+
+    @Override
+    public void setActivityResult(int resultCode) {
+
+    }
+
+    @Override
+    public void setActivityResult(int resultCode, Intent intent) {
+
     }
 }
