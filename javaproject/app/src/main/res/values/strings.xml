@@ -33,7 +33,7 @@
     <string name="menu_profile">Profile</string>
     <string name="menu_item_logout">Log Out</string>
     <string name="menu_item_add">Add</string>
-    <string name="button_edit_profile">Edit</string>
+    <string name="button_edit">Edit</string>
     <string name="menu_item_search">Search</string>
     <string name="item_field_model">Model:</string>
     <string name="edit_profile_activity">Edit Profile</string>
@@ -41,6 +41,7 @@
     <string name="item_field_price">Price:</string>
     <string name="button_save">Save</string>
     <string name="button_delete_account">Delete Account</string>
+    <string name="button_delete">Delete</string>
     <string name="button_request_password">Request Password Reset</string>
     <string name="sucessful_reset_password">A reset link was sent for your e-mail.</string>
 </resources>

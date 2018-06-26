@@ -44,4 +44,10 @@ public class RobotsModel {
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread());
     }
+
+    public Observable<Robot> updateRobot(String objectId, Robot robot) {
+        return APIService.getService().updateRobot(objectId, robot)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread());
+    }
 }

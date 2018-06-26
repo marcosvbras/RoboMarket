@@ -25,7 +25,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <LinearLayout
+            <RelativeLayout
                 android:id="@+id/linearLayout2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -34,13 +34,13 @@
                 android:layout_marginTop="24dp"
                 android:background="@drawable/rounded_corner_layout"
                 android:gravity="center"
-                android:orientation="vertical"
                 android:padding="16dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/top_toolbar">
 
                 <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/edit_text_model"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/hint_model"
@@ -51,45 +51,44 @@
                     app:setError="@{viewModel.modelFieldError}" />
 
                 <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/edit_text_manufacturer"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/hint_manufacturer"
                     android:inputType="text"
+                    android:layout_below="@id/edit_text_model"
                     android:text="@={viewModel.manufacturer}"
                     app:setError="@{viewModel.manufacturerFieldError}"
                     app:met_floatingLabel="highlight"
                     app:met_primaryColor="@color/colorAccent" />
 
                 <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/edit_text_year"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/hint_year"
+                    android:layout_below="@+id/edit_text_manufacturer"
                     android:inputType="numberSigned"
                     android:text="@={viewModel.year}"
                     app:met_floatingLabel="highlight"
                     app:met_primaryColor="@color/colorAccent" />
 
                 <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/edit_text_color"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/hint_color"
+                    android:layout_below="@+id/edit_text_year"
                     android:inputType="text"
                     android:text="@={viewModel.color}"
                     app:met_floatingLabel="highlight"
                     app:met_primaryColor="@color/colorAccent" />
 
                 <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/edit_text_price"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/hint_quantity"
-                    android:text="@={viewModel.quantity}"
-                    android:inputType="numberSigned"
-                    app:met_floatingLabel="highlight"
-                    app:met_primaryColor="@color/colorAccent" />
-
-                <com.rengwuxian.materialedittext.MaterialEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/edit_text_color"
                     android:hint="@string/hint_price"
                     android:text="@={viewModel.price}"
                     android:inputType="numberSigned"
@@ -97,20 +96,70 @@
                     app:met_floatingLabel="highlight"
                     app:met_primaryColor="@color/colorAccent" />
 
+                <LinearLayout
+                    android:id="@+id/quantity_box"
+                    android:layout_below="@id/edit_text_price"
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content">
+                    <com.rengwuxian.materialedittext.MaterialEditText
+                        android:id="@+id/edit_text_quantity"
+                        android:layout_width="0dp"
+                        android:layout_weight="2"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/hint_quantity"
+                        android:text="@={viewModel.quantity}"
+                        android:inputType="numberSigned"
+                        app:met_floatingLabel="highlight"
+                        app:met_primaryColor="@color/colorAccent" />
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:background="@drawable/circular_quantity_control"
+                        android:layout_height="50dp">
+                        <android.support.design.widget.FloatingActionButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:clickable="true"
+                            android:layout_marginRight="5dp"
+                            android:onClick="@{() -> viewModel.increaseQuantity()}"
+                            android:src="@drawable/ic_plus_white_48dp"
+                            android:shadowColor="@android:color/transparent"
+                            android:tint="@android:color/white"
+                            app:fabSize="mini" />
+                        <android.support.design.widget.FloatingActionButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:clickable="true"
+                            android:onClick="@{() -> viewModel.decreaseQuantity()}"
+                            android:shadowColor="@android:color/transparent"
+                            android:src="@drawable/ic_minus_white_48dp"
+                            android:tint="@android:color/white"
+                            app:fabSize="mini" />
+                    </LinearLayout>
+                </LinearLayout>
+
                 <ImageView
+                    android:id="@+id/image_view"
                     android:scaleType="centerInside"
                     android:layout_marginTop="15dp"
                     android:layout_width="match_parent"
+                    android:layout_below="@+id/quantity_box"
                     android:layout_height="100dp"
                     android:onClick="@{() -> viewModel.changeAvatarImg()}"
                     app:url_image="@{viewModel.imageUrl}"/>
                 <TextView
+                    android:id="@+id/text_view_tip"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:gravity="center"
+                    android:layout_below="@+id/image_view"
                     android:text="@string/hint_click_image" />
-            </LinearLayout>
+            </RelativeLayout>
 
             <Button
                 android:id="@+id/button_save"

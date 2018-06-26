@@ -1,5 +1,7 @@
 package com.marcosvbras.robomarket.home.ui.fragment;
 
+import android.arch.lifecycle.ViewModelProviders;
+import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -16,11 +18,15 @@ import android.view.ViewGroup;
 import com.marcosvbras.robomarket.R;
 import com.marcosvbras.robomarket.app.App;
 import com.marcosvbras.robomarket.app.BaseFragment;
+import com.marcosvbras.robomarket.createsale.CreateSaleActivity;
 import com.marcosvbras.robomarket.databinding.FragmentSalesBinding;
 import com.marcosvbras.robomarket.home.ui.activity.HomeActivity;
+import com.marcosvbras.robomarket.home.viewmodel.SalesViewModel;
+import com.marcosvbras.robomarket.home.viewmodel.SalesViewModelFactory;
+import com.marcosvbras.robomarket.interfaces.BaseActivityCallback;
 import com.marcosvbras.robomarket.login.ui.LoginActivity;
 
-public class SalesFragment extends BaseFragment {
+public class SalesFragment extends BaseFragment implements BaseActivityCallback {
 
     private FragmentSalesBinding fragmentSalesBinding;
     private View view;
@@ -32,8 +38,14 @@ public class SalesFragment extends BaseFragment {
         fragmentSalesBinding = DataBindingUtil.inflate(inflater,
                 R.layout.fragment_sales, container, false);
         view = fragmentSalesBinding.getRoot();
+        fragmentSalesBinding.setViewModel(createViewModel());
         setHasOptionsMenu(true);
         return view;
+    }
+
+    private SalesViewModel createViewModel() {
+        return ViewModelProviders.of(this, new SalesViewModelFactory(this))
+                .get(SalesViewModel.class);
     }
 
     @Override
@@ -75,7 +87,7 @@ public class SalesFragment extends BaseFragment {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch(item.getItemId()) {
             case R.id.menu_add:
-//                ((HomeActivity)getActivity()).openActivity(CreateRobotActivity.class, false);
+                ((HomeActivity)getActivity()).openActivity(CreateSaleActivity.class, false);
                 break;
             case R.id.menu_logout:
                 App.getInstance().deleteCredentials();
@@ -84,5 +96,50 @@ public class SalesFragment extends BaseFragment {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void showDialogMessage(String message) {
+
+    }
+
+    @Override
+    public void showDialogMessage(int message) {
+
+    }
+
+    @Override
+    public void openActivity(Class<?> activity, boolean finishCurrentActivity) {
+
+    }
+
+    @Override
+    public void openActivity(Class<?> activity, Bundle bundle, boolean finishCurrentActivity) {
+
+    }
+
+    @Override
+    public void openActivityForResult(Class<?> activity, Bundle bundle, int requestCode) {
+
+    }
+
+    @Override
+    public void setToolbar(int viewId, boolean displayHomeAsUpEnabled) {
+
+    }
+
+    @Override
+    public void finishCurrentActivity() {
+
+    }
+
+    @Override
+    public void setActivityResult(int resultCode) {
+
+    }
+
+    @Override
+    public void setActivityResult(int resultCode, Intent intent) {
+
     }
 }

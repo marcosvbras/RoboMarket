@@ -6,15 +6,16 @@ import com.genius.groupie.Item;
 import com.marcosvbras.robomarket.R;
 import com.marcosvbras.robomarket.business.domain.Robot;
 import com.marcosvbras.robomarket.databinding.ItemRobotBinding;
+import com.marcosvbras.robomarket.home.OnRecyclerClick;
 
-public class ItemRobot extends Item<ItemRobotBinding> {
+public class ItemRobot extends Item<ItemRobotBinding> implements View.OnClickListener {
 
     private Robot robot;
-    private View.OnClickListener onClickListener;
+    private OnRecyclerClick onRecyclerClick;
 
-    public ItemRobot(Robot robot, View.OnClickListener onClickListener) {
+    public ItemRobot(Robot robot, OnRecyclerClick onRecyclerClick) {
         this.robot = robot;
-        this.onClickListener = onClickListener;
+        this.onRecyclerClick = onRecyclerClick;
     }
 
     @Override
@@ -25,6 +26,11 @@ public class ItemRobot extends Item<ItemRobotBinding> {
     @Override
     public void bind(ItemRobotBinding viewBinding, int position) {
         viewBinding.setRobot(robot);
-        viewBinding.listItem.setOnClickListener(onClickListener);
+        viewBinding.listItem.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View v) {
+        onRecyclerClick.onClick(robot);
     }
 }

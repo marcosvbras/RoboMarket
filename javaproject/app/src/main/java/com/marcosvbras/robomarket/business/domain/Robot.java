@@ -1,6 +1,9 @@
 package com.marcosvbras.robomarket.business.domain;
 
-public class Robot {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class Robot implements Parcelable {
 
     private String objectId;
     private String updatedAt;
@@ -13,6 +16,34 @@ public class Robot {
     private int quantity;
     private String imageUrl;
     private String userId;
+
+    public Robot(){}
+
+    public Robot(Parcel in) {
+        objectId = in.readString();
+        updatedAt = in.readString();
+        createdAt = in.readString();
+        model = in.readString();
+        color = in.readString();
+        year = in.readInt();
+        price = in.readInt();
+        manufacturer = in.readString();
+        quantity = in.readInt();
+        imageUrl = in.readString();
+        userId = in.readString();
+    }
+
+    public static final Creator<Robot> CREATOR = new Creator<Robot>() {
+        @Override
+        public Robot createFromParcel(Parcel in) {
+            return new Robot(in);
+        }
+
+        @Override
+        public Robot[] newArray(int size) {
+            return new Robot[size];
+        }
+    };
 
     public String getObjectId() {
         return objectId;
@@ -100,5 +131,25 @@ public class Robot {
 
     public void setUserId(String userId) {
         this.userId = userId;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(objectId);
+        dest.writeString(updatedAt);
+        dest.writeString(createdAt);
+        dest.writeString(model);
+        dest.writeString(color);
+        dest.writeInt(year);
+        dest.writeInt(price);
+        dest.writeString(manufacturer);
+        dest.writeInt(quantity);
+        dest.writeString(imageUrl);
+        dest.writeString(userId);
     }
 }

@@ -7,6 +7,9 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -18,6 +21,7 @@ import com.marcosvbras.robomarket.home.ui.activity.HomeActivity;
 import com.marcosvbras.robomarket.home.viewmodel.ProfileViewModel;
 import com.marcosvbras.robomarket.home.viewmodel.ProfileViewModelFactory;
 import com.marcosvbras.robomarket.interfaces.BaseActivityCallback;
+import com.marcosvbras.robomarket.login.ui.LoginActivity;
 
 public class ProfileFragment extends BaseFragment implements BaseActivityCallback {
 
@@ -98,5 +102,23 @@ public class ProfileFragment extends BaseFragment implements BaseActivityCallbac
     @Override
     public void setActivityResult(int resultCode, Intent intent) {
 
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        getActivity().getMenuInflater().inflate(R.menu.menu_home, menu);
+        menu.findItem(R.id.menu_add).setVisible(false);
+        menu.findItem(R.id.menu_search).setVisible(false);
+        super.onCreateOptionsMenu(menu, inflater);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if(item.getItemId() == R.id.menu_logout) {
+            App.getInstance().deleteCredentials();
+            ((HomeActivity)getActivity()).openActivity(LoginActivity.class, true);
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }

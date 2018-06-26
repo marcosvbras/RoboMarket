@@ -36,8 +36,13 @@ public class Constants {
         public static final String ROBOHASH_API = "https://robohash.org/";
         public static final String ROBOHASH_SET_1_PARAM = "?set=set1";
         public static final String ROBOHASH_SET_2_PARAM = "?set=set2";
+        public static final String ACTION_TAG = "action";
+        public static final String ROBOT_TAG = "robot";
+        public static final int ACTION_CREATE_ROBOT = 8963;
+        public static final int ACTION_EDIT_ROBOT = 6658;
         public static final int FINISH_LOGIN_ACTIVITY = 9000;
         public static final int NEW_ROBOT_REQUEST_CODE = 6000;
+        public static final int EDIT_ROBOT_REQUEST_CODE = 7987;
     }
 
     public class Code {

@@ -24,7 +24,9 @@
         <activity android:name=".register.ui.RegisterActivity" />
         <activity android:name=".home.ui.activity.HomeActivity" />
         <activity android:name=".createrobot.ui.CreateRobotActivity" />
-        <activity android:name=".profile.ui.EditProfileActivity"></activity>
+        <activity android:name=".profile.ui.EditProfileActivity" />
+        <activity android:name=".createsale.CreateSaleActivity" />
+        <activity android:name=".robotdetail.ui.RobotDetailActivity"></activity>
     </application>
 
 </manifest>
