@@ -21,7 +21,9 @@ public class CreateRobotActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        robot = getIntent().getParcelableExtra(Constants.Other.ROBOT_TAG);
+        Bundle bundle = getIntent().getExtras();
+        if(bundle != null && bundle.containsKey(Constants.Other.ROBOT_TAG))
+            robot = getIntent().getExtras().getParcelable(Constants.Other.ROBOT_TAG);
         activityBinding = DataBindingUtil.setContentView(this, R.layout.activity_create_robot);
         activityBinding.setViewModel(createRobotViewModel());
         activityBinding.executePendingBindings();

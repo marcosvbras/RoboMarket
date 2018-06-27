@@ -105,6 +105,11 @@ public class ProfileFragment extends BaseFragment implements BaseActivityCallbac
     }
 
     @Override
+    public void setActivityResult(int resultCode, Bundle bundle) {
+
+    }
+
+    @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         getActivity().getMenuInflater().inflate(R.menu.menu_home, menu);
         menu.findItem(R.id.menu_add).setVisible(false);

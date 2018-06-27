@@ -23,4 +23,6 @@ public interface BaseActivityCallback {
 
     void setActivityResult(int resultCode, Intent intent);
 
+    void setActivityResult(int resultCode, Bundle bundle);
+
 }

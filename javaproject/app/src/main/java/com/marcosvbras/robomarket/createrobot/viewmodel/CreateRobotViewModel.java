@@ -2,6 +2,7 @@ package com.marcosvbras.robomarket.createrobot.viewmodel;
 
 import android.annotation.SuppressLint;
 import android.databinding.ObservableField;
+import android.os.Bundle;
 import android.text.TextUtils;
 
 import com.marcosvbras.robomarket.R;
@@ -100,14 +101,14 @@ public class CreateRobotViewModel extends BaseViewModel {
                         });
             } else {
                 robotsModel.updateRobot(savedRobot.getObjectId(), robot)
-                        .subscribe(next -> {
-
-                        }, error -> {
+                        .subscribe(next -> this.savedRobot = next, error -> {
                             isLoading.set(false);
                             activityCallback.showDialogMessage(error.getMessage());
                         }, () -> {
                             isLoading.set(false);
-                            activityCallback.setActivityResult(RESULT_OK);
+                            Bundle bundle = new Bundle();
+                            bundle.putParcelable(Constants.Other.ROBOT_TAG, savedRobot);
+                            activityCallback.setActivityResult(RESULT_OK, bundle);
                             activityCallback.finishCurrentActivity();
                         }, d -> {
                             isLoading.set(true);

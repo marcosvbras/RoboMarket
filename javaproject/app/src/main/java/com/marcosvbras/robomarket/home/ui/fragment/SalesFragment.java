@@ -6,7 +6,6 @@ import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.support.v7.widget.SearchView;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -18,7 +17,7 @@ import android.view.ViewGroup;
 import com.marcosvbras.robomarket.R;
 import com.marcosvbras.robomarket.app.App;
 import com.marcosvbras.robomarket.app.BaseFragment;
-import com.marcosvbras.robomarket.createsale.CreateSaleActivity;
+import com.marcosvbras.robomarket.createsale.ui.activity.CreateSaleActivity;
 import com.marcosvbras.robomarket.databinding.FragmentSalesBinding;
 import com.marcosvbras.robomarket.home.ui.activity.HomeActivity;
 import com.marcosvbras.robomarket.home.viewmodel.SalesViewModel;
@@ -140,6 +139,11 @@ public class SalesFragment extends BaseFragment implements BaseActivityCallback 
 
     @Override
     public void setActivityResult(int resultCode, Intent intent) {
+
+    }
+
+    @Override
+    public void setActivityResult(int resultCode, Bundle bundle) {
 
     }
 }

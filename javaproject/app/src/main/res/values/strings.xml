@@ -11,6 +11,7 @@
     <string name="hint_phone">Phone</string>
     <string name="hint_genre">Genre</string>
     <string name="hint_click_image">Click on image to change it</string>
+    <string name="hint_select_robot">Click on the Plus Button do add items</string>
     <string name="hint_address">Address</string>
     <string name="hint_model">Model</string>
     <string name="hint_color">Color</string>

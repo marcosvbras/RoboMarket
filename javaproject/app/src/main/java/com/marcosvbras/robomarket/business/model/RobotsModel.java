@@ -47,6 +47,13 @@ public class RobotsModel {
 
     public Observable<Robot> updateRobot(String objectId, Robot robot) {
         return APIService.getService().updateRobot(objectId, robot)
+                .flatMap(robotResponse -> APIService.getService().getRobot(objectId))
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread());
+    }
+
+    public Observable<Void> deleteRobot(String objectId) {
+        return APIService.getService().deleteRobot(objectId)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread());
     }

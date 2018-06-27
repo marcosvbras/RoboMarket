@@ -153,4 +153,9 @@ public class RobotsFragment extends BaseFragment implements BaseActivityCallback
     public void setActivityResult(int resultCode, Intent intent) {
         ((HomeActivity)getActivity()).setActivityResult(resultCode, intent);
     }
+
+    @Override
+    public void setActivityResult(int resultCode, Bundle bundle) {
+
+    }
 }

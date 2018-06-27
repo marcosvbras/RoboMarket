@@ -6,11 +6,103 @@
     <data>
         <variable
             name="viewModel"
-            type="com.marcosvbras.robomarket.home.viewmodel.SalesViewModel"/>
+            type="com.marcosvbras.robomarket.createsale.viewmodel.CreateSaleViewModel"/>
     </data>
-    <android.support.constraint.ConstraintLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@drawable/gradient_background"
+        android:fillViewport="false"
+        android:orientation="vertical">
 
-    </android.support.constraint.ConstraintLayout>
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <include
+                android:id="@+id/top_toolbar"
+                layout="@layout/partial_transparent_toolbar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_corner_layout"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="100dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:background="@drawable/blue_rounded_corner_layout"
+                        android:layout_width="match_parent"
+                        android:layout_marginBottom="20dp"
+                        android:layout_height="wrap_content">
+                        <android.support.v7.widget.RecyclerView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                        </android.support.v7.widget.RecyclerView>
+                    </LinearLayout>
+
+                    <android.support.design.widget.FloatingActionButton
+                        android:id="@+id/fab_mini"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center_horizontal|bottom"
+                        android:clickable="true"
+                        android:src="@drawable/ic_plus_white_48dp"
+                        android:tint="@android:color/white"
+                        app:fabSize="mini" />
+                </FrameLayout>
+
+                <TextView
+                    android:id="@+id/text_view_tip"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:layout_below="@+id/image_view"
+                    android:text="@string/hint_select_robot" />
+
+                <TextView
+                    android:id="@+id/text_view_total"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25dp"
+                    android:textSize="25sp"
+                    android:gravity="center"
+                    android:layout_below="@+id/image_view"
+                    android:text="R$ 0,00" />
+            </LinearLayout>
+
+            <!--<Button-->
+                <!--android:id="@+id/button_save"-->
+                <!--style="@style/ButtonWhiteDefault"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_marginBottom="40dp"-->
+                <!--android:layout_marginEnd="24dp"-->
+                <!--android:layout_marginStart="24dp"-->
+                <!--android:layout_marginTop="24dp"-->
+                <!--android:onClick="@{() -> viewModel.save()}"-->
+                <!--android:text="@string/button_save"-->
+                <!--app:layout_constraintBottom_toBottomOf="parent"-->
+                <!--app:layout_constraintEnd_toEndOf="parent"-->
+                <!--app:layout_constraintHorizontal_bias="0.0"-->
+                <!--app:layout_constraintStart_toStartOf="parent"-->
+                <!--app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />-->
+
+        </android.support.constraint.ConstraintLayout>
+    </ScrollView>
 </layout>
