@@ -25,6 +25,6 @@ public class ItemSaleRobot extends Item<ItemRobotSaleBinding> {
 
     @Override
     public void bind(ItemRobotSaleBinding viewBinding, int position) {
-
+        viewBinding.setRobot(robot);
     }
 }

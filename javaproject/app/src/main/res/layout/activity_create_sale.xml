@@ -30,7 +30,7 @@
                 android:id="@+id/linearLayout2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:background="@drawable/rounded_corner_layout"
+                android:background="@drawable/white_rounded_corner_layout"
                 android:gravity="center"
                 android:orientation="vertical"
                 android:padding="16dp"
@@ -45,13 +45,16 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <LinearLayout
-                        android:background="@drawable/blue_rounded_corner_layout"
                         android:layout_width="match_parent"
                         android:layout_marginBottom="20dp"
                         android:layout_height="wrap_content">
                         <android.support.v7.widget.RecyclerView
+                            android:background="@drawable/blue_rounded_corner_layout"
+                            android:nestedScrollingEnabled="false"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+                            app:adapter="@{viewModel.robotSaleAdapter}">
 
                         </android.support.v7.widget.RecyclerView>
                     </LinearLayout>
@@ -62,7 +65,7 @@
                         android:layout_height="40dp"
                         android:layout_gravity="center_horizontal|bottom"
                         android:clickable="true"
-                        android:onClick="@{() -> viewModel.add()}"
+                        android:onClick="@{() -> viewModel.select()}"
                         android:src="@drawable/ic_plus_white_48dp"
                         android:tint="@android:color/white"
                         app:fabSize="mini" />
@@ -88,21 +91,21 @@
                     android:text="R$ 0,00" />
             </LinearLayout>
 
-            <!--<Button-->
-                <!--android:id="@+id/button_save"-->
-                <!--style="@style/ButtonWhiteDefault"-->
-                <!--android:layout_width="0dp"-->
-                <!--android:layout_marginBottom="40dp"-->
-                <!--android:layout_marginEnd="24dp"-->
-                <!--android:layout_marginStart="24dp"-->
-                <!--android:layout_marginTop="24dp"-->
-                <!--android:onClick="@{() -> viewModel.save()}"-->
-                <!--android:text="@string/button_save"-->
-                <!--app:layout_constraintBottom_toBottomOf="parent"-->
-                <!--app:layout_constraintEnd_toEndOf="parent"-->
-                <!--app:layout_constraintHorizontal_bias="0.0"-->
-                <!--app:layout_constraintStart_toStartOf="parent"-->
-                <!--app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />-->
+            <Button
+                android:id="@+id/button_save"
+                style="@style/ButtonWhiteDefault"
+                android:layout_width="0dp"
+                android:layout_marginBottom="40dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:onClick="@{() -> viewModel.save()}"
+                android:text="@string/button_save"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
 
         </android.support.constraint.ConstraintLayout>
     </ScrollView>

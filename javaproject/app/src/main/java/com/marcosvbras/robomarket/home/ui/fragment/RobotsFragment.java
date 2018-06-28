@@ -158,4 +158,9 @@ public class RobotsFragment extends BaseFragment implements BaseActivityCallback
     public void setActivityResult(int resultCode, Bundle bundle) {
 
     }
+
+    @Override
+    public void showCustomAlertDialog() {
+
+    }
 }

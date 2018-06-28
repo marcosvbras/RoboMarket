@@ -1,16 +1,24 @@
 package com.marcosvbras.robomarket.app;
 
 import android.content.Intent;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.marcosvbras.robomarket.CustomDialog;
 import com.marcosvbras.robomarket.R;
+import com.marcosvbras.robomarket.SaleDialogFragment;
 import com.marcosvbras.robomarket.interfaces.BaseActivityCallback;
+
+import org.reactivestreams.Subscription;
+
+import io.reactivex.disposables.Disposable;
 
 public class BaseActivity extends AppCompatActivity implements BaseActivityCallback {
 
     private AlertDialog.Builder alertDialog;
+    private Disposable disposable;
 
     @Override
     public void showDialogMessage(String message) {
@@ -30,6 +38,23 @@ public class BaseActivity extends AppCompatActivity implements BaseActivityCallb
                 .setMessage(message)
                 .setPositiveButton(getString(R.string.ok), null)
                 .show();
+
+//        CustomDialog customDialog = new CustomDialog();
+//        if (disposable != null && !disposable.isDisposed()){
+//            disposable.dispose();
+//        }
+//        disposable = customDialog.publishSubject.subscribe(o -> {
+//
+//        }, throwable -> {
+//
+//        }, ()-> {});
+    }
+
+    @Override
+    public void showCustomAlertDialog() {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        SaleDialogFragment saleDialogFragment = SaleDialogFragment.newInstance();
+        saleDialogFragment.show(fragmentManager, "");
     }
 
     @Override

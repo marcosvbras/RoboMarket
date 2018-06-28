@@ -25,4 +25,6 @@ public interface BaseActivityCallback {
 
     void setActivityResult(int resultCode, Bundle bundle);
 
+    void showCustomAlertDialog();
+
 }
