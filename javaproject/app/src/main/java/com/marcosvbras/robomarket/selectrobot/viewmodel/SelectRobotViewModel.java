@@ -1,6 +1,8 @@
-package com.marcosvbras.robomarket.home.viewmodel;
+package com.marcosvbras.robomarket.selectrobot.viewmodel;
 
 import android.annotation.SuppressLint;
+import android.arch.lifecycle.ViewModel;
+import android.arch.lifecycle.ViewModelProviders;
 import android.os.Bundle;
 
 import com.marcosvbras.robomarket.app.App;
@@ -18,7 +20,9 @@ import java.util.List;
 
 import io.reactivex.disposables.Disposable;
 
-public class RobotsViewModel extends BaseViewModel implements OnRecyclerClick {
+import static android.app.Activity.RESULT_OK;
+
+public class SelectRobotViewModel extends BaseViewModel implements OnRecyclerClick {
 
     private BaseActivityCallback activityCallback;
     private RobotsModel robotsModel;
@@ -27,7 +31,7 @@ public class RobotsViewModel extends BaseViewModel implements OnRecyclerClick {
     private List<Robot> listRobots = new ArrayList<>();
     public final RobotsAdapter robotAdapter;
 
-    public RobotsViewModel(BaseActivityCallback activityCallback) {
+    public SelectRobotViewModel(BaseActivityCallback activityCallback) {
         this.activityCallback = activityCallback;
         this.robotAdapter = new RobotsAdapter(this);
         this.robotsModel = new RobotsModel();
@@ -40,7 +44,6 @@ public class RobotsViewModel extends BaseViewModel implements OnRecyclerClick {
 
         robotsModel.listRobots(App.getInstance().getUser(), query, skip)
                 .subscribe(next -> {
-//                    listRobots.addAll(next.getListRobots());
                     listRobots = next.getListRobots();
                     robotAdapter.updateItems(listRobots);
                 }, error -> {
@@ -72,6 +75,7 @@ public class RobotsViewModel extends BaseViewModel implements OnRecyclerClick {
     public void onClick(Object object) {
         Bundle bundle = new Bundle();
         bundle.putParcelable(Constants.Other.ROBOT_TAG, (Robot)object);
-        activityCallback.openActivity(RobotDetailActivity.class, bundle, false);
+        activityCallback.setActivityResult(RESULT_OK, bundle);
+        activityCallback.finishCurrentActivity();
     }
 }

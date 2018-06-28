@@ -9,18 +9,18 @@ import java.util.List;
 
 public class RobotsAdapter extends GroupAdapter {
 
-    private List<Robot> listRobots;
     private OnRecyclerClick onRecyclerClick;
+    private List<Robot> listRobot;
 
     public RobotsAdapter(OnRecyclerClick onRecyclerClick) {
         this.onRecyclerClick = onRecyclerClick;
     }
 
-    public void updateItems(List<Robot> listRobots) {
+    public void updateItems(List listItems) {
         this.clear();
-        this.listRobots = listRobots == null ? new ArrayList<>() : listRobots;
+        this.listRobot = listItems == null ? new ArrayList<>() : listItems;
 
-        for(Robot robot : this.listRobots)
+        for(Robot robot : this.listRobot)
             add(new ItemRobot(robot, onRecyclerClick));
 
         this.notifyDataSetChanged();
@@ -28,7 +28,7 @@ public class RobotsAdapter extends GroupAdapter {
 
     @Override
     public int getItemCount() {
-        if(listRobots == null)
+        if(listRobot == null)
             return 0;
 
         return super.getItemCount();

@@ -43,6 +43,7 @@ public class Constants {
         public static final int FINISH_LOGIN_ACTIVITY = 9000;
         public static final int NEW_ROBOT_REQUEST_CODE = 6000;
         public static final int EDIT_ROBOT_REQUEST_CODE = 7987;
+        public static final int SELECT_ROBOT_REQUEST_CODE = 9584;
     }
 
     public class Code {

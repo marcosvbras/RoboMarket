@@ -7,14 +7,9 @@ import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
+import com.genius.groupie.GroupAdapter;
 import com.marcosvbras.robomarket.R;
-import com.marcosvbras.robomarket.business.domain.Robot;
-import com.marcosvbras.robomarket.home.ui.adapter.RobotsAdapter;
 import com.rengwuxian.materialedittext.MaterialEditText;
-
-import java.util.List;
-
-import de.hdodenhof.circleimageview.CircleImageView;
 
 public class DataBinder {
 
@@ -43,12 +38,10 @@ public class DataBinder {
         view.setOnNavigationItemSelectedListener(listener);
     }
 
-    @BindingAdapter({"adapter", "data"})
-    public static void bindRobotRecycler(RecyclerView recyclerView, RobotsAdapter robotsAdapter, List<Robot> list) {
-        if(robotsAdapter != null) {
-            recyclerView.setAdapter(robotsAdapter);
-            robotsAdapter.updateItems(list);
-        }
+    @BindingAdapter({"adapter"})
+    public static void bindAdapter(RecyclerView recyclerView, GroupAdapter adapter) {
+        if(adapter != null)
+            recyclerView.setAdapter(adapter);
     }
 
 }
