@@ -3,6 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <data>
+        <import type="android.view.View"/>
         <variable
             name="viewModel"
             type="com.marcosvbras.robomarket.register.viewmodel.RegisterViewModel"/>
@@ -145,48 +146,61 @@
 
             <Button
                 android:id="@+id/button_signUp"
+                style="@style/ButtonWhiteDefault"
                 android:layout_width="0dp"
                 android:layout_marginBottom="16dp"
                 android:layout_marginEnd="32dp"
                 android:layout_marginStart="32dp"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="24dp"
                 android:onClick="@{() -> viewModel.signUp()}"
                 android:text="@string/signup_button"
-                style="@style/ButtonWhiteDefault"
                 app:layout_constraintBottom_toTopOf="@+id/textView"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
+                app:layout_constraintTop_toBottomOf="@+id/frameLayout"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <ProgressBar
+                android:id="@+id/progressBar2"
+                android:layout_width="0dp"
+                android:layout_height="24dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:indeterminateTint="@android:color/white"
+                android:visibility="@{viewModel.isLoading ? View.VISIBLE : View.INVISIBLE}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button_signUp" />
 
             <TextView
                 android:id="@+id/textView"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
+                android:layout_height="18dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="16dp"
                 android:text="@string/already_member"
                 android:textColor="@android:color/white"
-                app:layout_constraintBottom_toTopOf="@+id/button_signin"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/button_signUp"
-                app:layout_constraintVertical_bias="0.87" />
+                app:layout_constraintTop_toBottomOf="@+id/progressBar2" />
 
             <Button
                 android:id="@+id/button_signin"
+                style="@style/ButtonWhiteDefault"
                 android:layout_width="0dp"
-                android:layout_marginBottom="28dp"
+                android:layout_marginBottom="32dp"
                 android:layout_marginEnd="32dp"
                 android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
                 android:onClick="@{() -> viewModel.signIn()}"
                 android:text="@string/signin_button"
-                style="@style/ButtonWhiteDefault"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView" />
         </android.support.constraint.ConstraintLayout>
     </ScrollView>
 </layout>
