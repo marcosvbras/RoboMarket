@@ -1,6 +1,7 @@
 package com.marcosvbras.robomarket.home.viewmodel;
 
 import android.annotation.SuppressLint;
+import android.databinding.ObservableBoolean;
 import android.os.Bundle;
 
 import com.marcosvbras.robomarket.app.App;
@@ -26,6 +27,7 @@ public class RobotsViewModel extends BaseViewModel implements OnRecyclerClick {
     private int skip = 0;
     private List<Robot> listRobots = new ArrayList<>();
     public final RobotsAdapter robotAdapter;
+    public ObservableBoolean isListEmpty = new ObservableBoolean(false);
 
     public RobotsViewModel(BaseActivityCallback activityCallback) {
         this.activityCallback = activityCallback;
@@ -43,6 +45,7 @@ public class RobotsViewModel extends BaseViewModel implements OnRecyclerClick {
 //                    listRobots.addAll(next.getListRobots());
                     listRobots = next.getListRobots();
                     robotAdapter.updateItems(listRobots);
+                    isListEmpty.set(listRobots.size() == 0);
                 }, error -> {
                     isLoading.set(false);
                     cleanupSubscriptions();
@@ -64,6 +67,8 @@ public class RobotsViewModel extends BaseViewModel implements OnRecyclerClick {
 
     @Override
     public void cleanupSubscriptions() {
+        isLoading.set(false);
+
         if(disposable != null && !disposable.isDisposed())
             disposable.dispose();
     }

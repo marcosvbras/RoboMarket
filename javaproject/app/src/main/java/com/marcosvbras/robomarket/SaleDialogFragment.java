@@ -5,6 +5,7 @@ import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatDialogFragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,14 +19,15 @@ public class SaleDialogFragment extends AppCompatDialogFragment {
 
     private FragmentDialogSaleBinding fragmentBinding;
     private View view;
+    private DialogActions dialogActions;
+    private RobotSale robotSale;
 
     public SaleDialogFragment() { }
 
-    public static SaleDialogFragment newInstance() {
+    public static SaleDialogFragment newInstance(RobotSale robotSale, DialogActions dialogActions) {
         SaleDialogFragment saleDialogFragment = new SaleDialogFragment();
-//        Bundle bundle = new Bundle();
-//        bundle.putParcelable(Constants.Other.ROBOT_TAG, robot);
-//        saleDialogFragment.setArguments(bundle);
+        saleDialogFragment.dialogActions = dialogActions;
+        saleDialogFragment.robotSale = robotSale;
         return saleDialogFragment;
     }
 
@@ -35,10 +37,25 @@ public class SaleDialogFragment extends AppCompatDialogFragment {
         fragmentBinding = DataBindingUtil.inflate(
                 inflater, R.layout.fragment_dialog_sale, container, false
         );
+
+        Bundle bundle = getArguments();
+        setStyle(DialogFragment.STYLE_NORMAL, R.style.full_screen_dialog);
+
         view = fragmentBinding.getRoot();
-        fragmentBinding.setViewModel(ViewModelProviders.of(this).get(SaleDialogViewModel.class));
+        fragmentBinding.setViewModel(createViewModel());
+
+        if(bundle != null && bundle.containsKey(Constants.Other.ROBOT_TAG)) {
+            Robot robot = bundle.getParcelable(Constants.Other.ROBOT_TAG);
+            getDialog().setTitle(robot.getModel());
+        }
 
         return view;
+    }
+
+    private SaleDialogViewModel createViewModel() {
+        return ViewModelProviders.of(
+                this, new SaleDialogViewModelFactory(dialogActions, robotSale)
+        ).get(SaleDialogViewModel.class);
     }
 
     @Override

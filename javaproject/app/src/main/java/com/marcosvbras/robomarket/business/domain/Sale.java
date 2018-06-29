@@ -8,7 +8,7 @@ public class Sale {
     private String createdAt;
     private String updatedAt;
     private String userId;
-    private List<RobotSale> robots;
+    private List<ItemSale> robots;
 
     public String getObjectId() {
         return objectId;
@@ -42,11 +42,11 @@ public class Sale {
         this.userId = userId;
     }
 
-    public List<RobotSale> getRobots() {
+    public List<ItemSale> getRobots() {
         return robots;
     }
 
-    public void setRobots(List<RobotSale> robots) {
+    public void setRobots(List<ItemSale> robots) {
         this.robots = robots;
     }
 }

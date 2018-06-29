@@ -5,6 +5,10 @@ import android.arch.lifecycle.ViewModel;
 import android.arch.lifecycle.ViewModelProviders;
 import android.os.Bundle;
 
+import com.marcosvbras.robomarket.DialogActions;
+import com.marcosvbras.robomarket.RobotSale;
+import com.marcosvbras.robomarket.SaleDialogFragment;
+import com.marcosvbras.robomarket.SaleDialogViewModel;
 import com.marcosvbras.robomarket.app.App;
 import com.marcosvbras.robomarket.business.domain.Robot;
 import com.marcosvbras.robomarket.business.model.RobotsModel;
@@ -22,7 +26,7 @@ import io.reactivex.disposables.Disposable;
 
 import static android.app.Activity.RESULT_OK;
 
-public class SelectRobotViewModel extends BaseViewModel implements OnRecyclerClick {
+public class SelectRobotViewModel extends BaseViewModel implements OnRecyclerClick, DialogActions {
 
     private BaseActivityCallback activityCallback;
     private RobotsModel robotsModel;
@@ -56,7 +60,6 @@ public class SelectRobotViewModel extends BaseViewModel implements OnRecyclerCli
                     isLoading.set(true);
                     disposable = d;
                 });
-
     }
 
     @Override
@@ -75,7 +78,18 @@ public class SelectRobotViewModel extends BaseViewModel implements OnRecyclerCli
     public void onClick(Object object) {
         Bundle bundle = new Bundle();
         bundle.putParcelable(Constants.Other.ROBOT_TAG, (Robot)object);
-        activityCallback.setActivityResult(RESULT_OK, bundle);
-        activityCallback.finishCurrentActivity();
+//        activityCallback.showCustomAlertDialog(object, this);
+//        activityCallback.setActivityResult(RESULT_OK, bundle);
+//        activityCallback.finishCurrentActivity();
+    }
+
+    @Override
+    public void onSave(RobotSale robotSale) {
+
+    }
+
+    @Override
+    public void onRemove(RobotSale robotSale) {
+
     }
 }

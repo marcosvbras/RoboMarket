@@ -6,12 +6,12 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.marcosvbras.robomarket.CustomDialog;
+import com.marcosvbras.robomarket.DialogActions;
 import com.marcosvbras.robomarket.R;
 import com.marcosvbras.robomarket.SaleDialogFragment;
+import com.marcosvbras.robomarket.SaleDialogViewModel;
+import com.marcosvbras.robomarket.business.domain.Robot;
 import com.marcosvbras.robomarket.interfaces.BaseActivityCallback;
-
-import org.reactivestreams.Subscription;
 
 import io.reactivex.disposables.Disposable;
 
@@ -51,10 +51,10 @@ public class BaseActivity extends AppCompatActivity implements BaseActivityCallb
     }
 
     @Override
-    public void showCustomAlertDialog() {
+    public void showCustomAlertDialog(Object object, DialogActions actions) {
         FragmentManager fragmentManager = getSupportFragmentManager();
-        SaleDialogFragment saleDialogFragment = SaleDialogFragment.newInstance();
-        saleDialogFragment.show(fragmentManager, "");
+//        SaleDialogFragment saleDialogFragment = SaleDialogFragment.newInstance((Robot)object);
+//        saleDialogFragment.show(fragmentManager, "");
     }
 
     @Override

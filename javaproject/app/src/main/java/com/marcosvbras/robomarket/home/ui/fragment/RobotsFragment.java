@@ -14,9 +14,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.marcosvbras.robomarket.DialogActions;
 import com.marcosvbras.robomarket.R;
+import com.marcosvbras.robomarket.SaleDialogViewModel;
 import com.marcosvbras.robomarket.app.App;
 import com.marcosvbras.robomarket.app.BaseFragment;
+import com.marcosvbras.robomarket.business.domain.Robot;
 import com.marcosvbras.robomarket.createrobot.ui.CreateRobotActivity;
 import com.marcosvbras.robomarket.databinding.FragmentRobotsBinding;
 import com.marcosvbras.robomarket.home.ui.activity.HomeActivity;
@@ -160,7 +163,7 @@ public class RobotsFragment extends BaseFragment implements BaseActivityCallback
     }
 
     @Override
-    public void showCustomAlertDialog() {
+    public void showCustomAlertDialog(Object object, DialogActions actions) {
 
     }
 }

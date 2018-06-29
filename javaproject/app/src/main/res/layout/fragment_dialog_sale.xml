@@ -11,14 +11,28 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="32dp"
+            android:text="@{viewModel.model}"
+            android:textSize="22sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.501"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <android.support.design.widget.FloatingActionButton
             android:id="@+id/floatingActionButton3"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginStart="96dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginStart="72dp"
             android:clickable="true"
+            android:onClick="@{() -> viewModel.decreaseQuantity()}"
             android:src="@drawable/ic_minus_white_48dp"
             android:tint="@android:color/white"
             app:fabSize="mini"
@@ -29,14 +43,18 @@
             android:id="@+id/materialEditText"
             android:layout_width="75dp"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="40dp"
             android:gravity="center"
             android:inputType="numberSigned"
-            android:text="5"
+            android:maxLength="5"
+            android:text="@={viewModel.itemQuantity}"
+            app:setError="@{viewModel.error}"
             app:layout_constraintEnd_toStartOf="@+id/floatingActionButton"
-            app:layout_constraintHorizontal_bias="0.529"
+            app:layout_constraintHorizontal_bias="0.515"
             app:layout_constraintStart_toEndOf="@+id/floatingActionButton3"
-            app:layout_constraintTop_toBottomOf="@+id/textView7"
+            app:layout_constraintTop_toBottomOf="@+id/textView14"
             app:met_floatingLabel="highlight"
             app:met_primaryColor="@color/colorAccent" />
 
@@ -45,9 +63,9 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginEnd="96dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginEnd="72dp"
             android:clickable="true"
+            android:onClick="@{() -> viewModel.increaseQuantity()}"
             android:src="@drawable/ic_plus_white_48dp"
             android:tint="@android:color/white"
             app:fabSize="mini"
@@ -61,25 +79,41 @@
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="24dp"
-            android:text="$ 0,00"
+            android:text="@{viewModel.totalValue}"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/materialEditText" />
 
-        <TextView
-            android:id="@+id/textView7"
+        <Button
+            android:id="@+id/button_remove"
+            style="@style/ButtonBlueDefault"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
             android:layout_marginEnd="32dp"
             android:layout_marginStart="32dp"
-            android:layout_marginTop="16dp"
-            android:gravity="center"
-            android:text="R2D2"
-            android:textSize="20sp"
+            android:layout_marginTop="32dp"
+            android:onClick="@{() -> viewModel.removeItem()}"
+            android:text="@string/button_remove"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+        <Button
+            android:id="@+id/button_save"
+            style="@style/ButtonBlueDefault"
+            android:layout_width="0dp"
+            android:layout_marginBottom="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            android:onClick="@{() -> viewModel.saveItem()}"
+            android:text="@string/button_save"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button_remove"
+            app:layout_constraintVertical_bias="0.0" />
 
     </android.support.constraint.ConstraintLayout>
 </layout>

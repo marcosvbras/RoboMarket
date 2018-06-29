@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.support.v7.widget.SearchView;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 
 import com.marcosvbras.robomarket.R;
 import com.marcosvbras.robomarket.app.BaseActivity;

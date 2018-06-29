@@ -31,10 +31,9 @@ public class CreateSaleViewModel extends BaseViewModel implements OnRecyclerClic
     }
 
     public void select() {
-//        activityCallback.openActivityForResult(
-//                SelectRobotActivity.class, null, Constants.Other.SELECT_ROBOT_REQUEST_CODE
-//        );
-        activityCallback.showCustomAlertDialog();
+        activityCallback.openActivityForResult(
+                SelectRobotActivity.class, null, Constants.Other.SELECT_ROBOT_REQUEST_CODE
+        );
     }
 
     public void addRobot(Robot robot) {

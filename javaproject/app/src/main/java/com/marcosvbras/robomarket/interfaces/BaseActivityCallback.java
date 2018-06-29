@@ -3,6 +3,8 @@ package com.marcosvbras.robomarket.interfaces;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.marcosvbras.robomarket.DialogActions;
+
 public interface BaseActivityCallback {
 
     void showDialogMessage(String message);
@@ -25,6 +27,6 @@ public interface BaseActivityCallback {
 
     void setActivityResult(int resultCode, Bundle bundle);
 
-    void showCustomAlertDialog();
+    void showCustomAlertDialog(Object object, DialogActions actions);
 
 }

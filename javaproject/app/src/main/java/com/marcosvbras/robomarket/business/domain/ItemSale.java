@@ -1,14 +1,14 @@
 package com.marcosvbras.robomarket.business.domain;
 
-public class RobotSale {
+public class ItemSale {
 
     private int quantity;
     private int unitPrice;
     private String robotId;
 
-    public RobotSale() {}
+    public ItemSale() {}
 
-    public RobotSale(int quantity, int unitPrice, String robotId) {
+    public ItemSale(int quantity, int unitPrice, String robotId) {
         this.quantity = quantity;
         this.unitPrice = unitPrice;
         this.robotId = robotId;
