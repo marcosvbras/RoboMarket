@@ -15,11 +15,11 @@ public class DataBinder {
 
     @BindingAdapter(value="setError")
     public static void setError(MaterialEditText editText, ErrorObservable errorObservable) {
-        if(errorObservable.hasErrorSetted()) {
-            if(errorObservable.getIntError() != null)
-                editText.setError(editText.getContext().getString(errorObservable.getIntError()));
-            else if(errorObservable.get() != null)
-                editText.setError(errorObservable.get());
+        if(errorObservable.hasError()) {
+            if(errorObservable.getErrorResource() != null)
+                editText.setError(editText.getContext().getString(errorObservable.getErrorResource()));
+            else if(errorObservable.getErrorString() != null)
+                editText.setError(errorObservable.getErrorString());
 
             errorObservable.clear();
         }

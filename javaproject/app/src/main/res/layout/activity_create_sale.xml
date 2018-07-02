@@ -6,7 +6,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.marcosvbras.robomarket.createsale.viewmodel.CreateSaleViewModel"/>
+            type="com.marcosvbras.robomarket.flows.createsale.viewmodel.CreateSaleViewModel"/>
     </data>
     <ScrollView
         android:layout_width="match_parent"

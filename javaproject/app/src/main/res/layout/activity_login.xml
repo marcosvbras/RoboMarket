@@ -6,13 +6,13 @@
         <import type="android.view.View"/>
         <variable
             name="viewModel"
-            type="com.marcosvbras.robomarket.login.viewmodel.LoginViewModel" />
+            type="com.marcosvbras.robomarket.flows.login.viewmodel.LoginViewModel" />
     </data>
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:background="@drawable/gradient_background"
         android:layout_height="match_parent"
-        tools:context=".login.ui.LoginActivity">
+        tools:context=".flows.login.ui.LoginActivity">
 
         <LinearLayout
             android:id="@+id/linearLayout2"

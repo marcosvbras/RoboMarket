@@ -6,7 +6,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.marcosvbras.robomarket.robotdetail.viewmodel.RobotDetailViewModel"/>
+            type="com.marcosvbras.robomarket.flows.robotdetail.viewmodel.RobotDetailViewModel"/>
     </data>
     <android.support.design.widget.CoordinatorLayout
         android:layout_width="match_parent"

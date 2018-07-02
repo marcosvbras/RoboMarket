@@ -5,13 +5,13 @@
     <data>
         <variable
             name="viewModel"
-            type="com.marcosvbras.robomarket.intro.viewmodel.SplashViewModel"/>
+            type="com.marcosvbras.robomarket.flows.intro.viewmodel.SplashViewModel"/>
     </data>
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:background="@color/colorPrimary"
         android:layout_height="match_parent"
-        tools:context=".intro.ui.SplashActivity">
+        tools:context=".flows.intro.ui.SplashActivity">
 
         <ProgressBar
             android:id="@+id/progressBar"
