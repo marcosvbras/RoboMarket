@@ -8,7 +8,7 @@ import android.text.TextUtils;
 import com.marcosvbras.robomarket.R;
 import com.marcosvbras.robomarket.app.App;
 import com.marcosvbras.robomarket.business.domain.Robot;
-import com.marcosvbras.robomarket.business.model.RobotsModel;
+import com.marcosvbras.robomarket.business.model.RobotModel;
 import com.marcosvbras.robomarket.interfaces.BaseActivityCallback;
 import com.marcosvbras.robomarket.utils.Constants;
 import com.marcosvbras.robomarket.utils.ErrorObservable;
@@ -24,7 +24,7 @@ public class CreateRobotViewModel extends BaseViewModel {
 
     private BaseActivityCallback activityCallback;
     private Disposable disposable;
-    private RobotsModel robotsModel;
+    private RobotModel robotModel;
     private Robot savedRobot;
     public ObservableField<String> model = new ObservableField<>();
     public ObservableField<String> color = new ObservableField<>();
@@ -41,7 +41,7 @@ public class CreateRobotViewModel extends BaseViewModel {
         this.activityCallback = activityCallback;
         this.savedRobot = savedRobot;
         checkAction();
-        robotsModel = new RobotsModel();
+        robotModel = new RobotModel();
     }
 
     private void checkAction() {
@@ -85,7 +85,7 @@ public class CreateRobotViewModel extends BaseViewModel {
 
             if(savedRobot == null) {
                 robot.setUserId(App.getInstance().getUser().getObjectId());
-                robotsModel.createRobot(robot)
+                robotModel.createRobot(robot)
                         .subscribe(next -> {
 
                         }, error -> {
@@ -100,7 +100,7 @@ public class CreateRobotViewModel extends BaseViewModel {
                             disposable = d;
                         });
             } else {
-                robotsModel.updateRobot(savedRobot.getObjectId(), robot)
+                robotModel.updateRobot(savedRobot.getObjectId(), robot)
                         .subscribe(next -> this.savedRobot = next, error -> {
                             isLoading.set(false);
                             activityCallback.showDialogMessage(error.getMessage());

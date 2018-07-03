@@ -4,8 +4,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
     <data>
         <variable
-            name="robotSale"
-            type="com.marcosvbras.robomarket.business.domain.RobotSale"/>
+            name="itemRobotQuantity"
+            type="com.marcosvbras.robomarket.business.domain.ItemRobotQuantity"/>
     </data>
     <android.support.constraint.ConstraintLayout
         android:padding="7dp"
@@ -21,7 +21,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:textColor="@android:color/white"
-            android:text="@{robotSale.robot.model}"
+            android:text="@{itemRobotQuantity.robot.model}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

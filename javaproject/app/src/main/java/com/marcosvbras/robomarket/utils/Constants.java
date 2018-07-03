@@ -6,12 +6,14 @@ public class Constants {
         public static final String BASE_API_URL = "https://parseapi.back4app.com/";
         public static final String LOGIN_ENDPOINT = "login";
         public static final String LOGOUT_ENDPOINT = "logout";
-        public static final String USERS_ROOT_ENDPOINT = "users";
+        public static final String USER_ROOT_ENDPOINT = "users";
         public static final String USER_ACTIONS_ENDPOINT = "users/{objectId}";
         public static final String AUTHENTICATED_USER_ENDPOINT = "users/me";
         public static final String PASSWORD_RESET_ENDPOINT = "requestPasswordReset";
-        public static final String ROBOTS_ROOT_ENDPOINT = "classes/Robot";
+        public static final String ROBOT_ROOT_ENDPOINT = "classes/Robot";
+        public static final String SALE_ROOT_ENDPOINT = "classes/Sale";
         public static final String ROBOT_ACTIONS_ENDPOINT = "classes/Robot/{objectId}";
+        public static final String SALE_ACTIONS_ENDPOINT = "classes/Robot/{objectId}";
         public static final String HEADER_APP_ID = "X-Parse-Application-Id";
         public static final String HEADER_REST_API_KEY = "X-Parse-REST-API-Key";
         public static final String HEADER_SESSION_TOKEN = "X-Parse-Session-Token";

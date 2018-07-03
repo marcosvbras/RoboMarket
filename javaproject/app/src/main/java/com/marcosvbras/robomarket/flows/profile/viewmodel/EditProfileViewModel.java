@@ -32,13 +32,10 @@ public class EditProfileViewModel extends BaseViewModel {
     public ObservableField<String> phone = new ObservableField<>();
     public ObservableField<String> address = new ObservableField<>();
     public ObservableField<String> password = new ObservableField<>();
-    public ObservableField<String> newPassword = new ObservableField<>();
-    public ObservableField<String> confirmPassword = new ObservableField<>();
     public ObservableField<String> genre = new ObservableField<>();
     public ObservableField<String> avatarUrl = new ObservableField<>();
     public ErrorObservable emailFieldError = new ErrorObservable();
-    public ErrorObservable newPasswordFieldError = new ErrorObservable();
-    public ErrorObservable confirmPasswordFieldError = new ErrorObservable();
+
     public ErrorObservable usernameFieldError = new ErrorObservable();
     public ErrorObservable nameFieldError = new ErrorObservable();
 
@@ -49,7 +46,20 @@ public class EditProfileViewModel extends BaseViewModel {
     }
 
     private void setUserData() {
-        user = (User) App.getInstance().getUser().clone();
+        User u = App.getInstance().getUser();
+        user = new User();
+        user.setAddress(u.getAddress());
+        user.setUsername(u.getUsername());
+        user.setPhone(u.getPhone());
+        user.setName(u.getName());
+        user.setGenre(u.getGenre());
+        user.setEmail(u.getEmail());
+        user.setAvatarUrl(u.getAvatarUrl());
+        user.setEmailVerified(u.getEmailVerified());
+        user.setObjectId(u.getObjectId());
+        user.setPassword(u.getPassword());
+        user.setSessionToken(u.getSessionToken());
+
         email.set(user.getEmail());
         username.set(user.getUsername());
         name.set(user.getName());

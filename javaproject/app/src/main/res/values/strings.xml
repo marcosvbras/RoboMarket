@@ -48,4 +48,5 @@
     <string name="button_delete">Delete</string>
     <string name="button_request_password">Request Password Reset</string>
     <string name="sucessful_reset_password">A reset link was sent for your e-mail.</string>
+    <string name="select_robots_to_continue">Select at least one robot to continue</string>
 </resources>

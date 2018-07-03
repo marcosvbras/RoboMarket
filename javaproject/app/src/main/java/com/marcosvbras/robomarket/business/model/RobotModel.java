@@ -9,12 +9,10 @@ import com.marcosvbras.robomarket.business.response.ListRobotResponse;
 import com.marcosvbras.robomarket.utils.Constants;
 
 import io.reactivex.Observable;
-import io.reactivex.ObservableSource;
 import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.functions.Function;
 import io.reactivex.schedulers.Schedulers;
 
-public class RobotsModel {
+public class RobotModel {
 
     private String robotList = "{\"userId\": \"{userId}\"}";
     private String robotFilter = "{\"model\":{\"$regex\":\"^{myQuery}\", \"$options\": \"i\"}, \"userId\": \"{userId}\"}";

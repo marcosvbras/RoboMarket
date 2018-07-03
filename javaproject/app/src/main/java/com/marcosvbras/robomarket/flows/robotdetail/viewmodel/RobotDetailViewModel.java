@@ -5,7 +5,7 @@ import android.databinding.ObservableField;
 import android.os.Bundle;
 
 import com.marcosvbras.robomarket.business.domain.Robot;
-import com.marcosvbras.robomarket.business.model.RobotsModel;
+import com.marcosvbras.robomarket.business.model.RobotModel;
 import com.marcosvbras.robomarket.flows.createrobot.ui.CreateRobotActivity;
 import com.marcosvbras.robomarket.interfaces.BaseActivityCallback;
 import com.marcosvbras.robomarket.utils.Constants;
@@ -19,7 +19,7 @@ public class RobotDetailViewModel extends BaseViewModel {
 
     private BaseActivityCallback activityCallback;
     private Robot robot;
-    private RobotsModel robotsModel;
+    private RobotModel robotModel;
     private Disposable disposable;
     public ObservableField<String> model = new ObservableField<>();
     public ObservableField<String> manufacturer = new ObservableField<>();
@@ -31,7 +31,7 @@ public class RobotDetailViewModel extends BaseViewModel {
 
     public RobotDetailViewModel(BaseActivityCallback activityCallback) {
         this.activityCallback = activityCallback;
-        robotsModel = new RobotsModel();
+        robotModel = new RobotModel();
     }
 
     public void showData(Robot robot) {
@@ -62,7 +62,7 @@ public class RobotDetailViewModel extends BaseViewModel {
         cleanupSubscriptions();
 
         if(robot != null) {
-            robotsModel.deleteRobot(robot.getObjectId())
+            robotModel.deleteRobot(robot.getObjectId())
                     .subscribe(next -> {
 
                     }, error -> {

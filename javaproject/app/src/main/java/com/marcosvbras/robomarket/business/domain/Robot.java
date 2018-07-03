@@ -10,10 +10,10 @@ public class Robot implements Parcelable {
     private String createdAt;
     private String model;
     private String color;
-    private int year;
-    private int price;
+    private Integer year;
+    private Integer price;
     private String manufacturer;
-    private int quantity;
+    private Integer quantity;
     private String imageUrl;
     private String userId;
 

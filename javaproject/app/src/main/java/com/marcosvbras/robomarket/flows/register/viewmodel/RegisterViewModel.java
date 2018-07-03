@@ -9,8 +9,8 @@ import android.widget.AdapterView;
 
 import com.marcosvbras.robomarket.R;
 import com.marcosvbras.robomarket.app.App;
-import com.marcosvbras.robomarket.business.model.UserModel;
 import com.marcosvbras.robomarket.business.domain.User;
+import com.marcosvbras.robomarket.business.model.UserModel;
 import com.marcosvbras.robomarket.interfaces.BaseActivityCallback;
 import com.marcosvbras.robomarket.utils.Constants;
 import com.marcosvbras.robomarket.utils.ErrorObservable;

@@ -13,23 +13,23 @@ import android.view.ViewGroup;
 
 import com.marcosvbras.robomarket.R;
 import com.marcosvbras.robomarket.business.domain.Robot;
-import com.marcosvbras.robomarket.business.domain.RobotSale;
+import com.marcosvbras.robomarket.business.domain.ItemRobotQuantity;
 import com.marcosvbras.robomarket.databinding.FragmentDialogSaleBinding;
 import com.marcosvbras.robomarket.utils.Constants;
 
-public class SaleDialogFragment extends AppCompatDialogFragment {
+public class SaleDialogFragment extends AppCompatDialogFragment implements DialogActions {
 
     private FragmentDialogSaleBinding fragmentBinding;
     private View view;
-    private DialogActions dialogActions;
-    private RobotSale robotSale;
+    private DialogFormActions dialogFormActions;
+    private ItemRobotQuantity itemRobotQuantity;
 
     public SaleDialogFragment() { }
 
-    public static SaleDialogFragment newInstance(RobotSale robotSale, DialogActions dialogActions) {
+    public static SaleDialogFragment newInstance(ItemRobotQuantity itemRobotQuantity, DialogFormActions dialogFormActions) {
         SaleDialogFragment saleDialogFragment = new SaleDialogFragment();
-        saleDialogFragment.dialogActions = dialogActions;
-        saleDialogFragment.robotSale = robotSale;
+        saleDialogFragment.dialogFormActions = dialogFormActions;
+        saleDialogFragment.itemRobotQuantity = itemRobotQuantity;
         return saleDialogFragment;
     }
 
@@ -45,6 +45,7 @@ public class SaleDialogFragment extends AppCompatDialogFragment {
 
         view = fragmentBinding.getRoot();
         fragmentBinding.setViewModel(createViewModel());
+        fragmentBinding.getViewModel().setActions(this);
 
         if(bundle != null && bundle.containsKey(Constants.Other.ROBOT_TAG)) {
             Robot robot = bundle.getParcelable(Constants.Other.ROBOT_TAG);
@@ -56,12 +57,12 @@ public class SaleDialogFragment extends AppCompatDialogFragment {
 
     private SaleDialogViewModel createViewModel() {
         return ViewModelProviders.of(
-                this, new SaleDialogViewModelFactory(dialogActions, robotSale)
+                this, new SaleDialogViewModelFactory(dialogFormActions, itemRobotQuantity)
         ).get(SaleDialogViewModel.class);
     }
 
     @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
+    public void onFinished() {
+        getDialog().dismiss();
     }
 }

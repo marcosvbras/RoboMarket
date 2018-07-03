@@ -4,24 +4,24 @@ import android.arch.lifecycle.ViewModel;
 import android.arch.lifecycle.ViewModelProvider;
 import android.support.annotation.NonNull;
 
-import com.marcosvbras.robomarket.business.domain.RobotSale;
+import com.marcosvbras.robomarket.business.domain.ItemRobotQuantity;
 
 import javax.inject.Inject;
 
 public class SaleDialogViewModelFactory implements ViewModelProvider.Factory {
 
-    private final DialogActions dialogActions;
-    private final RobotSale robotSale;
+    private final DialogFormActions dialogFormActions;
+    private final ItemRobotQuantity itemRobotQuantity;
 
     @Inject
-    public SaleDialogViewModelFactory(DialogActions dialogActions, RobotSale robotSale) {
-        this.dialogActions = dialogActions;
-        this.robotSale = robotSale;
+    public SaleDialogViewModelFactory(DialogFormActions dialogFormActions, ItemRobotQuantity itemRobotQuantity) {
+        this.dialogFormActions = dialogFormActions;
+        this.itemRobotQuantity = itemRobotQuantity;
     }
 
     @NonNull
     @Override
     public <T extends ViewModel> T create(@NonNull Class<T> modelClass) {
-        return (T) new SaleDialogViewModel(robotSale, dialogActions);
+        return (T) new SaleDialogViewModel(itemRobotQuantity, dialogFormActions);
     }
 }

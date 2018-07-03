@@ -5,7 +5,7 @@ import android.databinding.ObservableField;
 import android.text.TextUtils;
 
 import com.marcosvbras.robomarket.R;
-import com.marcosvbras.robomarket.business.domain.RobotSale;
+import com.marcosvbras.robomarket.business.domain.ItemRobotQuantity;
 import com.marcosvbras.robomarket.utils.ErrorObservable;
 import com.marcosvbras.robomarket.viewmodels.BaseViewModel;
 
@@ -15,22 +15,28 @@ public class SaleDialogViewModel extends BaseViewModel {
     public final ObservableField<String> totalValue = new ObservableField<>("Total: $ 0");
     public final ObservableField<String> model = new ObservableField<>();
     public final ErrorObservable error = new ErrorObservable();
-    private RobotSale robotSale;
+    private ItemRobotQuantity itemRobotQuantity;
+    private DialogFormActions dialogFormActions;
     private DialogActions dialogActions;
 
-    public SaleDialogViewModel(RobotSale robotSale, DialogActions dialogActions) {
-        this.robotSale = robotSale;
-        this.dialogActions = dialogActions;
+    public SaleDialogViewModel(ItemRobotQuantity itemRobotQuantity, DialogFormActions dialogFormActions) {
+        this.itemRobotQuantity = itemRobotQuantity;
+        this.dialogFormActions = dialogFormActions;
         prepareData();
     }
 
+    public void setActions(DialogActions dialogActions) {
+        this.dialogActions = dialogActions;
+    }
+
     private void prepareData() {
-        if(robotSale != null) {
-            model.set(robotSale.getRobot().getModel());
+        if(itemRobotQuantity != null) {
+            model.set(itemRobotQuantity.getRobot().getModel());
             itemQuantity.addOnPropertyChangedCallback(onQuantityChanged());
 
-            if(robotSale.getItemQuantity() != 0)
-                itemQuantity.set("Total: $ " + robotSale.getItemQuantity());
+            if(itemRobotQuantity.getItemQuantity() != 0) {
+                itemQuantity.set(String.valueOf(itemRobotQuantity.getItemQuantity()));
+            }
         }
     }
 
@@ -45,7 +51,7 @@ public class SaleDialogViewModel extends BaseViewModel {
 
     public void increaseQuantity() {
         if(TextUtils.isEmpty(itemQuantity.get()))
-            itemQuantity.set("0");
+            itemQuantity.set("1");
 
         int quantityInt = Integer.parseInt(itemQuantity.get());
         itemQuantity.set(String.valueOf(quantityInt + 1));
@@ -53,8 +59,8 @@ public class SaleDialogViewModel extends BaseViewModel {
     }
 
     public void decreaseQuantity() {
-        if(TextUtils.isEmpty(itemQuantity.get())) {
-            itemQuantity.set("0");
+        if(TextUtils.isEmpty(itemQuantity.get()) || itemQuantity.get().equals("0")) {
+            itemQuantity.set("1");
             return;
         }
 
@@ -68,25 +74,32 @@ public class SaleDialogViewModel extends BaseViewModel {
     }
 
     public void removeItem() {
-        dialogActions.onRemove(robotSale);
+        dialogFormActions.onRemove(itemRobotQuantity);
+        finish();
     }
 
     public void saveItem() {
         if(checkStock()) {
-            robotSale.setItemQuantity(
+            itemRobotQuantity.setItemQuantity(
                     TextUtils.isEmpty(itemQuantity.get()) ? 0 : Integer.valueOf(itemQuantity.get())
             );
-            dialogActions.onSave(robotSale);
+            dialogFormActions.onSave(itemRobotQuantity);
+            finish();
         }
+    }
+
+    private void finish() {
+        if(dialogActions != null)
+            dialogActions.onFinished();
     }
 
     private void updateTotalValue() {
         if(TextUtils.isEmpty(itemQuantity.get())) {
-            totalValue.set("Total: $ 0");
+            totalValue.set("Total: $ 1");
             return;
         }
 
-        int value = Integer.parseInt(itemQuantity.get()) * robotSale.getRobot().getPrice();
+        int value = Integer.parseInt(itemQuantity.get()) * itemRobotQuantity.getRobot().getPrice();
         totalValue.set("Total: $ " + String.valueOf(value));
         checkStock();
     }
@@ -94,7 +107,7 @@ public class SaleDialogViewModel extends BaseViewModel {
     private boolean checkStock() {
         int quantityInt = TextUtils.isEmpty(itemQuantity.get()) ? 0 : Integer.parseInt(itemQuantity.get());
 
-        if(quantityInt > robotSale.getRobot().getQuantity()) {
+        if(quantityInt > itemRobotQuantity.getRobot().getQuantity()) {
             error.setErrorResource(R.string.error_stock_not_enough);
             return false;
         }

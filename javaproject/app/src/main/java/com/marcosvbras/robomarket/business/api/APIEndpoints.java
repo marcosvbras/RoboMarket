@@ -1,8 +1,10 @@
 package com.marcosvbras.robomarket.business.api;
 
 import com.marcosvbras.robomarket.business.domain.Robot;
+import com.marcosvbras.robomarket.business.domain.Sale;
 import com.marcosvbras.robomarket.business.domain.User;
 import com.marcosvbras.robomarket.business.response.ListRobotResponse;
+import com.marcosvbras.robomarket.business.response.ListSaleResponse;
 import com.marcosvbras.robomarket.business.response.UpdateResponse;
 import com.marcosvbras.robomarket.utils.Constants;
 
@@ -25,7 +27,7 @@ public interface APIEndpoints {
     /*
     * Returns a Session Token within Header and createdAt, objectId and sessionToken within Body.
     * */
-    @POST(Constants.Api.USERS_ROOT_ENDPOINT)
+    @POST(Constants.Api.USER_ROOT_ENDPOINT)
     Observable<User> signup(@Body User user);
 
     @PUT(Constants.Api.USER_ACTIONS_ENDPOINT)
@@ -54,7 +56,7 @@ public interface APIEndpoints {
 
     // Robots Endpoints
 
-    @GET(Constants.Api.ROBOTS_ROOT_ENDPOINT)
+    @GET(Constants.Api.ROBOT_ROOT_ENDPOINT)
     Observable<ListRobotResponse> listRobots(@Query("where") String condition, @Query("order") String order,
                                              @Query("limit") int limit, @Query("skip") int skip);
 
@@ -67,7 +69,18 @@ public interface APIEndpoints {
     @DELETE(Constants.Api.ROBOT_ACTIONS_ENDPOINT)
     Observable<Void> deleteRobot(@Path("objectId") String objectId);
 
-    @POST(Constants.Api.ROBOTS_ROOT_ENDPOINT)
+    @POST(Constants.Api.ROBOT_ROOT_ENDPOINT)
     Observable<Robot> createRobot(@Body Robot robot);
+
+
+    @GET(Constants.Api.SALE_ROOT_ENDPOINT)
+    Observable<ListSaleResponse> listSales(@Query("where") String condition, @Query("order") String order,
+                                           @Query("limit") int limit, @Query("skip") int skip);
+
+    @GET(Constants.Api.SALE_ACTIONS_ENDPOINT)
+    Observable<Sale> getSale(@Path("objectId") String objectId);
+
+    @POST(Constants.Api.SALE_ROOT_ENDPOINT)
+    Observable<Sale> createSale(@Body Sale sale);
 
 }

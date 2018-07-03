@@ -6,7 +6,7 @@ import android.os.Bundle;
 
 import com.marcosvbras.robomarket.app.App;
 import com.marcosvbras.robomarket.business.domain.Robot;
-import com.marcosvbras.robomarket.business.model.RobotsModel;
+import com.marcosvbras.robomarket.business.model.RobotModel;
 import com.marcosvbras.robomarket.flows.home.ui.adapter.RobotsAdapter;
 import com.marcosvbras.robomarket.flows.robotdetail.ui.RobotDetailActivity;
 import com.marcosvbras.robomarket.interfaces.BaseActivityCallback;
@@ -22,7 +22,7 @@ import io.reactivex.disposables.Disposable;
 public class RobotsViewModel extends BaseViewModel implements OnRecyclerClick {
 
     private BaseActivityCallback activityCallback;
-    private RobotsModel robotsModel;
+    private RobotModel robotModel;
     private Disposable disposable;
     private int skip = 0;
     private List<Robot> listRobots = new ArrayList<>();
@@ -32,7 +32,7 @@ public class RobotsViewModel extends BaseViewModel implements OnRecyclerClick {
     public RobotsViewModel(BaseActivityCallback activityCallback) {
         this.activityCallback = activityCallback;
         this.robotAdapter = new RobotsAdapter(this);
-        this.robotsModel = new RobotsModel();
+        this.robotModel = new RobotModel();
         listRobots(null);
     }
 
@@ -40,7 +40,7 @@ public class RobotsViewModel extends BaseViewModel implements OnRecyclerClick {
     public void listRobots(String query) {
         cleanupSubscriptions();
 
-        robotsModel.listRobots(App.getInstance().getUser(), query, skip)
+        robotModel.listRobots(App.getInstance().getUser(), query, skip)
                 .subscribe(next -> {
 //                    listRobots.addAll(next.getListRobots());
                     listRobots = next.getListRobots();
