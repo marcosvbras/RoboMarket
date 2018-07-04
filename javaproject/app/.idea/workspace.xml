@@ -23,35 +23,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aa6d3ab3-4336-4959-963f-85245ddbf702" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/business/api/APIEndpoints.java" afterPath="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/business/api/APIEndpoints.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/business/domain/ItemSale.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/business/domain/Robot.java" afterPath="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/business/domain/Robot.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/business/domain/RobotSale.kt" afterPath="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/business/domain/RobotSale.kt" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/business/domain/Sale.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/business/domain/User.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/business/model/RobotsModel.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/createrobot/viewmodel/CreateRobotViewModel.java" afterPath="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/createrobot/viewmodel/CreateRobotViewModel.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/createsale/ui/activity/CreateSaleActivity.kt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/createsale/ui/adapter/ItemSaleRobot.kt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/createsale/ui/adapter/RobotSaleAdapter.kt" afterPath="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/createsale/ui/adapter/RobotSaleAdapter.kt" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/createsale/viewmodel/CreateSaleViewModel.java" afterPath="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/createsale/viewmodel/CreateSaleViewModel.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/dialog/DialogActions.kt" afterPath="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/dialog/DialogFormActions.kt" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/dialog/SaleDialogFragment.java" afterPath="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/dialog/SaleDialogFragment.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/dialog/SaleDialogViewModel.java" afterPath="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/dialog/SaleDialogViewModel.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/dialog/SaleDialogViewModelFactory.java" afterPath="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/dialog/SaleDialogViewModelFactory.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/BindingAdapter.kt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/business/api/APIEndpoints.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/business/api/RequestInterceptor.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/business/domain/Sale.kt" afterPath="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/business/domain/Sale.kt" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/business/model/RobotModel.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/business/model/SaleModel.kt" afterPath="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/business/model/SaleModel.kt" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/business/model/UserModel.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/business/response/ListRobotResponse.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/business/response/ListSaleResponse.kt" afterPath="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/business/response/ListSaleResponse.kt" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/business/response/UpdateResponse.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/home/ui/adapter/ItemRobot.java" afterPath="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/home/ui/adapter/ItemRobot.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/home/ui/adapter/RobotsAdapter.java" afterPath="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/home/ui/adapter/RobotsAdapter.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/home/ui/fragment/SalesFragment.java" afterPath="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/home/ui/fragment/SalesFragment.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/home/viewmodel/RobotsViewModel.java" afterPath="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/home/viewmodel/RobotsViewModel.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/home/viewmodel/SalesViewModel.java" afterPath="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/home/viewmodel/SalesViewModel.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/profile/viewmodel/EditProfileViewModel.java" afterPath="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/profile/viewmodel/EditProfileViewModel.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/register/viewmodel/RegisterViewModel.java" afterPath="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/register/viewmodel/RegisterViewModel.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/robotdetail/viewmodel/RobotDetailViewModel.java" afterPath="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/robotdetail/viewmodel/RobotDetailViewModel.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/selectrobot/viewmodel/SelectRobotViewModel.java" afterPath="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/selectrobot/viewmodel/SelectRobotViewModel.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/home/viewmodel/SalesViewModel.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/home/viewmodel/SalesViewModelFactory.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/selectrobot/viewmodel/SelectRobotViewModel.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/selectrobot/viewmodel/SelectRobotViewModelFactory.java" afterPath="" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/utils/Constants.java" afterPath="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/utils/Constants.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_create_sale.xml" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_create_sale.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/item_robot_sale.xml" afterPath="$PROJECT_DIR$/src/main/res/layout/item_robot_sale.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/src/main/res/values/strings.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/fragment_sales.xml" afterPath="$PROJECT_DIR$/src/main/res/layout/fragment_sales.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -87,62 +79,26 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="CreateSaleActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/createsale/ui/activity/CreateSaleActivity.java">
+      <file leaf-file-name="SelectRobotViewModel.kt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/selectrobot/viewmodel/SelectRobotViewModel.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="34" column="26" lean-forward="false" selection-start-line="34" selection-start-column="26" selection-end-line="34" selection-end-column="26" />
-              <folding />
+            <state relative-caret-position="629">
+              <caret line="37" column="42" lean-forward="false" selection-start-line="37" selection-start-column="42" selection-end-line="37" selection-end-column="42" />
+              <folding>
+                <element signature="e#64#660#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EditProfileViewModel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/profile/viewmodel/EditProfileViewModel.java">
+      <file leaf-file-name="SelectRobotViewModelFactory.kt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/selectrobot/viewmodel/SelectRobotViewModelFactory.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="39" column="45" lean-forward="false" selection-start-line="39" selection-start-column="45" selection-end-line="39" selection-end-column="45" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RobotModel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/business/model/RobotModel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="28" column="38" lean-forward="false" selection-start-line="28" selection-start-column="38" selection-end-line="28" selection-end-column="38" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RegisterViewModel.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/register/viewmodel/RegisterViewModel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="395">
-              <caret line="47" column="5" lean-forward="true" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="User.kt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/business/domain/User.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="34" lean-forward="false" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ListSaleResponse.kt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/business/response/ListSaleResponse.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="42" lean-forward="false" selection-start-line="5" selection-start-column="42" selection-end-line="5" selection-end-column="42" />
-              <folding />
+            <state relative-caret-position="204">
+              <caret line="12" column="1" lean-forward="false" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+              <folding>
+                <element signature="e#64#217#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -154,8 +110,8 @@
       <list>
         <option value="valueResourceFile" />
         <option value="resourceFile" />
-        <option value="layoutResourceFile" />
         <option value="Interface" />
+        <option value="layoutResourceFile" />
         <option value="Class" />
         <option value="Kotlin File" />
       </list>
@@ -168,7 +124,6 @@
       <find>signup()</find>
       <find>include</find>
       <find>robotAdapter</find>
-      <find>activityCallback</find>
       <find>user.</find>
       <find>Birth</find>
       <find>url_image</find>
@@ -179,6 +134,7 @@
       <find>CreateSaleActivity2</find>
       <find>databinding</find>
       <find>updateTotalValue</find>
+      <find>activityCallback</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -2410,56 +2366,56 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/robotdetail/viewmodel/RobotDetailViewModel.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/robotdetail/viewmodel/RobotDetailViewModelFactory.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/selectrobot/viewmodel/SelectRobotViewModel.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/selectrobot/viewmodel/SelectRobotViewModelFactory.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/BaseFragmentCallback.kt" />
-        <option value="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/ErrorObservable.kt" />
-        <option value="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/viewmodels/BaseViewModel.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/createrobot/viewmodel/CreateRobotViewModel.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/login/viewmodel/LoginViewModel.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/utils/DataBinder.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/BindingAdapter.kt" />
-        <option value="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/viewmodels/RobotSale.kt" />
-        <option value="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/dialog/SaleDialogViewModelFactory.java" />
-        <option value="$PROJECT_DIR$/src/main/res/layout/item_robot_sale.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/createsale/ui/ItemSaleRobot.kt" />
-        <option value="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/createsale/ui/adapter/RobotSaleAdapter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/createsale/ui/RobotSaleAdapter.kt" />
-        <option value="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/createsale/ui/activity/CreateSale2Activity.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/createsale/ui/activity/CreateSaleActivity.kt" />
-        <option value="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/createsale/ui/adapter/ItemSaleRobot.kt" />
-        <option value="$PROJECT_DIR$/build.gradle" />
-        <option value="$PROJECT_DIR$/src/main/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/createsale/ui/adapter/ItemSaleRobot2.kt" />
-        <option value="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/home/ui/fragment/SalesFragment.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/createsale/ui/activity/CreateSaleActivity.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/createsale/ui/adapter/RobotSaleAdapter.kt" />
-        <option value="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/dialog/DialogActions.kt" />
-        <option value="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/dialog/SaleDialogFragment.java" />
-        <option value="$PROJECT_DIR$/src/main/res/layout/activity_create_sale.xml" />
-        <option value="$PROJECT_DIR$/src/main/res/values/strings.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/utils/Constants.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/business/response/ListSaleResponse.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/business/ItemSale.kt" />
-        <option value="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/business/domain/ItemRobotSale.kt" />
-        <option value="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/dialog/SaleDialogViewModel.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/business/ItemRobotSale.kt" />
-        <option value="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/business/domain/Sale.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/business/domain/ItemRobotQuantity.kt" />
-        <option value="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/createsale/ui/adapter/ItemSaleRobot.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/business/domain/Robot.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/business/Sale.kt" />
-        <option value="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/business/model/SaleModel.kt" />
-        <option value="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/createsale/viewmodel/CreateSaleViewModel.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/business/User.kt" />
-        <option value="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/app/App.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/business/api/APIEndpoints.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/business/domain/User.kt" />
+        <option value="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/intro/viewmodel/SplashViewModel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/home/viewmodel/SalesViewModel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/home/viewmodel/ProfileViewModel.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/profile/viewmodel/EditProfileViewModel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/business/model/SaleModel.kt" />
         <option value="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/business/response/ListSaleResponse.kt" />
-        <option value="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/business/model/RobotModel.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/register/viewmodel/RegisterViewModel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/business/ListRobotResponse.kt" />
+        <option value="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/business/api/APIEndpoints.kt" />
+        <option value="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/home/SalesViewModel.kt" />
+        <option value="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/home/SalesViewModelFactory.kt" />
+        <option value="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/business/domain/Sale.kt" />
+        <option value="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/home/ui/adapter/SaleAdapter.kt" />
+        <option value="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/createsale/ui/activity/CreateSaleActivity.java" />
+        <option value="$PROJECT_DIR$/src/main/res/layout/fragment_sales.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/home/viewmodel/ItemSaleViewModelFactory.kt" />
+        <option value="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/home/viewmodel/SalesViewModelFactory.kt" />
+        <option value="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/home/ui/fragment/SalesFragment.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/home/ui/adapter/ItemSale.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/home/viewmodel/RobotsViewModel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/selectrobot/viewmodel/SelectRobotViewModel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/business/model/RobotModel.kt" />
+        <option value="$PROJECT_DIR$/src/main/res/layout/item_sale.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/home/viewmodel/SalesViewModel.kt" />
+        <option value="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/home/viewmodel/ItemSaleViewModel.kt" />
+        <option value="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/BindingAdapter.kt" />
+        <option value="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/home/ui/adapter/ItemRobot.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/home/ui/adapter/RobotsAdapter.java" />
+        <option value="$PROJECT_DIR$/src/main/res/layout/activity_create_robot.xml" />
+        <option value="$PROJECT_DIR$/src/main/res/layout/item_robot.xml" />
+        <option value="$PROJECT_DIR$/src/main/res/layout/activity_login.xml" />
+        <option value="$PROJECT_DIR$/src/main/res/layout/activity_robot_detail.xml" />
+        <option value="$PROJECT_DIR$/src/main/res/layout/activity_home.xml" />
+        <option value="$PROJECT_DIR$/src/main/res/layout/activity_register.xml" />
+        <option value="$PROJECT_DIR$/src/main/res/layout/fragment_profile.xml" />
+        <option value="$PROJECT_DIR$/src/main/res/layout/fragment_dialog_sale.xml" />
+        <option value="$PROJECT_DIR$/src/main/res/layout/activity_edit_profile.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/home/ui/activity/HomeActivity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/createrobot/ui/CreateRobotActivity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/dialog/SaleDialogFragment.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/home/ui/fragment/ProfileFragment.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/login/ui/LoginActivity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/profile/ui/EditProfileActivity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/register/ui/RegisterActivity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/robotdetail/ui/RobotDetailActivity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/utils/DataBinder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/utils/BindingAdapter.kt" />
+        <option value="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/selectrobot/SelectRobotViewModel.kt" />
+        <option value="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/selectrobot/ui/SelectRobotActivity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/selectrobot/viewmodel/SelectRobotViewModel.kt" />
+        <option value="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/selectrobot/viewmodel/SelectRobotViewModelFactory.kt" />
       </list>
     </option>
   </component>
@@ -2488,7 +2444,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="Scratches" />
       <pane id="AndroidView">
         <subPane>
@@ -2500,11 +2455,6 @@
             <path>
               <item name="app" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="manifests" type="f94875db:AndroidManifestsGroupNode" />
-            </path>
-            <path>
-              <item name="app" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
             </path>
             <path>
@@ -2512,21 +2462,6 @@
               <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
               <item name="robomarket" type="cbb59c9e:AndroidPsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="app" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="robomarket" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="business" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="app" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="robomarket" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="business" type="462c0819:PsiDirectoryNode" />
-              <item name="domain" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="app" type="1abcf292:AndroidViewProjectNode" />
@@ -2549,24 +2484,7 @@
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
               <item name="robomarket" type="cbb59c9e:AndroidPsiDirectoryNode" />
               <item name="flows" type="462c0819:PsiDirectoryNode" />
-              <item name="profile" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="app" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="robomarket" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="flows" type="462c0819:PsiDirectoryNode" />
-              <item name="profile" type="462c0819:PsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="app" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="robomarket" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="flows" type="462c0819:PsiDirectoryNode" />
-              <item name="profile" type="462c0819:PsiDirectoryNode" />
+              <item name="home" type="462c0819:PsiDirectoryNode" />
               <item name="viewmodel" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -2574,7 +2492,24 @@
               <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
               <item name="robomarket" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="viewmodels" type="462c0819:PsiDirectoryNode" />
+              <item name="flows" type="462c0819:PsiDirectoryNode" />
+              <item name="selectrobot" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="app" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="robomarket" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="flows" type="462c0819:PsiDirectoryNode" />
+              <item name="selectrobot" type="462c0819:PsiDirectoryNode" />
+              <item name="viewmodel" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="app" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="robomarket" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="app" type="1abcf292:AndroidViewProjectNode" />
@@ -2585,7 +2520,7 @@
               <item name="app" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="res" type="d4f16f75:AndroidResFolderNode" />
-              <item name="values" type="ddeffd01:AndroidResFolderTypeNode" />
+              <item name="layout" type="ddeffd01:AndroidResFolderTypeNode" />
             </path>
             <path>
               <item name="app" type="1abcf292:AndroidViewProjectNode" />
@@ -2595,6 +2530,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane" />
     </panes>
   </component>
@@ -2605,14 +2541,18 @@
     <property name="device.picker.selection" value="0024969655" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/res/drawable" />
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///home/marcosvbras/AndroidStudioProjects/RoboMarket/javaproject/app/src/main/java/com/marcosvbras/robomarket/app/BaseActivity.java&#10;SaleDialogFragment&#9;FILE&#9;file:///home/marcosvbras/AndroidStudioProjects/RoboMarket/javaproject/app/src/main/java/com/marcosvbras/robomarket/SaleDialogFragment.java" />
+    <property name="DEBUGGABLE_DEVICE" value="lenovo-lenovo_k10a40-0024969655" />
+    <property name="DEBUGGABLE_PROCESS" value="com.marcosvbras.robomarket" />
+    <property name="SHOW_ALL_PROCESSES" value="false" />
+    <property name="DEBUGGER_ID" value="Auto" />
   </component>
   <component name="RecentsManager">
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
-      <recent name="com.marcosvbras.robomarket.business.domain" />
-      <recent name="com.marcosvbras.robomarket.flows.createsale.ui.adapter" />
+      <recent name="com.marcosvbras.robomarket.flows.selectrobot.viewmodel" />
       <recent name="com.marcosvbras.robomarket.utils" />
-      <recent name="com.marcosvbras.robomarket.interfaces" />
-      <recent name="com.marcosvbras.robomarket.flows.dialog" />
+      <recent name="com.marcosvbras.robomarket.flows.home.viewmodel" />
+      <recent name="com.marcosvbras.robomarket.business.response" />
+      <recent name="com.marcosvbras.robomarket.business.model" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/res/drawable-hdpi" />
@@ -2630,6 +2570,9 @@
       <recent name="com.marcosvbras.robomarket.flows" />
       <recent name="com.marcosvbras.robomarket" />
       <recent name="com.marcosvbras.robomarket.home.viewmodel" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/selectrobot/viewmodel" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.marcosvbras.robomarket.business.response" />
@@ -2813,7 +2756,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1366" y="48" width="1600" height="900" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32898173" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -2831,7 +2773,7 @@
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18100129" sideWeight="0.49477807" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32767624" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Build" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32767624" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32767624" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991013" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24967907" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -2840,34 +2782,12 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39817232" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18806162" sideWeight="0.5052219" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32898173" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4673629" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32767624" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24967907" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39817232" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Device File Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991013" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32898173" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32898173" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32767624" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32898173" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32898173" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18100129" sideWeight="0.49477807" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991013" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18806162" sideWeight="0.5052219" order="6" side_tool="true" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -2908,344 +2828,422 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="62" />
+      <option name="time" value="65" />
     </breakpoint-manager>
     <watches-manager />
   </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>dateF.format(dateFormat.parse(sale.createdAt))</expression-string>
+        <language-id>kotlin</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>dateF.format(dateFormat.format(sale.createdAt))</expression-string>
+        <language-id>kotlin</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/createrobot/ui/CreateRobotActivity.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/business/domain/ItemRobotSale.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+        <state relative-caret-position="34">
+          <caret line="2" column="11" lean-forward="false" selection-start-line="2" selection-start-column="11" selection-end-line="2" selection-end-column="11" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/createsale/ui/activity/CreateSaleActivity.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="59">
-          <caret line="9" column="55" lean-forward="false" selection-start-line="9" selection-start-column="50" selection-end-line="9" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/createsale/ui/activity/CreateSale2Activity.kt">
+    <entry file="file://$USER_HOME$/Android/Sdk/sources/android-27/android/widget/BaseAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
-          <caret line="24" column="29" lean-forward="true" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="30" column="18" lean-forward="true" selection-start-line="30" selection-start-column="18" selection-end-line="30" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-manifest">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/createsale/ui/adapter/ItemSaleRobot2.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="16" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="60" column="66" lean-forward="false" selection-start-line="60" selection-start-column="66" selection-end-line="60" selection-end-column="66" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/createsale/viewmodel/CreateSaleViewModelFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="19" column="12" lean-forward="true" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
+          <caret line="30" column="22" lean-forward="false" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/createsale/ui/adapter/RobotSaleAdapter.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+        <state relative-caret-position="102">
+          <caret line="8" column="4" lean-forward="true" selection-start-line="8" selection-start-column="4" selection-end-line="12" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/home/ui/fragment/SalesFragment.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/home/ui/adapter/SaleAdapter.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="40" column="30" lean-forward="false" selection-start-line="40" selection-start-column="30" selection-end-line="40" selection-end-column="30" />
+        <state relative-caret-position="187">
+          <caret line="11" column="28" lean-forward="false" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
+          <folding>
+            <element signature="e#58#212#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.reactivex.rxjava2/rxjava/2.1.14/1d852092fc0e7711e2f47dd3b6a061e6479310f5/rxjava-2.1.14-sources.jar!/io/reactivex/Observable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="239">
+          <caret line="12027" column="28" lean-forward="false" selection-start-line="12027" selection-start-column="28" selection-end-line="12027" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/register/ui/RegisterActivity.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/business/api/APIService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="25" column="42" lean-forward="true" selection-start-line="25" selection-start-column="42" selection-end-line="25" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/home/viewmodel/SalesViewModelFactory.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
-          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/selectrobot/viewmodel/SelectRobotViewModel.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/business/model/UserModel.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-434">
-          <caret line="30" column="45" lean-forward="false" selection-start-line="30" selection-start-column="45" selection-end-line="30" selection-end-column="45" />
+        <state relative-caret-position="163">
+          <caret line="36" column="28" lean-forward="false" selection-start-line="36" selection-start-column="28" selection-end-line="36" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_robot_detail.xml">
+    <entry file="file://$PROJECT_DIR$/build/generated/source/apt/debug/com/marcosvbras/robomarket/databinding/ItemSaleBinding.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="122" column="0" lean-forward="false" selection-start-line="122" selection-start-column="0" selection-end-line="122" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/login/viewmodel/LoginViewModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="373">
+          <caret line="22" column="26" lean-forward="false" selection-start-line="22" selection-start-column="11" selection-end-line="22" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/business/model/SaleModel.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="18" column="54" lean-forward="true" selection-start-line="18" selection-start-column="54" selection-end-line="18" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/home/ui/adapter/ItemSale.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="33" lean-forward="false" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/fragment_sales.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="41" lean-forward="true" selection-start-line="14" selection-start-column="41" selection-end-line="14" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/business/model/RobotModel.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
-          <caret line="12" column="43" lean-forward="false" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="43" />
+          <caret line="20" column="45" lean-forward="false" selection-start-line="20" selection-start-column="45" selection-end-line="20" selection-end-column="45" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/dialog/SaleDialogViewModelFactory.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/home/viewmodel/RobotsViewModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="803">
+          <caret line="66" column="33" lean-forward="true" selection-start-line="66" selection-start-column="33" selection-end-line="66" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/home/viewmodel/ItemSaleViewModel.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="9" lean-forward="true" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
+          <folding>
+            <element signature="e#57#305#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/item_sale.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="33" column="43" lean-forward="false" selection-start-line="33" selection-start-column="43" selection-end-line="33" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/home/viewmodel/SalesViewModelFactory.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/home/ui/adapter/RobotsAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/home/ui/adapter/ItemRobot.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="10" column="38" lean-forward="false" selection-start-line="10" selection-start-column="38" selection-end-line="10" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_create_robot.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-289">
+          <caret line="13" column="36" lean-forward="false" selection-start-line="13" selection-start-column="36" selection-end-line="13" selection-end-column="36" />
+          <folding>
+            <element signature="e#2017#2037#0" expanded="false" />
+            <element signature="e#2595#2622#0" expanded="false" />
+            <element signature="e#3249#3268#0" expanded="false" />
+            <element signature="e#3833#3853#0" expanded="false" />
+            <element signature="e#4467#4487#0" expanded="false" />
+            <element signature="e#5421#5444#0" expanded="false" />
+            <element signature="e#8254#8280#0" expanded="false" />
+            <element signature="e#8760#8781#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/item_robot.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
-          <caret line="21" column="12" lean-forward="false" selection-start-line="21" selection-start-column="12" selection-end-line="21" selection-end-column="12" />
+          <caret line="15" column="44" lean-forward="true" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
           <folding />
         </state>
       </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/dialog/DialogActions.kt">
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_login.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="4" lean-forward="false" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
+        <state relative-caret-position="152">
+          <caret line="99" column="54" lean-forward="false" selection-start-line="99" selection-start-column="54" selection-end-line="99" selection-end-column="54" />
+          <folding>
+            <element signature="e#1553#1576#0" expanded="false" />
+            <element signature="e#2002#2025#0" expanded="false" />
+            <element signature="e#2683#2706#0" expanded="false" />
+            <element signature="e#3304#3324#0" expanded="false" />
+            <element signature="e#4002#4027#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_robot_detail.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3723">
+          <caret line="219" column="53" lean-forward="true" selection-start-line="219" selection-start-column="53" selection-end-line="219" selection-end-column="53" />
+          <folding>
+            <element signature="e#1988#2028#0" expanded="false" />
+            <element signature="e#2216#2247#0" expanded="false" />
+            <element signature="e#2775#2802#0" expanded="false" />
+            <element signature="e#4198#4218#0" expanded="false" />
+            <element signature="e#5619#5638#0" expanded="false" />
+            <element signature="e#7039#7059#0" expanded="false" />
+            <element signature="e#8462#8485#0" expanded="false" />
+            <element signature="e#9897#9918#0" expanded="false" />
+            <element signature="e#10617#10640#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_home.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="16" lean-forward="true" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
           <folding />
         </state>
       </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/dialog/DialogFormActions.kt">
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_register.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+        <state relative-caret-position="272">
+          <caret line="16" column="39" lean-forward="true" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
+          <folding>
+            <element signature="e#2058#2077#0" expanded="false" />
+            <element signature="e#2559#2581#0" expanded="false" />
+            <element signature="e#2999#3019#0" expanded="false" />
+            <element signature="e#3451#3471#0" expanded="false" />
+            <element signature="e#4101#4121#0" expanded="false" />
+            <element signature="e#4666#4689#0" expanded="false" />
+            <element signature="e#5179#5202#0" expanded="false" />
+            <element signature="e#5749#5779#0" expanded="false" />
+            <element signature="e#6299#6327#0" expanded="false" />
+            <element signature="e#6451#6479#0" expanded="false" />
+            <element signature="e#7863#7886#0" expanded="false" />
+            <element signature="e#9260#9284#0" expanded="false" />
+            <element signature="e#9986#10009#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/fragment_profile.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding>
+            <element signature="e#668#699#0" expanded="false" />
+            <element signature="e#942#970#0" expanded="false" />
+            <element signature="e#1009#1037#0" expanded="false" />
+            <element signature="e#2755#2778#0" expanded="false" />
+            <element signature="e#4072#4092#0" expanded="false" />
+            <element signature="e#5384#5404#0" expanded="false" />
+            <element signature="e#6697#6717#0" expanded="false" />
+            <element signature="e#8011#8033#0" expanded="false" />
+            <element signature="e#9335#9356#0" expanded="false" />
+            <element signature="e#10013#10046#0" expanded="false" />
+            <element signature="e#10703#10734#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/fragment_dialog_sale.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="17" lean-forward="true" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
+          <folding>
+            <element signature="e#4273#4296#0" expanded="false" />
+            <element signature="e#4885#4906#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_edit_profile.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="305">
+          <caret line="149" column="9" lean-forward="true" selection-start-line="149" selection-start-column="9" selection-end-line="149" selection-end-column="9" />
+          <folding>
+            <element signature="e#2279#2298#0" expanded="false" />
+            <element signature="e#2780#2802#0" expanded="false" />
+            <element signature="e#3220#3240#0" expanded="false" />
+            <element signature="e#3672#3692#0" expanded="false" />
+            <element signature="e#4322#4342#0" expanded="false" />
+            <element signature="e#4887#4910#0" expanded="false" />
+            <element signature="e#5359#5387#0" expanded="false" />
+            <element signature="e#5511#5539#0" expanded="false" />
+            <element signature="e#6919#6940#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/createrobot/ui/CreateRobotActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/createsale/ui/activity/CreateSaleActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-60">
+          <caret line="22" column="49" lean-forward="false" selection-start-line="22" selection-start-column="49" selection-end-line="22" selection-end-column="49" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/dialog/SaleDialogFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="29" column="59" lean-forward="false" selection-start-line="29" selection-start-column="59" selection-end-line="29" selection-end-column="59" />
-          <folding>
-            <element signature="e#2507#2508#0" expanded="false" />
-            <element signature="e#2544#2545#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_create_sale.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="39" lean-forward="false" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="39" />
-          <folding>
-            <element signature="e#3763#3790#0" expanded="false" />
-            <element signature="e#4724#4745#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="521">
-          <caret line="47" column="48" lean-forward="true" selection-start-line="47" selection-start-column="48" selection-end-line="47" selection-end-column="48" />
+        <state relative-caret-position="212">
+          <caret line="57" column="49" lean-forward="false" selection-start-line="57" selection-start-column="49" selection-end-line="57" selection-end-column="49" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/business/response/ListSaleResponse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="11" column="32" lean-forward="true" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/business/response/ListRobotResponse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="16" column="28" lean-forward="false" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/viewmodels/BaseViewModel.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/home/ui/activity/HomeActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
-          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <caret line="25" column="44" lean-forward="true" selection-start-line="25" selection-start-column="44" selection-end-line="25" selection-end-column="44" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/dialog/SaleDialogViewModel.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/home/ui/fragment/ProfileFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="13" column="65" lean-forward="false" selection-start-line="13" selection-start-column="65" selection-end-line="13" selection-end-column="65" />
+        <state relative-caret-position="314">
+          <caret line="132" column="49" lean-forward="true" selection-start-line="132" selection-start-column="49" selection-end-line="132" selection-end-column="49" />
           <folding>
-            <element signature="e#1197#1198#0" expanded="false" />
-            <element signature="e#1247#1248#0" expanded="false" />
-            <element signature="e#1727#1932#0" expanded="false" />
-            <element signature="e#1931#1932#0" expanded="false" />
+            <element signature="e#1918#1919#0" expanded="false" />
+            <element signature="e#1986#1987#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/business/domain/ItemRobotSale.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/home/ui/fragment/RobotsFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="18" column="5" lean-forward="false" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+        <state relative-caret-position="255">
+          <caret line="42" column="41" lean-forward="true" selection-start-line="42" selection-start-column="41" selection-end-line="42" selection-end-column="41" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/business/domain/RobotSale.kt">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/home/ui/fragment/SalesFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="54" lean-forward="false" selection-start-line="2" selection-start-column="54" selection-end-line="2" selection-end-column="54" />
+        <state relative-caret-position="-1207">
+          <caret line="30" column="22" lean-forward="true" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/business/domain/ItemRobotQuantity.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="64" lean-forward="true" selection-start-line="2" selection-start-column="64" selection-end-line="2" selection-end-column="64" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/res/layout/item_robot_sale.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="35" lean-forward="false" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/createsale/ui/adapter/ItemSaleRobot.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="25" column="13" lean-forward="true" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
-          <folding>
-            <element signature="e#798#799#0" expanded="false" />
-            <element signature="e#845#846#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/utils/Constants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="429">
-          <caret line="43" column="57" lean-forward="false" selection-start-line="43" selection-start-column="57" selection-end-line="43" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/business/domain/ItemRobotSale.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="47" lean-forward="false" selection-start-line="2" selection-start-column="47" selection-end-line="2" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/business/domain/Sale.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="26" lean-forward="true" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/business/domain/Robot.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="21" column="29" lean-forward="true" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/business/model/SaleModel.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding>
-            <element signature="e#51#362#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/createsale/viewmodel/CreateSaleViewModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="84" column="74" lean-forward="false" selection-start-line="84" selection-start-column="74" selection-end-line="84" selection-end-column="74" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/business/domain/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="13" column="29" lean-forward="true" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/app/App.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="15" column="14" lean-forward="false" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/business/api/APIEndpoints.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="24" column="16" lean-forward="false" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/business/model/UserModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="24" column="50" lean-forward="true" selection-start-line="24" selection-start-column="50" selection-end-line="24" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/home/viewmodel/ProfileViewModel.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/intro/ui/SplashActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
@@ -3253,99 +3251,123 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/home/ui/fragment/ProfileFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-646">
-          <caret line="26" column="13" lean-forward="false" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/intro/viewmodel/SplashViewModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-115">
-          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/login/viewmodel/LoginViewModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-64">
-          <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/login/ui/LoginActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        <state relative-caret-position="204">
+          <caret line="18" column="57" lean-forward="false" selection-start-line="18" selection-start-column="57" selection-end-line="18" selection-end-column="57" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/profile/ui/EditProfileActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        <state relative-caret-position="246">
+          <caret line="32" column="41" lean-forward="true" selection-start-line="32" selection-start-column="41" selection-end-line="32" selection-end-column="41" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/createsale/ui/activity/CreateSaleActivity.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/register/ui/RegisterActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="34" column="26" lean-forward="false" selection-start-line="34" selection-start-column="26" selection-end-line="34" selection-end-column="26" />
+        <state relative-caret-position="252">
+          <caret line="15" column="49" lean-forward="false" selection-start-line="15" selection-start-column="49" selection-end-line="15" selection-end-column="49" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/robotdetail/ui/RobotDetailActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="37" column="31" lean-forward="true" selection-start-line="37" selection-start-column="31" selection-end-line="37" selection-end-column="31" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/business/domain/User.kt">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/utils/DataBinder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="31" column="36" lean-forward="false" selection-start-line="31" selection-start-column="36" selection-end-line="31" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/utils/BindingAdapter.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="365">
+          <caret line="43" column="1" lean-forward="true" selection-start-line="43" selection-start-column="1" selection-end-line="43" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/utils/ErrorObservable.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/viewmodels/BaseViewModel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
-          <caret line="8" column="34" lean-forward="false" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
+          <caret line="8" column="22" lean-forward="false" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/selectrobot/viewmodel/SelectRobotViewModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="850">
+          <caret line="76" column="1" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="76" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/business/domain/Sale.kt">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/selectrobot/viewmodel/SelectRobotViewModelFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="36" lean-forward="false" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="36" />
+        <state relative-caret-position="68">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="24" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/business/response/ListSaleResponse.kt">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/selectrobot/ui/SelectRobotActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="42" lean-forward="false" selection-start-line="5" selection-start-column="42" selection-end-line="5" selection-end-column="42" />
+        <state relative-caret-position="323">
+          <caret line="35" column="51" lean-forward="true" selection-start-line="35" selection-start-column="51" selection-end-line="35" selection-end-column="51" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/profile/viewmodel/EditProfileViewModel.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/home/viewmodel/SalesViewModel.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="39" column="45" lean-forward="false" selection-start-line="39" selection-start-column="45" selection-end-line="39" selection-end-column="45" />
+        <state relative-caret-position="38">
+          <caret line="19" column="40" lean-forward="true" selection-start-line="19" selection-start-column="40" selection-end-line="19" selection-end-column="40" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/business/model/RobotModel.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/selectrobot/viewmodel/SelectRobotViewModel.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="28" column="38" lean-forward="false" selection-start-line="28" selection-start-column="38" selection-end-line="28" selection-end-column="38" />
-          <folding />
+        <state relative-caret-position="629">
+          <caret line="37" column="42" lean-forward="false" selection-start-line="37" selection-start-column="42" selection-end-line="37" selection-end-column="42" />
+          <folding>
+            <element signature="e#64#660#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/register/viewmodel/RegisterViewModel.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/marcosvbras/robomarket/flows/selectrobot/viewmodel/SelectRobotViewModelFactory.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="395">
-          <caret line="47" column="5" lean-forward="true" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
-          <folding />
+        <state relative-caret-position="204">
+          <caret line="12" column="1" lean-forward="false" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+          <folding>
+            <element signature="e#64#217#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

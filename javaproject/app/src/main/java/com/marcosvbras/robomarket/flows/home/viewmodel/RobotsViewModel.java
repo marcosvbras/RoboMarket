@@ -40,19 +40,13 @@ public class RobotsViewModel extends BaseViewModel implements OnRecyclerClick {
     public void listRobots(String query) {
         cleanupSubscriptions();
 
-        robotModel.listRobots(App.getInstance().getUser(), query, skip)
+        robotModel.listRobots(App.getInstance().getUser().getObjectId(), query, skip)
                 .subscribe(next -> {
 //                    listRobots.addAll(next.getListRobots());
-                    listRobots = next.getListRobots();
+                    listRobots = next.getResults();
                     robotAdapter.updateItems(listRobots);
                     isListEmpty.set(listRobots.size() == 0);
-                }, error -> {
-                    isLoading.set(false);
-                    cleanupSubscriptions();
-                }, () -> {
-                    isLoading.set(false);
-                    cleanupSubscriptions();
-                }, d -> {
+                }, error -> cleanupSubscriptions(), this::cleanupSubscriptions, d -> {
                     isLoading.set(true);
                     disposable = d;
                 });

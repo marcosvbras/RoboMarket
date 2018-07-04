@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.DialogFragment;
-import android.support.v7.widget.SearchView;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -30,7 +29,6 @@ public class SalesFragment extends BaseFragment implements BaseActivityCallback 
 
     private FragmentSalesBinding fragmentBinding;
     private View view;
-    private SearchView searchView;
 
     @Nullable
     @Override
@@ -57,30 +55,8 @@ public class SalesFragment extends BaseFragment implements BaseActivityCallback 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         getActivity().getMenuInflater().inflate(R.menu.menu_home, menu);
-        MenuItem menuItemSearch = menu.findItem(R.id.menu_search);
-        searchView = (SearchView)menuItemSearch.getActionView();
-        searchView.setOnQueryTextListener(onSearchListener());
-        searchView.setOnCloseListener(() -> {
-//            fragmentBinding.getViewModel().listRobots(null);
-            return false;
-        });
-
+        menu.findItem(R.id.menu_search).setVisible(false);
         super.onCreateOptionsMenu(menu, inflater);
-    }
-
-    private SearchView.OnQueryTextListener onSearchListener() {
-        return new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String query) {
-                return false;
-            }
-
-            @Override
-            public boolean onQueryTextChange(String newText) {
-//                fragmentBinding.getViewModel().listRobots(newText);
-                return true;
-            }
-        };
     }
 
     @Override

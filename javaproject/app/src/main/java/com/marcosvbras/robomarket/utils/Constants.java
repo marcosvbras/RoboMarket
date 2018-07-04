@@ -19,8 +19,8 @@ public class Constants {
         public static final String HEADER_SESSION_TOKEN = "X-Parse-Session-Token";
         public static final String APP_ID = "D8MjOxsJpDNPaLdBaxvRU6Afm1xMGF9TTY5TQArd";
         public static final String REST_API_KEY = "kv9fEiX8x7RlrxNOcvqKaLXYZg7qBlDh1lCzHVbY";
-        public static final int DEFAULT_ROBOT_PAGINATION = 10;
-        public static final int DEFAULT_ROBOT_SKIP = 10;
+        public static final int DEFAULT_ITEM_PAGINATION = 10;
+        public static final int DEFAULT_ITEM_SKIP = 10;
         public static final String DEFAULT_ROBOT_ORDER = "-updatedAt";
     }
 
