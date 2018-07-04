@@ -3,6 +3,7 @@ package com.marcosvbras.robomarket.flows.profile.viewmodel;
 import android.annotation.SuppressLint;
 import android.databinding.ObservableField;
 import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.AdapterView;
@@ -14,6 +15,7 @@ import com.marcosvbras.robomarket.business.model.UserModel;
 import com.marcosvbras.robomarket.interfaces.BaseActivityCallback;
 import com.marcosvbras.robomarket.utils.Constants;
 import com.marcosvbras.robomarket.utils.ErrorObservable;
+import com.marcosvbras.robomarket.utils.MaskWatcher;
 import com.marcosvbras.robomarket.viewmodels.BaseViewModel;
 
 import java.util.Random;
@@ -26,6 +28,7 @@ public class EditProfileViewModel extends BaseViewModel {
     private Disposable disposable;
     private User user;
     private UserModel userModel;
+    public final TextWatcher phoneNumberWatcher = MaskWatcher.Companion.build9DigitPhone();
     public ObservableField<String> email = new ObservableField<>();
     public ObservableField<String> username = new ObservableField<>();
     public ObservableField<String> name = new ObservableField<>();

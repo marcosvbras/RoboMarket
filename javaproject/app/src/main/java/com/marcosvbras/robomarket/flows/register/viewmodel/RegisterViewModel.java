@@ -3,6 +3,7 @@ package com.marcosvbras.robomarket.flows.register.viewmodel;
 import android.annotation.SuppressLint;
 import android.databinding.ObservableField;
 import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.AdapterView;
@@ -14,6 +15,7 @@ import com.marcosvbras.robomarket.business.model.UserModel;
 import com.marcosvbras.robomarket.interfaces.BaseActivityCallback;
 import com.marcosvbras.robomarket.utils.Constants;
 import com.marcosvbras.robomarket.utils.ErrorObservable;
+import com.marcosvbras.robomarket.utils.MaskWatcher;
 import com.marcosvbras.robomarket.viewmodels.BaseViewModel;
 import com.marcosvbras.robomarket.flows.home.ui.activity.HomeActivity;
 
@@ -40,6 +42,7 @@ public class RegisterViewModel extends BaseViewModel {
     public ErrorObservable confirmPasswordFieldError = new ErrorObservable();
     public ErrorObservable usernameFieldError = new ErrorObservable();
     public ErrorObservable nameFieldError = new ErrorObservable();
+    public final TextWatcher phoneNumberWatcher = MaskWatcher.Companion.build9DigitPhone();
 
     public RegisterViewModel(BaseActivityCallback activityCallback) {
         this.activityCallback = activityCallback;

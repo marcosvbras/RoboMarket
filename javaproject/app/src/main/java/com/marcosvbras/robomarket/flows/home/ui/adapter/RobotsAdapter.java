@@ -20,8 +20,8 @@ public class RobotsAdapter extends GroupAdapter {
         this.clear();
         this.listRobot = listItems == null ? new ArrayList<>() : listItems;
 
-//        for(Robot robot : this.listRobot)
-//            add(new ItemRobot(robot, onRecyclerClick));
+        for(Robot robot : this.listRobot)
+            add(new ItemRobot(robot, onRecyclerClick));
 
         this.notifyDataSetChanged();
     }
