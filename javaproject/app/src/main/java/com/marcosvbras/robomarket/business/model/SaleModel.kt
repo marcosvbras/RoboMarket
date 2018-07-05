@@ -13,22 +13,22 @@ class SaleModel {
     private val whereClause = "{\"userId\": \"{userId}\"}"
 
     fun listSales(userId: String, skip: Int) : Observable<ListSaleResponse>? {
-        return APIService.getService().listSales(
+        return APIService.getService()?.listSales(
                 whereClause.replace("{userId}", userId),
                 Constants.Api.DEFAULT_ROBOT_ORDER,
                 Constants.Api.DEFAULT_ITEM_PAGINATION,
                 skip
-        ).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread())
+        )?.subscribeOn(Schedulers.io())?.observeOn(AndroidSchedulers.mainThread())
     }
 
-    fun getSale(objectId: String) = APIService.getService().getSale(objectId)
-            .subscribeOn(Schedulers.io())
-            .observeOn(AndroidSchedulers.mainThread())
+    fun getSale(objectId: String) = APIService.getService()?.getSale(objectId)
+            ?.subscribeOn(Schedulers.io())
+            ?.observeOn(AndroidSchedulers.mainThread())
 
-    fun createSale(sale: Sale) : Observable<Sale> {
-        return APIService.getService().createSale(sale)
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
+    fun createSale(sale: Sale) : Observable<Sale>? {
+        return APIService.getService()?.createSale(sale)
+                ?.subscribeOn(Schedulers.io())
+                ?.observeOn(AndroidSchedulers.mainThread())
     }
 
 }

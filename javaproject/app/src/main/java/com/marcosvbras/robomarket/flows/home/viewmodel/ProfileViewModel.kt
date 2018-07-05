@@ -22,7 +22,7 @@ class ProfileViewModel(private val callback: BaseActivityCallback) : BaseViewMod
         cleanupSubscriptions()
 
         userModel.resetPassword(App.getInstance().user)
-                .subscribe({
+                ?.subscribe({
 
                 }, { error ->
                     callback.showDialogMessage(error.message!!)
@@ -40,7 +40,7 @@ class ProfileViewModel(private val callback: BaseActivityCallback) : BaseViewMod
         cleanupSubscriptions()
 
         userModel.deleteUser(App.getInstance().user.objectId!!)
-                .subscribe({
+                ?.subscribe({
 
                 }, { error ->
                     callback.showDialogMessage(error.message!!)

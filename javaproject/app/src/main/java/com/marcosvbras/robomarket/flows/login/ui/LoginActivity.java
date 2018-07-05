@@ -1,5 +1,6 @@
 package com.marcosvbras.robomarket.flows.login.ui;
 
+import android.arch.lifecycle.ViewModelProviders;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 
@@ -7,6 +8,7 @@ import com.marcosvbras.robomarket.R;
 import com.marcosvbras.robomarket.app.BaseActivity;
 import com.marcosvbras.robomarket.databinding.ActivityLoginBinding;
 import com.marcosvbras.robomarket.flows.login.viewmodel.LoginViewModel;
+import com.marcosvbras.robomarket.flows.login.viewmodel.LoginViewModelFactory;
 
 public class LoginActivity extends BaseActivity {
 
@@ -15,9 +17,13 @@ public class LoginActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        LoginViewModel loginViewModel = new LoginViewModel(this);
         activityBinding = DataBindingUtil.setContentView(this, R.layout.activity_login);
-        activityBinding.setViewModel(loginViewModel);
+        activityBinding.setViewModel(createViewModel());
         activityBinding.executePendingBindings();
+    }
+
+    private LoginViewModel createViewModel() {
+        return ViewModelProviders.of(this, new LoginViewModelFactory(this))
+                .get(LoginViewModel.class);
     }
 }

@@ -5,7 +5,7 @@ import android.os.Bundle
 import com.marcosvbras.robomarket.app.App
 import com.marcosvbras.robomarket.business.domain.Robot
 import com.marcosvbras.robomarket.business.model.RobotModel
-import com.marcosvbras.robomarket.flows.home.ui.adapter.RobotsAdapter
+import com.marcosvbras.robomarket.flows.home.ui.adapter.RobotAdapter
 import com.marcosvbras.robomarket.interfaces.BaseActivityCallback
 import com.marcosvbras.robomarket.interfaces.OnRecyclerClick
 import com.marcosvbras.robomarket.utils.Constants
@@ -19,7 +19,7 @@ class SelectRobotViewModel(private val callback: BaseActivityCallback) : BaseVie
     private var disposable: Disposable? = null
     private var skip = 0
     private var listRobots: List<Robot>? = ArrayList()
-    val robotAdapter: RobotsAdapter = RobotsAdapter(this)
+    val robotAdapter: RobotAdapter = RobotAdapter(this)
 
     init {
         listRobots(null)
@@ -29,8 +29,8 @@ class SelectRobotViewModel(private val callback: BaseActivityCallback) : BaseVie
         cleanupSubscriptions()
 
         robotModel.listRobots(App.getInstance().user.objectId!!, query, skip)
-                .subscribe({ (results) ->
-                    listRobots = results
+                ?.subscribe({ next ->
+                    listRobots = next.results
                     robotAdapter.updateItems(listRobots)
                 }, { error ->
                     cleanupSubscriptions()

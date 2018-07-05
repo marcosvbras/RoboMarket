@@ -5,7 +5,7 @@ import android.os.Bundle
 import com.marcosvbras.robomarket.app.App
 import com.marcosvbras.robomarket.business.domain.Robot
 import com.marcosvbras.robomarket.business.model.RobotModel
-import com.marcosvbras.robomarket.flows.home.ui.adapter.RobotsAdapter
+import com.marcosvbras.robomarket.flows.home.ui.adapter.RobotAdapter
 import com.marcosvbras.robomarket.flows.robotdetail.ui.RobotDetailActivity
 import com.marcosvbras.robomarket.interfaces.BaseActivityCallback
 import com.marcosvbras.robomarket.interfaces.OnRecyclerClick
@@ -20,7 +20,7 @@ class RobotsViewModel(private val callback: BaseActivityCallback) : BaseViewMode
     private var disposable: Disposable? = null
     private val skip = 0
     private var listRobots: List<Robot>? = ArrayList()
-    val robotAdapter: RobotsAdapter = RobotsAdapter(this)
+    val robotAdapter: RobotAdapter = RobotAdapter(this)
     var isListEmpty = ObservableBoolean(false)
 
     init {
@@ -31,9 +31,9 @@ class RobotsViewModel(private val callback: BaseActivityCallback) : BaseViewMode
         cleanupSubscriptions()
 
         robotModel.listRobots(App.getInstance().user.objectId!!, query, skip)
-                .subscribe({ (results) ->
+                ?.subscribe({ next ->
                     // listRobots.addAll(next.getListRobots());
-                    listRobots = results
+                    listRobots = next.results
                     robotAdapter.updateItems(listRobots)
                     isListEmpty.set(listRobots!!.size == 0)
                 }, { error -> cleanupSubscriptions() }, { this.cleanupSubscriptions() }, { d ->

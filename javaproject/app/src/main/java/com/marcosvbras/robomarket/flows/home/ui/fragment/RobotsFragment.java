@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.DialogFragment;
+import android.support.v4.app.Fragment;
 import android.support.v7.widget.SearchView;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -18,7 +19,6 @@ import android.view.ViewGroup;
 import com.marcosvbras.robomarket.databinding.FragmentRobotsBinding;
 import com.marcosvbras.robomarket.R;
 import com.marcosvbras.robomarket.app.App;
-import com.marcosvbras.robomarket.app.BaseFragment;
 import com.marcosvbras.robomarket.flows.createrobot.ui.CreateRobotActivity;
 import com.marcosvbras.robomarket.flows.home.ui.activity.HomeActivity;
 import com.marcosvbras.robomarket.flows.home.viewmodel.RobotsViewModel;
@@ -29,7 +29,7 @@ import com.marcosvbras.robomarket.utils.Constants;
 
 import static android.app.Activity.RESULT_OK;
 
-public class RobotsFragment extends BaseFragment implements BaseActivityCallback {
+public class RobotsFragment extends Fragment implements BaseActivityCallback {
 
     private FragmentRobotsBinding fragmentBinding;
     private View view;

@@ -10,7 +10,7 @@ import com.marcosvbras.robomarket.interfaces.OnRecyclerClick
 import com.marcosvbras.robomarket.viewmodels.BaseViewModel
 import io.reactivex.disposables.Disposable
 
-class SalesViewModel(private val activityCallback: BaseActivityCallback) : BaseViewModel(), OnRecyclerClick {
+class SalesViewModel(private val callback: BaseActivityCallback) : BaseViewModel(), OnRecyclerClick {
 
     private var disposable: Disposable? = null
     private val saleModel: SaleModel = SaleModel()

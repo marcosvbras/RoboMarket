@@ -12,8 +12,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.marcosvbras.robomarket.R;
-import com.marcosvbras.robomarket.business.domain.Robot;
 import com.marcosvbras.robomarket.business.domain.ItemRobotQuantity;
+import com.marcosvbras.robomarket.business.domain.Robot;
 import com.marcosvbras.robomarket.databinding.FragmentDialogSaleBinding;
 import com.marcosvbras.robomarket.utils.Constants;
 

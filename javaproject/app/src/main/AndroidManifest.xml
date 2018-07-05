@@ -19,8 +19,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".flows.login.ui.LoginActivity" />
         <activity android:name=".app.BaseActivity" />
+        <activity android:name=".flows.login.ui.LoginActivity" />
         <activity android:name=".flows.register.ui.RegisterActivity" />
         <activity android:name=".flows.home.ui.activity.HomeActivity" />
         <activity android:name=".flows.createrobot.ui.CreateRobotActivity" />
