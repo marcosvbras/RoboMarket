@@ -24,6 +24,8 @@ import com.marcosvbras.robomarket.flows.home.viewmodel.ProfileViewModelFactory;
 import com.marcosvbras.robomarket.interfaces.BaseActivityCallback;
 import com.marcosvbras.robomarket.flows.login.ui.LoginActivity;
 
+import org.jetbrains.annotations.NotNull;
+
 public class ProfileFragment extends Fragment implements BaseActivityCallback {
 
     private FragmentProfileBinding fragmentBinding;
@@ -73,13 +75,13 @@ public class ProfileFragment extends Fragment implements BaseActivityCallback {
     }
 
     @Override
-    public void openActivity(Class<?> activity, boolean finishCurrentActivity) {
-        ((HomeActivity)getActivity()).openActivity(activity, finishCurrentActivity);
+    public void openActivity(Class<?> activity, Bundle bundle, boolean finishCurrentActivity) {
+        ((HomeActivity)getActivity()).openActivity(activity, bundle, finishCurrentActivity);
     }
 
     @Override
-    public void openActivity(Class<?> activity, Bundle bundle, boolean finishCurrentActivity) {
-        ((HomeActivity)getActivity()).openActivity(activity, bundle, finishCurrentActivity);
+    public void openActivityWithAnimation(@NotNull Class<?> activity, @org.jetbrains.annotations.Nullable Bundle bundle, boolean finishCurrentActivity, int enterAnimation, int exitAnimation) {
+
     }
 
     @Override
@@ -116,6 +118,16 @@ public class ProfileFragment extends Fragment implements BaseActivityCallback {
     }
 
     @Override
+    public void showSnackBar(@NotNull String message, int length) {
+
+    }
+
+    @Override
+    public void showSnackBar(int message, int length) {
+
+    }
+
+    @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         getActivity().getMenuInflater().inflate(R.menu.menu_home, menu);
         menu.findItem(R.id.menu_add).setVisible(false);
@@ -127,7 +139,7 @@ public class ProfileFragment extends Fragment implements BaseActivityCallback {
     public boolean onOptionsItemSelected(MenuItem item) {
         if(item.getItemId() == R.id.menu_logout) {
             App.getInstance().deleteCredentials();
-            ((HomeActivity)getActivity()).openActivity(LoginActivity.class, true);
+            ((HomeActivity)getActivity()).openActivity(LoginActivity.class, null,true);
         }
 
         return super.onOptionsItemSelected(item);

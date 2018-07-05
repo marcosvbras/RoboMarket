@@ -15,7 +15,7 @@ class ProfileViewModel(private val callback: BaseActivityCallback) : BaseViewMod
     private var disposable: Disposable? = null
 
     fun edit() {
-        callback.openActivity(EditProfileActivity::class.java, false)
+        callback.openActivity(EditProfileActivity::class.java, null,false)
     }
 
     fun requestPasswordReset() {
@@ -29,7 +29,7 @@ class ProfileViewModel(private val callback: BaseActivityCallback) : BaseViewMod
                     cleanupSubscriptions()
                 }, {
                     cleanupSubscriptions()
-                    callback.showDialogMessage(R.string.sucessful_reset_password)
+                    callback.showSnackBar(R.string.sucessful_reset_password)
                 }, { d ->
                     isLoading.set(true)
                     disposable = d
@@ -47,7 +47,7 @@ class ProfileViewModel(private val callback: BaseActivityCallback) : BaseViewMod
                     cleanupSubscriptions()
                 }, {
                     cleanupSubscriptions()
-                    callback.openActivity(LoginActivity::class.java, true)
+                    callback.openActivity(LoginActivity::class.java, null,true)
                 }, { d ->
                     isLoading.set(true)
                     disposable = d

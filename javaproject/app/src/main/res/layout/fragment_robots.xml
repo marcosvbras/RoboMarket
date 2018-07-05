@@ -1,56 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
     <data>
         <import type="android.view.View"/>
         <variable
             name="viewModel"
             type="com.marcosvbras.robomarket.flows.home.viewmodel.RobotsViewModel"/>
     </data>
-    <android.support.constraint.ConstraintLayout
-        xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:refreshing="@{viewModel.isRefreshing}"
+        app:onRefreshListener="@{() -> viewModel.onRefresh()}">
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/recyclerView"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:scrollbars="vertical"
-            android:visibility="@{viewModel.isLoading ? View.INVISIBLE : View.VISIBLE}"
-            app:adapter="@{viewModel.robotAdapter}"
-            app:layoutManager="android.support.v7.widget.LinearLayoutManager"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0" />
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="22dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="24dp"
-            android:gravity="center"
-            android:visibility="@{viewModel.isListEmpty ? View.VISIBLE : View.GONE}"
-            android:text="@string/no_robots_found"
-            app:layout_constraintEnd_toEndOf="@+id/recyclerView"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/recyclerView"
-            app:layout_constraintTop_toTopOf="parent" />
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:scrollbars="vertical"
+                android:visibility="@{viewModel.isLoading ? View.INVISIBLE : View.VISIBLE}"
+                app:adapter="@{viewModel.robotAdapter}"
+                app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0" />
 
-        <ProgressBar
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:visibility="@{viewModel.isLoading ? View.VISIBLE : View.GONE}"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/recyclerView"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/recyclerView" />
-    </android.support.constraint.ConstraintLayout>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="22dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="24dp"
+                android:gravity="center"
+                android:visibility="@{viewModel.isListEmpty ? View.VISIBLE : View.GONE}"
+                android:text="@string/no_robots_found"
+                app:layout_constraintEnd_toEndOf="@+id/recyclerView"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/recyclerView"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:visibility="@{viewModel.isLoading ? View.VISIBLE : View.GONE}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/recyclerView"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/recyclerView" />
+        </android.support.constraint.ConstraintLayout>
+    </android.support.v4.widget.SwipeRefreshLayout>
 </layout>

@@ -18,6 +18,7 @@ class SalesViewModel(private val callback: BaseActivityCallback) : BaseViewModel
     private var listSale = mutableListOf<Sale>()
     var saleAdapter: SaleAdapter? = SaleAdapter(this)
     var isListEmpty = ObservableBoolean(false)
+    var isRefreshing = ObservableBoolean(false)
 
     init {
         listSales()
@@ -38,6 +39,24 @@ class SalesViewModel(private val callback: BaseActivityCallback) : BaseViewModel
                 })
     }
 
+    fun onRefresh() {
+        cleanupSubscriptions()
+
+        saleModel.listSales(App.getInstance().user.objectId!!, skip)
+                ?.subscribe({ next ->
+                    listSale = next.results!!
+                    saleAdapter?.updateItems(listSale)
+                    isListEmpty.set(listSale.isEmpty())
+                }, { error ->
+                    cleanupSubscriptions()
+                }, {
+                    cleanupSubscriptions()
+                }, { d ->
+                    isRefreshing.set(true)
+                    disposable = d
+                })
+    }
+
     override fun onCleared() {
         cleanupSubscriptions()
         super.onCleared()
@@ -45,10 +64,15 @@ class SalesViewModel(private val callback: BaseActivityCallback) : BaseViewModel
 
     override fun cleanupSubscriptions() {
         isLoading.set(false)
+        isRefreshing.set(false)
         disposable?.dispose()
     }
 
     override fun onClick(obj: Any) {
+
+    }
+
+    override fun onLongClick(obj: Any) {
 
     }
 }

@@ -49,7 +49,7 @@ class LoginViewModel(private val callback: BaseActivityCallback) : BaseViewModel
                         callback.showDialogMessage(error.message!!)
                     }, {
                         cleanupSubscriptions()
-                        callback.openActivity(HomeActivity::class.java, true)
+                        callback.openActivity(HomeActivity::class.java, null,true)
                     }, { d ->
                         isLoading.set(true)
                         disposable = d
@@ -59,7 +59,7 @@ class LoginViewModel(private val callback: BaseActivityCallback) : BaseViewModel
 
     fun register() {
         // callback.openActivityForResult(RegisterActivity.class, null, Constants.Other.FINISH_LOGIN_ACTIVITY);
-        callback.openActivity(RegisterActivity::class.java, false)
+        callback.openActivity(RegisterActivity::class.java, null,false)
     }
 
     override fun cleanupSubscriptions() {

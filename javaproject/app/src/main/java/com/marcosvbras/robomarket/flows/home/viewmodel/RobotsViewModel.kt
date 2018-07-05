@@ -22,6 +22,7 @@ class RobotsViewModel(private val callback: BaseActivityCallback) : BaseViewMode
     private var listRobots: List<Robot>? = ArrayList()
     val robotAdapter: RobotAdapter = RobotAdapter(this)
     var isListEmpty = ObservableBoolean(false)
+    var isRefreshing = ObservableBoolean(false)
 
     init {
         listRobots(null)
@@ -35,12 +36,30 @@ class RobotsViewModel(private val callback: BaseActivityCallback) : BaseViewMode
                     // listRobots.addAll(next.getListRobots());
                     listRobots = next.results
                     robotAdapter.updateItems(listRobots)
-                    isListEmpty.set(listRobots!!.size == 0)
+                    isListEmpty.set(listRobots!!.isEmpty())
                 }, { error -> cleanupSubscriptions() }, { this.cleanupSubscriptions() }, { d ->
                     isLoading.set(true)
                     disposable = d
                 })
 
+    }
+
+    fun onRefresh() {
+        cleanupSubscriptions()
+
+        robotModel.listRobots(App.getInstance().user.objectId!!, null, skip)
+                ?.subscribe({ next ->
+                    listRobots = next.results
+                    robotAdapter.updateItems(listRobots)
+                    isListEmpty.set(listRobots!!.isEmpty())
+                }, { error ->
+                    cleanupSubscriptions()
+                }, {
+                    cleanupSubscriptions()
+                }, { d ->
+                    isRefreshing.set(true)
+                    disposable = d
+                })
     }
 
     override fun onCleared() {
@@ -50,6 +69,7 @@ class RobotsViewModel(private val callback: BaseActivityCallback) : BaseViewMode
 
     override fun cleanupSubscriptions() {
         isLoading.set(false)
+        isRefreshing.set(false)
         disposable?.dispose()
     }
 
@@ -57,5 +77,9 @@ class RobotsViewModel(private val callback: BaseActivityCallback) : BaseViewMode
         val bundle = Bundle()
         bundle.putParcelable(Constants.Other.ROBOT_TAG, obj as Robot)
         callback.openActivity(RobotDetailActivity::class.java, bundle, false)
+    }
+
+    override fun onLongClick(obj: Any) {
+
     }
 }

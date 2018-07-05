@@ -25,6 +25,8 @@ import com.marcosvbras.robomarket.flows.home.viewmodel.SalesViewModelFactory;
 import com.marcosvbras.robomarket.interfaces.BaseActivityCallback;
 import com.marcosvbras.robomarket.flows.login.ui.LoginActivity;
 
+import org.jetbrains.annotations.NotNull;
+
 public class SalesFragment extends Fragment implements BaseActivityCallback {
 
     private FragmentSalesBinding fragmentBinding;
@@ -63,11 +65,11 @@ public class SalesFragment extends Fragment implements BaseActivityCallback {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch(item.getItemId()) {
             case R.id.menu_add:
-                ((HomeActivity)getActivity()).openActivity(CreateSaleActivity.class, false);
+                ((HomeActivity)getActivity()).openActivity(CreateSaleActivity.class, null,false);
                 break;
             case R.id.menu_logout:
                 App.getInstance().deleteCredentials();
-                ((HomeActivity)getActivity()).openActivity(LoginActivity.class, true);
+                ((HomeActivity)getActivity()).openActivity(LoginActivity.class, null,true);
                 break;
         }
 
@@ -85,12 +87,12 @@ public class SalesFragment extends Fragment implements BaseActivityCallback {
     }
 
     @Override
-    public void openActivity(Class<?> activity, boolean finishCurrentActivity) {
+    public void openActivity(Class<?> activity, Bundle bundle, boolean finishCurrentActivity) {
 
     }
 
     @Override
-    public void openActivity(Class<?> activity, Bundle bundle, boolean finishCurrentActivity) {
+    public void openActivityWithAnimation(@NotNull Class<?> activity, @org.jetbrains.annotations.Nullable Bundle bundle, boolean finishCurrentActivity, int enterAnimation, int exitAnimation) {
 
     }
 
@@ -126,6 +128,16 @@ public class SalesFragment extends Fragment implements BaseActivityCallback {
 
     @Override
     public void showCustomAlertDialog(DialogFragment dialogFragment) {
+
+    }
+
+    @Override
+    public void showSnackBar(@NotNull String message, int length) {
+
+    }
+
+    @Override
+    public void showSnackBar(int message, int length) {
 
     }
 }

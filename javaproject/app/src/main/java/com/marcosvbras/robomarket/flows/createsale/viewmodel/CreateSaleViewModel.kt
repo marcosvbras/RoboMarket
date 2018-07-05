@@ -128,6 +128,10 @@ class CreateSaleViewModel(private val callback: BaseActivityCallback) : BaseView
         updateFinalValue()
     }
 
+    override fun onLongClick(obj: Any) {
+
+    }
+
     override fun onRemove(itemRobotQuantity: ItemRobotQuantity) {
         for (rs in listRobotQuantity) {
             if (rs.robot.objectId == itemRobotQuantity.robot.objectId) {

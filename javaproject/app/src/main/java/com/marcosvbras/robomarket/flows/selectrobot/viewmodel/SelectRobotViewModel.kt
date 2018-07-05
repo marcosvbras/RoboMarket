@@ -58,4 +58,8 @@ class SelectRobotViewModel(private val callback: BaseActivityCallback) : BaseVie
         callback.setActivityResult(RESULT_OK, bundle)
         callback.finishCurrentActivity()
     }
+
+    override fun onLongClick(obj: Any) {
+
+    }
 }

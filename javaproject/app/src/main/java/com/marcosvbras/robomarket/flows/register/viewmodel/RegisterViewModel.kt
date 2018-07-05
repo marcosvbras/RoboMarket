@@ -104,7 +104,7 @@ class RegisterViewModel(private val callback: BaseActivityCallback) : BaseViewMo
                         callback.showDialogMessage(error.message!!)
                     }, {
                         cleanupSubscriptions()
-                        callback.openActivity(HomeActivity::class.java, true)
+                        callback.openActivity(HomeActivity::class.java, null,true)
                     }, { d ->
                         isLoading.set(true)
                         disposable = d

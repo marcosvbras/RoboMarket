@@ -27,6 +27,8 @@ import com.marcosvbras.robomarket.flows.login.ui.LoginActivity;
 import com.marcosvbras.robomarket.interfaces.BaseActivityCallback;
 import com.marcosvbras.robomarket.utils.Constants;
 
+import org.jetbrains.annotations.NotNull;
+
 import static android.app.Activity.RESULT_OK;
 
 public class RobotsFragment extends Fragment implements BaseActivityCallback {
@@ -97,7 +99,7 @@ public class RobotsFragment extends Fragment implements BaseActivityCallback {
                 break;
             case R.id.menu_logout:
                 App.getInstance().deleteCredentials();
-                ((HomeActivity)getActivity()).openActivity(LoginActivity.class, true);
+                ((HomeActivity)getActivity()).openActivity(LoginActivity.class, null, true);
                 break;
         }
 
@@ -121,13 +123,13 @@ public class RobotsFragment extends Fragment implements BaseActivityCallback {
     }
 
     @Override
-    public void openActivity(Class<?> activity, boolean finishCurrentActivity) {
-
+    public void openActivity(Class<?> activity, Bundle bundle, boolean finishCurrentActivity) {
+        ((HomeActivity)getActivity()).openActivity(activity, bundle, finishCurrentActivity);
     }
 
     @Override
-    public void openActivity(Class<?> activity, Bundle bundle, boolean finishCurrentActivity) {
-        ((HomeActivity)getActivity()).openActivity(activity, bundle, finishCurrentActivity);
+    public void openActivityWithAnimation(@NotNull Class<?> activity, @org.jetbrains.annotations.Nullable Bundle bundle, boolean finishCurrentActivity, int enterAnimation, int exitAnimation) {
+
     }
 
     @Override
@@ -162,6 +164,16 @@ public class RobotsFragment extends Fragment implements BaseActivityCallback {
 
     @Override
     public void showCustomAlertDialog(DialogFragment dialogFragment) {
+
+    }
+
+    @Override
+    public void showSnackBar(@NotNull String message, int length) {
+
+    }
+
+    @Override
+    public void showSnackBar(int message, int length) {
 
     }
 }

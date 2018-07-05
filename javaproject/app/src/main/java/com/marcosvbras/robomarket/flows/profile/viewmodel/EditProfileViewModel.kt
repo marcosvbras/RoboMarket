@@ -113,7 +113,6 @@ class EditProfileViewModel(private val callback: BaseActivityCallback) : BaseVie
                         cleanupSubscriptions()
                         callback.showDialogMessage(error.message!!)
                     }, {
-
                         cleanupSubscriptions()
                         callback.finishCurrentActivity()
                     }, { d ->
