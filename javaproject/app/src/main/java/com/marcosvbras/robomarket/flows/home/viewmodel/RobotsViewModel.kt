@@ -2,6 +2,8 @@ package com.marcosvbras.robomarket.flows.home.viewmodel
 
 import android.databinding.ObservableBoolean
 import android.os.Bundle
+import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.RecyclerView
 import com.marcosvbras.robomarket.app.App
 import com.marcosvbras.robomarket.business.domain.Robot
 import com.marcosvbras.robomarket.business.model.RobotModel
@@ -22,7 +24,23 @@ class RobotsViewModel(private val callback: BaseActivityCallback) : BaseViewMode
     private var listRobots: List<Robot>? = ArrayList()
     val robotAdapter: RobotAdapter = RobotAdapter(this)
     var isListEmpty = ObservableBoolean(false)
-    var isRefreshing = ObservableBoolean(false)
+    var isLoadingMore = ObservableBoolean(false)
+
+    val scrollListener : RecyclerView.OnScrollListener =
+            object : RecyclerView.OnScrollListener() {
+                override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                    super.onScrolled(recyclerView, dx, dy)
+                    val layoutManager = recyclerView.layoutManager as LinearLayoutManager
+//                    val totalItemCount = layoutManager.itemCount
+                    val lastVisibleItem = layoutManager.findLastVisibleItemPosition()
+                    if (!isLoadingMore.get() && robotAdapter.itemCount <= lastVisibleItem) {
+//                        if (onLoadMoreListener != null) {
+//                            onLoadMoreListener.onLoadMore()
+//                        }
+                        isLoadingMore.set(true)
+                    }
+                }
+            }
 
     init {
         listRobots(null)
@@ -41,25 +59,10 @@ class RobotsViewModel(private val callback: BaseActivityCallback) : BaseViewMode
                     isLoading.set(true)
                     disposable = d
                 })
-
     }
 
     fun onRefresh() {
-        cleanupSubscriptions()
-
-        robotModel.listRobots(App.getInstance().user.objectId!!, null, skip)
-                ?.subscribe({ next ->
-                    listRobots = next.results
-                    robotAdapter.updateItems(listRobots)
-                    isListEmpty.set(listRobots!!.isEmpty())
-                }, { error ->
-                    cleanupSubscriptions()
-                }, {
-                    cleanupSubscriptions()
-                }, { d ->
-                    isRefreshing.set(true)
-                    disposable = d
-                })
+        listRobots(null)
     }
 
     override fun onCleared() {
@@ -69,7 +72,6 @@ class RobotsViewModel(private val callback: BaseActivityCallback) : BaseViewMode
 
     override fun cleanupSubscriptions() {
         isLoading.set(false)
-        isRefreshing.set(false)
         disposable?.dispose()
     }
 
