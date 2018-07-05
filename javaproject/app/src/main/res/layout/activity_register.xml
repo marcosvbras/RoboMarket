@@ -20,16 +20,23 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+            <include
+                android:id="@+id/top_toolbar"
+                layout="@layout/partial_transparent_toolbar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
             <FrameLayout
                 android:id="@+id/frameLayout"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="24dp"
                 android:layout_marginStart="24dp"
-                android:layout_marginTop="100dp"
+                android:layout_marginTop="32dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                app:layout_constraintTop_toBottomOf="@+id/top_toolbar">
 
                 <LinearLayout
                     android:id="@+id/linearLayout2"
@@ -64,8 +71,8 @@
                         android:layout_height="wrap_content"
                         android:hint="@string/hint_phone"
                         android:maxLength="16"
-                        android:addTextChangedListener="@{viewModel.phoneNumberWatcher}"
                         android:text="@={viewModel.phone}"
+                        app:mask="@{viewModel.phoneNumberWatcher}"
                         app:met_floatingLabel="highlight"
                         app:met_primaryColor="@color/colorAccent" />
 
@@ -85,6 +92,7 @@
                     <com.rengwuxian.materialedittext.MaterialEditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
                         android:hint="@string/hint_email"
                         android:inputType="textEmailAddress"
                         android:text="@={viewModel.email}"
@@ -125,9 +133,9 @@
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/profile_image"
                     android:layout_width="@dimen/circular_image_view"
-                    android:background="@drawable/circular_imageview_background"
                     android:layout_height="@dimen/circular_image_view"
                     android:layout_gravity="center_horizontal"
+                    android:background="@drawable/circular_imageview_background"
                     app:civ_border_color="@android:color/white"
                     app:civ_border_width="2dp"
                     app:url_image="@{viewModel.avatarUrl}" />

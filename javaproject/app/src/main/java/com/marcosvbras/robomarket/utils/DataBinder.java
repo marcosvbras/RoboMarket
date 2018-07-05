@@ -3,7 +3,11 @@ package com.marcosvbras.robomarket.utils;
 import android.databinding.BindingAdapter;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.widget.RecyclerView;
+import android.text.TextUtils;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Spinner;
+import android.widget.SpinnerAdapter;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
@@ -38,10 +42,28 @@ public class DataBinder {
         view.setOnNavigationItemSelectedListener(listener);
     }
 
+    @BindingAdapter("selection")
+    public static void setSelection(Spinner spinner, String item) {
+        SpinnerAdapter spinnerAdapter = spinner.getAdapter();
+
+        for(int i = 0; i < spinnerAdapter.getCount(); i++) {
+            if (spinnerAdapter.getItem(i).toString().equals(item)) {
+                spinner.setSelection(i);
+                break;
+            }
+        }
+    }
+
     @BindingAdapter({"adapter"})
     public static void bindAdapter(RecyclerView recyclerView, GroupAdapter adapter) {
         if(adapter != null)
             recyclerView.setAdapter(adapter);
+    }
+
+    @BindingAdapter({"mask"})
+    public static void addMask(EditText editText, String mask) {
+        if(!TextUtils.isEmpty(mask))
+            editText.addTextChangedListener(new MaskWatcher(mask, editText));
     }
 
 }

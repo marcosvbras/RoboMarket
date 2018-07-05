@@ -39,8 +39,8 @@ public class HomeActivity extends BaseActivity implements HomeActivityCallbacks 
         Fragment frag = fragmentManager.findFragmentByTag(tag);
         FragmentTransaction transaction = fragmentManager.beginTransaction();
 
-//        if(frag == null)
-//            transaction.add(R.id.conteinerFrag, fragment, tag);
+        if(frag == null)
+            transaction.add(R.id.conteinerFrag, fragment, tag);
 
         if(activeFragment != null && activeFragment != fragment) {
             transaction.hide(activeFragment);

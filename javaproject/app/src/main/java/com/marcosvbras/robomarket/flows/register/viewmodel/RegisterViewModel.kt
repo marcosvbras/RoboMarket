@@ -37,7 +37,7 @@ class RegisterViewModel(private val callback: BaseActivityCallback) : BaseViewMo
     var confirmPasswordFieldError = ErrorObservable()
     var usernameFieldError = ErrorObservable()
     var nameFieldError = ErrorObservable()
-    val phoneNumberWatcher: TextWatcher = MaskWatcher.build9DigitPhone()
+    val phoneNumberWatcher = MaskWatcher.nineDigitPhone
 
     private val isFormValid: Boolean
         get() {

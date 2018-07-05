@@ -24,7 +24,7 @@ class EditProfileViewModel(private val callback: BaseActivityCallback) : BaseVie
     private var disposable: Disposable? = null
     private var user: User? = null
     private val userModel: UserModel
-    val phoneNumberWatcher: TextWatcher = MaskWatcher.build9DigitPhone()
+    val phoneNumberWatcher = MaskWatcher.nineDigitPhone
     var email = ObservableField<String>()
     var username = ObservableField<String>()
     var name = ObservableField<String>()
@@ -123,8 +123,9 @@ class EditProfileViewModel(private val callback: BaseActivityCallback) : BaseVie
         }
     }
 
-    fun onGenreSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
-        genre.set(parent.selectedItem as String)
+    fun onGenreSelected(parent: AdapterView<*>, view: View, position: Int, settedStr: String) {
+        if(parent.getItemAtPosition(position).toString() != settedStr)
+            genre.set(parent.selectedItem as String)
     }
 
     fun changeAvatarImg() {

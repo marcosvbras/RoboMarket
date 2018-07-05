@@ -3,45 +3,65 @@ package com.marcosvbras.robomarket.utils
 import android.text.Editable
 import android.text.TextWatcher
 import io.reactivex.annotations.NonNull
+import android.widget.EditText
 
-class MaskWatcher(@NonNull val mask: String) : TextWatcher {
+class MaskWatcher(@NonNull val mask: String, val editText: EditText) : TextWatcher {
 
-    private var isRunning = false
-    private var isDeleting = false
+    var isUpdating: Boolean = false
+    var old = ""
     val maskLength = mask.length
 
-    override fun afterTextChanged(editable: Editable?) {
-        if(isRunning || isDeleting)
-            return
+    override fun afterTextChanged(editable: Editable?) {}
 
-        isRunning = true
-
-        val editableLength = editable?.length
-
-        if(editableLength!! < maskLength) {
-            if (mask[editableLength] != '#')
-                editable.append(mask[editableLength])
-            else if(mask[editableLength - 1] != '#')
-                editable.insert(editableLength - 1, mask, editableLength - 1, editableLength)
-        }
-
-        isRunning = false
-    }
-
-    override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-        isDeleting = count > after
-    }
+    override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
 
     override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+        val str = unmask(s.toString())
+        var mascara = ""
+        if (isUpdating) {
+            old = str
+            isUpdating = false
+            return
+        }
 
+        var i = 0
+
+        for (m in mask.toCharArray()) {
+            if (m != '#' && str.length > old.length) {
+                mascara += m
+                continue
+            }
+            try {
+                mascara += str[i]
+            } catch (e: Exception) {
+                break
+            }
+
+            i++
+        }
+
+        isUpdating = true
+        editText.setText(mascara)
+        editText.setSelection(mascara.length)
     }
 
     companion object {
-        fun buildCpf() = MaskWatcher("###.###.###-##")
-        fun buildCep() = MaskWatcher("##.###-###")
-        fun build9DigitPhone() = MaskWatcher("(##) # ####-####")
-        fun build8DigitPhone() = MaskWatcher("(##) ####-####")
-        fun buildCnpj() = MaskWatcher("##.###.###/####-##")
-        fun buildRg() = MaskWatcher("########")
+        const val cpf = "###.###.###-##"
+        const val cep = "##.###-###"
+        const val nineDigitPhone = "(##) # ####-####"
+        const val eightDigitPhone = "(##) ####-####"
+        const val cnpj = "##.###.###/####-##"
+        const val rg = "########"
+
+        fun buildCpf(editText: EditText) = MaskWatcher(cpf, editText)
+        fun buildCep(editText: EditText) = MaskWatcher(cep, editText)
+        fun build9DigitPhone(editText: EditText) = MaskWatcher(nineDigitPhone, editText)
+        fun build8DigitPhone(editText: EditText) = MaskWatcher(eightDigitPhone, editText)
+        fun buildCnpj(editText: EditText) = MaskWatcher(cnpj, editText)
+        fun buildRg(editText: EditText) = MaskWatcher(rg, editText)
+
+        fun unmask(s: String): String {
+            return s.replace("[.]".toRegex(), "").replace("[-]".toRegex(), "").replace("[/]".toRegex(), "").replace("[(]".toRegex(), "").replace("[ ]".toRegex(), "").replace("[:]".toRegex(), "").replace("[)]".toRegex(), "")
+        }
     }
 }
