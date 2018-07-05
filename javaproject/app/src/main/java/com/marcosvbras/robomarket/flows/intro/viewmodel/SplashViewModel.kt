@@ -13,15 +13,11 @@ class SplashViewModel(private val callback: BaseActivityCallback) : BaseViewMode
     private var disposable: Disposable? = null
     private val userModel: UserModel = UserModel()
 
-    init {
-        authenticate()
-    }
-
-    private fun authenticate() {
+    fun authenticate() {
         cleanupSubscriptions()
 
         userModel.getAuthenticatedUser()!!
-                .subscribe({ next -> App.getInstance().user = next }, { error ->
+                .subscribe({ next -> App.getInstance().user = next }, {
                     cleanupSubscriptions()
                     callback.openActivity(LoginActivity::class.java, true)
                 }, {

@@ -43,7 +43,7 @@ open class BaseActivity : AppCompatActivity(), BaseActivityCallback {
             finish()
     }
 
-    override fun openActivity(activity: Class<*>, bundle: Bundle, finishCurrentActivity: Boolean) {
+    override fun openActivity(activity: Class<*>, bundle: Bundle?, finishCurrentActivity: Boolean) {
         val intent = Intent(this, activity)
 
         if (bundle != null)
@@ -55,7 +55,7 @@ open class BaseActivity : AppCompatActivity(), BaseActivityCallback {
             finish()
     }
 
-    override fun openActivityForResult(activity: Class<*>, bundle: Bundle, requestCode: Int) {
+    override fun openActivityForResult(activity: Class<*>, bundle: Bundle?, requestCode: Int) {
         val intent = Intent(this, activity)
 
         if (bundle != null)

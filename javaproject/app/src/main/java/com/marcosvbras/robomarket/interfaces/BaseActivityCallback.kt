@@ -12,9 +12,9 @@ interface BaseActivityCallback {
 
     fun openActivity(activity: Class<*>, finishCurrentActivity: Boolean)
 
-    fun openActivity(activity: Class<*>, bundle: Bundle, finishCurrentActivity: Boolean)
+    fun openActivity(activity: Class<*>, bundle: Bundle?, finishCurrentActivity: Boolean)
 
-    fun openActivityForResult(activity: Class<*>, bundle: Bundle, requestCode: Int)
+    fun openActivityForResult(activity: Class<*>, bundle: Bundle?, requestCode: Int)
 
     fun setToolbar(viewId: Int, displayHomeAsUpEnabled: Boolean)
 

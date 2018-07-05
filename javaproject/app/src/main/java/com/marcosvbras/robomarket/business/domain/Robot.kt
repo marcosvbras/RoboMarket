@@ -19,43 +19,64 @@ class Robot : Parcelable {
 
     constructor()
 
-    constructor(`in`: Parcel) {
-        objectId = `in`.readString()
-        updatedAt = `in`.readString()
-        createdAt = `in`.readString()
-        model = `in`.readString()
-        color = `in`.readString()
-        year = `in`.readInt()
-        price = `in`.readInt()
-        manufacturer = `in`.readString()
-        quantity = `in`.readInt()
-        imageUrl = `in`.readString()
-        userId = `in`.readString()
+    constructor(parcel: Parcel) {
+        objectId = parcel.readString()
+        updatedAt = parcel.readString()
+        createdAt = parcel.readString()
+        model = parcel.readString()
+        color = parcel.readString()
+        year = parcel.readInt()
+        price = parcel.readInt()
+        manufacturer = parcel.readString()
+        quantity = parcel.readInt()
+        imageUrl = parcel.readString()
+        userId = parcel.readString()
     }
 
     override fun describeContents(): Int {
         return 0
     }
 
-    override fun writeToParcel(dest: Parcel, flags: Int) {
-        dest.writeString(objectId)
-        dest.writeString(updatedAt)
-        dest.writeString(createdAt)
-        dest.writeString(model)
-        dest.writeString(color)
-        dest.writeInt(year!!)
-        dest.writeInt(price!!)
-        dest.writeString(manufacturer)
-        dest.writeInt(quantity!!)
-        dest.writeString(imageUrl)
-        dest.writeString(userId)
+    override fun writeToParcel(parcel: Parcel, flags: Int) {
+        parcel.writeString(objectId)
+        parcel.writeString(updatedAt)
+        parcel.writeString(createdAt)
+        parcel.writeString(model)
+        parcel.writeString(color)
+        parcel.writeInt(year!!)
+        parcel.writeInt(price!!)
+        parcel.writeString(manufacturer)
+        parcel.writeInt(quantity!!)
+        parcel.writeString(imageUrl)
+        parcel.writeString(userId)
     }
 
-    companion object {
+//    companion object {
+//
+//        val CREATOR: Parcelable.Creator<Robot> = object : Parcelable.Creator<Robot> {
+//            override fun createFromParcel(`in`: Parcel): Robot {
+//                return Robot(`in`)
+//            }
+//
+//            override fun newArray(size: Int): Array<Robot?> {
+//                return arrayOfNulls(size)
+//            }
+//        }
+//    }
 
-        val CREATOR: Parcelable.Creator<Robot> = object : Parcelable.Creator<Robot> {
-            override fun createFromParcel(`in`: Parcel): Robot {
-                return Robot(`in`)
+//    companion object CREATOR : Parcelable.Creator<Robot> {
+//        override fun createFromParcel(parcel: Parcel): Robot {
+//            return Robot(parcel)
+//        }
+//
+//        override fun newArray(size: Int): Array<Robot?> {
+//            return arrayOfNulls(size)
+//        }
+//    }
+    companion object {
+        @JvmField val CREATOR = object : Parcelable.Creator<Robot> {
+            override fun createFromParcel(parcel: Parcel): Robot {
+                return Robot(parcel)
             }
 
             override fun newArray(size: Int): Array<Robot?> {

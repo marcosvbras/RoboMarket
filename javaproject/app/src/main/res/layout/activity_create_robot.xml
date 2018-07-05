@@ -3,6 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <data>
+        <import type="android.view.View"/>
         <variable
             name="viewModel"
             type="com.marcosvbras.robomarket.flows.createrobot.viewmodel.CreateRobotViewModel"/>
@@ -101,7 +102,19 @@
                     android:layout_below="@id/edit_text_price"
                     android:layout_width="match_parent"
                     android:orientation="horizontal"
+                    android:layout_marginTop="5dp"
                     android:layout_height="wrap_content">
+                    <android.support.design.widget.FloatingActionButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp"
+                        android:clickable="true"
+                        android:layout_gravity="center_vertical"
+                        android:onClick="@{() -> viewModel.decreaseQuantity()}"
+                        android:shadowColor="@android:color/transparent"
+                        android:src="@drawable/ic_minus_white_48dp"
+                        android:tint="@android:color/white"
+                        app:fabSize="mini"
+                        android:focusable="true" />
                     <com.rengwuxian.materialedittext.MaterialEditText
                         android:id="@+id/edit_text_quantity"
                         android:layout_width="0dp"
@@ -109,37 +122,23 @@
                         android:layout_height="wrap_content"
                         android:hint="@string/hint_quantity"
                         android:text="@={viewModel.quantity}"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginLeft="5dp"
                         android:inputType="numberSigned"
                         app:met_floatingLabel="highlight"
                         app:met_primaryColor="@color/colorAccent" />
-
-                    <LinearLayout
-                        android:orientation="horizontal"
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:background="@drawable/circular_quantity_control"
-                        android:layout_height="50dp">
-                        <android.support.design.widget.FloatingActionButton
-                            android:layout_width="wrap_content"
-                            android:layout_height="40dp"
-                            android:clickable="true"
-                            android:layout_marginRight="5dp"
-                            android:onClick="@{() -> viewModel.increaseQuantity()}"
-                            android:src="@drawable/ic_plus_white_48dp"
-                            android:shadowColor="@android:color/transparent"
-                            android:tint="@android:color/white"
-                            app:fabSize="mini" />
-                        <android.support.design.widget.FloatingActionButton
-                            android:layout_width="wrap_content"
-                            android:layout_height="40dp"
-                            android:clickable="true"
-                            android:onClick="@{() -> viewModel.decreaseQuantity()}"
-                            android:shadowColor="@android:color/transparent"
-                            android:src="@drawable/ic_minus_white_48dp"
-                            android:tint="@android:color/white"
-                            app:fabSize="mini" />
-                    </LinearLayout>
+                    <android.support.design.widget.FloatingActionButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp"
+                        android:clickable="true"
+                        android:layout_marginRight="5dp"
+                        android:layout_gravity="center_vertical"
+                        android:onClick="@{() -> viewModel.increaseQuantity()}"
+                        android:src="@drawable/ic_plus_white_48dp"
+                        android:shadowColor="@android:color/transparent"
+                        android:tint="@android:color/white"
+                        app:fabSize="mini"
+                        android:focusable="true" />
                 </LinearLayout>
 
                 <ImageView
@@ -176,6 +175,22 @@
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+
+            <ProgressBar
+                android:id="@+id/progressBar2"
+                android:layout_width="0dp"
+                android:layout_height="20dp"
+                android:layout_marginBottom="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:indeterminateTint="@android:color/white"
+                android:visibility="@{viewModel.isLoading ? View.VISIBLE : View.INVISIBLE}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button_save"
+                tools:ignore="UnusedAttribute" />
 
         </android.support.constraint.ConstraintLayout>
     </ScrollView>

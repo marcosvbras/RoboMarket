@@ -17,7 +17,7 @@ import com.rengwuxian.materialedittext.MaterialEditText;
 
 public class DataBinder {
 
-    @BindingAdapter(value="setError")
+    @BindingAdapter({"setError"})
     public static void setError(MaterialEditText editText, ErrorObservable errorObservable) {
         if(errorObservable.hasError()) {
             if(errorObservable.getErrorResource() != null)
@@ -29,20 +29,20 @@ public class DataBinder {
         }
     }
 
-    @BindingAdapter(value="url_image")
+    @BindingAdapter({"url_image"})
     public static void setAvatar(ImageView imageView, String url) {
         RequestOptions requestOptions = new RequestOptions()
                 .placeholder(R.drawable.ic_robot_grey600_48dp);
         Glide.with(imageView.getContext()).load(url).apply(requestOptions).into(imageView);
     }
 
-    @BindingAdapter("onNavigationItemSelected")
+    @BindingAdapter({"onNavigationItemSelected"})
     public static void setOnNavigationItemSelectedListener(
             BottomNavigationView view, BottomNavigationView.OnNavigationItemSelectedListener listener) {
         view.setOnNavigationItemSelectedListener(listener);
     }
 
-    @BindingAdapter("selection")
+    @BindingAdapter({"selection"})
     public static void setSelection(Spinner spinner, String item) {
         SpinnerAdapter spinnerAdapter = spinner.getAdapter();
 

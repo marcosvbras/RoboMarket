@@ -36,8 +36,8 @@ public class ProfileFragment extends Fragment implements BaseActivityCallback {
                 inflater, R.layout.fragment_profile, container, false);
         view = fragmentBinding.getRoot();
         fragmentBinding.setViewModel(createViewModel());
-        showInfo();
         setHasOptionsMenu(true);
+        showInfo();
         return view;
     }
 

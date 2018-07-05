@@ -9,9 +9,9 @@ import com.marcosvbras.robomarket.interfaces.BaseActivityCallback
 class CreateRobotViewModelFactory : ViewModelProvider.NewInstanceFactory {
 
     private val activityCallback: BaseActivityCallback
-    private val robot: Robot
+    private val robot: Robot?
 
-    constructor(activityCallback: BaseActivityCallback, robot: Robot) : super() {
+    constructor(activityCallback: BaseActivityCallback, robot: Robot?) : super() {
         this.activityCallback = activityCallback
         this.robot = robot
     }

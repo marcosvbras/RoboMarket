@@ -32,7 +32,7 @@ class CreateSaleViewModel(private val callback: BaseActivityCallback) : BaseView
 
     fun select() {
         callback.openActivityForResult(
-                SelectRobotActivity::class.java, null!!, Constants.Other.SELECT_ROBOT_REQUEST_CODE
+                SelectRobotActivity::class.java, null, Constants.Other.SELECT_ROBOT_REQUEST_CODE
         )
     }
 

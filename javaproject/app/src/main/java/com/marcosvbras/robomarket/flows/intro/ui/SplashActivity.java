@@ -24,9 +24,16 @@ public class SplashActivity extends BaseActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         activityBinding = DataBindingUtil.setContentView(this, R.layout.activity_splash);
         activityBinding.setViewModel(createViewModel());
+        activityBinding.executePendingBindings();
     }
 
     private SplashViewModel createViewModel() {
         return ViewModelProviders.of(this, new SplashViewModelFactory(this)).get(SplashViewModel.class);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        activityBinding.getViewModel().authenticate();
     }
 }

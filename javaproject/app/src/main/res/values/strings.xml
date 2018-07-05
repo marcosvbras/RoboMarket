@@ -39,6 +39,7 @@
     <string name="item_field_model">Model:</string>
     <string name="error_stock_not_enough">There is no robots left in stock</string>
     <string name="no_robots_found">No robots found</string>
+    <string name="no_sales_found">No sales found</string>
     <string name="edit_profile_activity">Edit Profile</string>
     <string name="item_field_quantity">Quantity:</string>
     <string name="item_field_price">Price:</string>
