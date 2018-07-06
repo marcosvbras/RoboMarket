@@ -6,12 +6,12 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.marcosvbras.robomarket.R;
-import com.marcosvbras.robomarket.app.BaseActivity;
+import com.marcosvbras.robomarket.app.Activity;
 import com.marcosvbras.robomarket.databinding.ActivityRegisterBinding;
 import com.marcosvbras.robomarket.flows.register.viewmodel.RegisterViewModel;
 import com.marcosvbras.robomarket.flows.register.viewmodel.RegisterViewModelFactory;
 
-public class RegisterActivity extends BaseActivity {
+public class RegisterActivity extends Activity {
 
     private ActivityRegisterBinding activityBinding;
 

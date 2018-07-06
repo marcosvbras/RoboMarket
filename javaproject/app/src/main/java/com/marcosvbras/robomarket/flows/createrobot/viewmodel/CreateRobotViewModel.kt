@@ -8,14 +8,14 @@ import com.marcosvbras.robomarket.R
 import com.marcosvbras.robomarket.app.App
 import com.marcosvbras.robomarket.business.domain.Robot
 import com.marcosvbras.robomarket.business.model.RobotModel
-import com.marcosvbras.robomarket.interfaces.BaseActivityCallback
+import com.marcosvbras.robomarket.interfaces.ActivityCallback
 import com.marcosvbras.robomarket.utils.Constants
 import com.marcosvbras.robomarket.utils.ErrorObservable
 import com.marcosvbras.robomarket.viewmodels.BaseViewModel
 import io.reactivex.disposables.Disposable
 import java.util.*
 
-class CreateRobotViewModel(private val callback: BaseActivityCallback, private var savedRobot: Robot?) : BaseViewModel() {
+class CreateRobotViewModel(private val callback: ActivityCallback, private var savedRobot: Robot?) : BaseViewModel() {
 
     private var disposable: Disposable? = null
     private val robotModel: RobotModel

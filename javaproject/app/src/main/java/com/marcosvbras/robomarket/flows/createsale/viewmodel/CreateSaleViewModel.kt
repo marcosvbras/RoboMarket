@@ -11,7 +11,7 @@ import com.marcosvbras.robomarket.flows.createsale.ui.adapter.RobotSaleAdapter
 import com.marcosvbras.robomarket.flows.dialog.DialogFormActions
 import com.marcosvbras.robomarket.flows.dialog.SaleDialogFragment
 import com.marcosvbras.robomarket.flows.selectrobot.ui.SelectRobotActivity
-import com.marcosvbras.robomarket.interfaces.BaseActivityCallback
+import com.marcosvbras.robomarket.interfaces.ActivityCallback
 import com.marcosvbras.robomarket.interfaces.OnRecyclerClick
 import com.marcosvbras.robomarket.utils.Constants
 import com.marcosvbras.robomarket.viewmodels.BaseViewModel
@@ -21,7 +21,7 @@ import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 import java.util.ArrayList
 
-class CreateSaleViewModel(private val callback: BaseActivityCallback) : BaseViewModel(), OnRecyclerClick, DialogFormActions {
+class CreateSaleViewModel(private val callback: ActivityCallback) : BaseViewModel(), OnRecyclerClick, DialogFormActions {
 
     private var disposable: Disposable? = null
     private val listRobotQuantity = mutableListOf<ItemRobotQuantity>()

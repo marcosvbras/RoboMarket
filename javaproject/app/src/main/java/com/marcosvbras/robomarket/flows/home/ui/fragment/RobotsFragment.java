@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.DialogFragment;
-import android.support.v4.app.Fragment;
 import android.support.v7.widget.SearchView;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -16,41 +15,48 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.marcosvbras.robomarket.app.BaseFragment;
 import com.marcosvbras.robomarket.databinding.FragmentRobotsBinding;
 import com.marcosvbras.robomarket.R;
 import com.marcosvbras.robomarket.app.App;
 import com.marcosvbras.robomarket.flows.createrobot.ui.CreateRobotActivity;
+import com.marcosvbras.robomarket.flows.home.interfaces.HomeActivityCallback;
 import com.marcosvbras.robomarket.flows.home.ui.activity.HomeActivity;
 import com.marcosvbras.robomarket.flows.home.viewmodel.RobotsViewModel;
 import com.marcosvbras.robomarket.flows.home.viewmodel.RobotsViewModelFactory;
 import com.marcosvbras.robomarket.flows.login.ui.LoginActivity;
-import com.marcosvbras.robomarket.interfaces.BaseActivityCallback;
+import com.marcosvbras.robomarket.interfaces.ActivityCallback;
 import com.marcosvbras.robomarket.utils.Constants;
 
 import org.jetbrains.annotations.NotNull;
 
 import static android.app.Activity.RESULT_OK;
 
-public class RobotsFragment extends Fragment implements BaseActivityCallback {
+public class RobotsFragment extends BaseFragment {
 
     private FragmentRobotsBinding fragmentBinding;
-    private View view;
     private SearchView searchView;
+    private HomeActivityCallback activityCallback;
+
+    public static RobotsFragment newInstance(@NonNull HomeActivityCallback activityCallback) {
+        RobotsFragment robotsFragment = new RobotsFragment();
+        robotsFragment.activityCallback = activityCallback;
+        return robotsFragment;
+    }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         fragmentBinding = DataBindingUtil.inflate(
                 inflater, R.layout.fragment_robots, container, false);
-        view = fragmentBinding.getRoot();
         fragmentBinding.setViewModel(createViewModel());
         setHasOptionsMenu(true);
 
-        return view;
+        return fragmentBinding.getRoot();
     }
 
     private RobotsViewModel createViewModel() {
-        return ViewModelProviders.of(this, new RobotsViewModelFactory(this))
+        return ViewModelProviders.of(this, new RobotsViewModelFactory(activityCallback))
                 .get(RobotsViewModel.class);
     }
 
@@ -100,7 +106,7 @@ public class RobotsFragment extends Fragment implements BaseActivityCallback {
                 break;
             case R.id.menu_logout:
                 App.getInstance().deleteCredentials();
-                ((HomeActivity)getActivity()).openActivity(LoginActivity.class, null, true);
+                activityCallback.openActivity(LoginActivity.class, null, true);
                 break;
         }
 
@@ -113,68 +119,4 @@ public class RobotsFragment extends Fragment implements BaseActivityCallback {
             fragmentBinding.getViewModel().listRobots(null);
     }
 
-    @Override
-    public void showDialogMessage(String message) {
-
-    }
-
-    @Override
-    public void showDialogMessage(int message) {
-
-    }
-
-    @Override
-    public void openActivity(Class<?> activity, Bundle bundle, boolean finishCurrentActivity) {
-        ((HomeActivity)getActivity()).openActivity(activity, bundle, finishCurrentActivity);
-    }
-
-    @Override
-    public void openActivityWithAnimation(@NotNull Class<?> activity, @org.jetbrains.annotations.Nullable Bundle bundle, boolean finishCurrentActivity, int enterAnimation, int exitAnimation) {
-
-    }
-
-    @Override
-    public void openActivityForResult(Class<?> activity, Bundle bundle, int requestCode) {
-
-    }
-
-    @Override
-    public void setToolbar(int viewId, boolean displayHomeAsUpEnabled) {
-
-    }
-
-    @Override
-    public void finishCurrentActivity() {
-
-    }
-
-    @Override
-    public void setActivityResult(int resultCode) {
-        ((HomeActivity)getActivity()).setActivityResult(resultCode);
-    }
-
-    @Override
-    public void setActivityResult(int resultCode, Intent intent) {
-        ((HomeActivity)getActivity()).setActivityResult(resultCode, intent);
-    }
-
-    @Override
-    public void setActivityResult(int resultCode, Bundle bundle) {
-
-    }
-
-    @Override
-    public void showCustomAlertDialog(DialogFragment dialogFragment) {
-
-    }
-
-    @Override
-    public void showSnackBar(@NotNull String message, int length) {
-
-    }
-
-    @Override
-    public void showSnackBar(int message, int length) {
-
-    }
 }

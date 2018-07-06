@@ -6,12 +6,12 @@ import android.os.Bundle
 import com.marcosvbras.robomarket.business.domain.Robot
 import com.marcosvbras.robomarket.business.model.RobotModel
 import com.marcosvbras.robomarket.flows.createrobot.ui.CreateRobotActivity
-import com.marcosvbras.robomarket.interfaces.BaseActivityCallback
+import com.marcosvbras.robomarket.interfaces.ActivityCallback
 import com.marcosvbras.robomarket.utils.Constants
 import com.marcosvbras.robomarket.viewmodels.BaseViewModel
 import io.reactivex.disposables.Disposable
 
-class RobotDetailViewModel(private val callback: BaseActivityCallback) : BaseViewModel() {
+class RobotDetailViewModel(private val callback: ActivityCallback) : BaseViewModel() {
 
     private var robot: Robot? = null
     private val robotModel: RobotModel = RobotModel()

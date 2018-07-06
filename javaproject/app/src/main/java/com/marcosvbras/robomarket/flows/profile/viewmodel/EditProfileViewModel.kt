@@ -3,7 +3,6 @@ package com.marcosvbras.robomarket.flows.profile.viewmodel
 import android.annotation.SuppressLint
 import android.databinding.ObservableField
 import android.text.TextUtils
-import android.text.TextWatcher
 import android.util.Patterns
 import android.view.View
 import android.widget.AdapterView
@@ -11,7 +10,7 @@ import com.marcosvbras.robomarket.R
 import com.marcosvbras.robomarket.app.App
 import com.marcosvbras.robomarket.business.domain.User
 import com.marcosvbras.robomarket.business.model.UserModel
-import com.marcosvbras.robomarket.interfaces.BaseActivityCallback
+import com.marcosvbras.robomarket.interfaces.ActivityCallback
 import com.marcosvbras.robomarket.utils.Constants
 import com.marcosvbras.robomarket.utils.ErrorObservable
 import com.marcosvbras.robomarket.utils.MaskWatcher
@@ -19,7 +18,7 @@ import com.marcosvbras.robomarket.viewmodels.BaseViewModel
 import io.reactivex.disposables.Disposable
 import java.util.*
 
-class EditProfileViewModel(private val callback: BaseActivityCallback) : BaseViewModel() {
+class EditProfileViewModel(private val callback: ActivityCallback) : BaseViewModel() {
 
     private var disposable: Disposable? = null
     private var user: User? = null

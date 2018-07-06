@@ -7,12 +7,12 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import com.marcosvbras.robomarket.R;
-import com.marcosvbras.robomarket.app.BaseActivity;
+import com.marcosvbras.robomarket.app.Activity;
 import com.marcosvbras.robomarket.databinding.ActivitySplashBinding;
 import com.marcosvbras.robomarket.flows.intro.viewmodel.SplashViewModel;
 import com.marcosvbras.robomarket.flows.intro.viewmodel.SplashViewModelFactory;
 
-public class SplashActivity extends BaseActivity {
+public class SplashActivity extends Activity {
 
     private ActivitySplashBinding activityBinding;
 

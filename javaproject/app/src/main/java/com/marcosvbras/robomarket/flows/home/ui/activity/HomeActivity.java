@@ -8,13 +8,13 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 
 import com.marcosvbras.robomarket.R;
-import com.marcosvbras.robomarket.app.BaseActivity;
+import com.marcosvbras.robomarket.app.Activity;
 import com.marcosvbras.robomarket.databinding.ActivityHomeBinding;
-import com.marcosvbras.robomarket.flows.home.interfaces.HomeActivityCallbacks;
+import com.marcosvbras.robomarket.flows.home.interfaces.HomeActivityCallback;
 import com.marcosvbras.robomarket.flows.home.viewmodel.HomeViewModel;
 import com.marcosvbras.robomarket.flows.home.viewmodel.HomeViewModelFactory;
 
-public class HomeActivity extends BaseActivity implements HomeActivityCallbacks {
+public class HomeActivity extends Activity implements HomeActivityCallback {
 
     private ActivityHomeBinding activityBinding;
     private FragmentManager fragmentManager;

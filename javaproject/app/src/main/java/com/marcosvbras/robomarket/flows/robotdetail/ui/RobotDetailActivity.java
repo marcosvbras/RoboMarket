@@ -7,14 +7,14 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.marcosvbras.robomarket.R;
-import com.marcosvbras.robomarket.app.BaseActivity;
+import com.marcosvbras.robomarket.app.Activity;
 import com.marcosvbras.robomarket.business.domain.Robot;
 import com.marcosvbras.robomarket.databinding.ActivityRobotDetailBinding;
 import com.marcosvbras.robomarket.flows.robotdetail.viewmodel.RobotDetailViewModel;
 import com.marcosvbras.robomarket.flows.robotdetail.viewmodel.RobotDetailViewModelFactory;
 import com.marcosvbras.robomarket.utils.Constants;
 
-public class RobotDetailActivity extends BaseActivity {
+public class RobotDetailActivity extends Activity {
 
     private ActivityRobotDetailBinding activityBinding;
     private Robot robot;

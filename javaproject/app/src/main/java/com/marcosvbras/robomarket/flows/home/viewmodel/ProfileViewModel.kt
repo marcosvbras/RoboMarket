@@ -3,13 +3,14 @@ package com.marcosvbras.robomarket.flows.home.viewmodel
 import com.marcosvbras.robomarket.R
 import com.marcosvbras.robomarket.app.App
 import com.marcosvbras.robomarket.business.model.UserModel
+import com.marcosvbras.robomarket.flows.home.interfaces.HomeActivityCallback
 import com.marcosvbras.robomarket.flows.login.ui.LoginActivity
 import com.marcosvbras.robomarket.flows.profile.ui.EditProfileActivity
-import com.marcosvbras.robomarket.interfaces.BaseActivityCallback
+import com.marcosvbras.robomarket.interfaces.ActivityCallback
 import com.marcosvbras.robomarket.viewmodels.BaseViewModel
 import io.reactivex.disposables.Disposable
 
-class ProfileViewModel(private val callback: BaseActivityCallback) : BaseViewModel() {
+class ProfileViewModel(private val callback: HomeActivityCallback) : BaseViewModel() {
 
     private val userModel: UserModel = UserModel()
     private var disposable: Disposable? = null

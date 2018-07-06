@@ -6,14 +6,14 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.marcosvbras.robomarket.R;
-import com.marcosvbras.robomarket.app.BaseActivity;
+import com.marcosvbras.robomarket.app.Activity;
 import com.marcosvbras.robomarket.business.domain.Robot;
 import com.marcosvbras.robomarket.databinding.ActivityCreateRobotBinding;
 import com.marcosvbras.robomarket.flows.createrobot.viewmodel.CreateRobotViewModel;
 import com.marcosvbras.robomarket.flows.createrobot.viewmodel.CreateRobotViewModelFactory;
 import com.marcosvbras.robomarket.utils.Constants;
 
-public class CreateRobotActivity extends BaseActivity {
+public class CreateRobotActivity extends Activity {
 
     private ActivityCreateRobotBinding activityBinding;
     private Robot robot;

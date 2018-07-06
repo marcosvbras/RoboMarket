@@ -15,36 +15,43 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.marcosvbras.robomarket.app.BaseFragment;
 import com.marcosvbras.robomarket.databinding.FragmentProfileBinding;
 import com.marcosvbras.robomarket.R;
 import com.marcosvbras.robomarket.app.App;
+import com.marcosvbras.robomarket.flows.home.interfaces.HomeActivityCallback;
 import com.marcosvbras.robomarket.flows.home.ui.activity.HomeActivity;
 import com.marcosvbras.robomarket.flows.home.viewmodel.ProfileViewModel;
 import com.marcosvbras.robomarket.flows.home.viewmodel.ProfileViewModelFactory;
-import com.marcosvbras.robomarket.interfaces.BaseActivityCallback;
+import com.marcosvbras.robomarket.interfaces.ActivityCallback;
 import com.marcosvbras.robomarket.flows.login.ui.LoginActivity;
 
 import org.jetbrains.annotations.NotNull;
 
-public class ProfileFragment extends Fragment implements BaseActivityCallback {
+public class ProfileFragment extends BaseFragment {
 
     private FragmentProfileBinding fragmentBinding;
-    private View view;
+    private HomeActivityCallback activityCallback;
+
+    public static ProfileFragment newInstance(@NonNull HomeActivityCallback activityCallback) {
+        ProfileFragment profileFragment = new ProfileFragment();
+        profileFragment.activityCallback = activityCallback;
+        return profileFragment;
+    }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         fragmentBinding = DataBindingUtil.inflate(
                 inflater, R.layout.fragment_profile, container, false);
-        view = fragmentBinding.getRoot();
-        fragmentBinding.setViewModel(createViewModel());
         setHasOptionsMenu(true);
+        fragmentBinding.setViewModel(createViewModel());
         showInfo();
-        return view;
+        return fragmentBinding.getRoot();
     }
 
     private ProfileViewModel createViewModel() {
-        return ViewModelProviders.of(this, new ProfileViewModelFactory(this))
+        return ViewModelProviders.of(this, new ProfileViewModelFactory(activityCallback))
                 .get(ProfileViewModel.class);
     }
 
@@ -65,69 +72,6 @@ public class ProfileFragment extends Fragment implements BaseActivityCallback {
     }
 
     @Override
-    public void showDialogMessage(String message) {
-        ((HomeActivity)getActivity()).showDialogMessage(message);
-    }
-
-    @Override
-    public void showDialogMessage(int message) {
-        ((HomeActivity)getActivity()).showDialogMessage(message);
-    }
-
-    @Override
-    public void openActivity(Class<?> activity, Bundle bundle, boolean finishCurrentActivity) {
-        ((HomeActivity)getActivity()).openActivity(activity, bundle, finishCurrentActivity);
-    }
-
-    @Override
-    public void openActivityWithAnimation(@NotNull Class<?> activity, @org.jetbrains.annotations.Nullable Bundle bundle, boolean finishCurrentActivity, int enterAnimation, int exitAnimation) {
-
-    }
-
-    @Override
-    public void openActivityForResult(Class<?> activity, Bundle bundle, int requestCode) {
-
-    }
-
-    @Override
-    public void setToolbar(int viewId, boolean displayHomeAsUpEnabled) {
-    }
-
-    @Override
-    public void finishCurrentActivity() {
-    }
-
-    @Override
-    public void setActivityResult(int resultCode) {
-
-    }
-
-    @Override
-    public void setActivityResult(int resultCode, Intent intent) {
-
-    }
-
-    @Override
-    public void setActivityResult(int resultCode, Bundle bundle) {
-
-    }
-
-    @Override
-    public void showCustomAlertDialog(DialogFragment dialogFragment) {
-
-    }
-
-    @Override
-    public void showSnackBar(@NotNull String message, int length) {
-
-    }
-
-    @Override
-    public void showSnackBar(int message, int length) {
-
-    }
-
-    @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         getActivity().getMenuInflater().inflate(R.menu.menu_home, menu);
         menu.findItem(R.id.menu_add).setVisible(false);
@@ -139,7 +83,7 @@ public class ProfileFragment extends Fragment implements BaseActivityCallback {
     public boolean onOptionsItemSelected(MenuItem item) {
         if(item.getItemId() == R.id.menu_logout) {
             App.getInstance().deleteCredentials();
-            ((HomeActivity)getActivity()).openActivity(LoginActivity.class, null,true);
+            activityCallback.openActivity(LoginActivity.class, null,true);
         }
 
         return super.onOptionsItemSelected(item);

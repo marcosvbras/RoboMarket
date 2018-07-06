@@ -2,18 +2,18 @@ package com.marcosvbras.robomarket.flows.home.viewmodel
 
 import android.view.MenuItem
 import com.marcosvbras.robomarket.R
-import com.marcosvbras.robomarket.flows.home.interfaces.HomeActivityCallbacks
+import com.marcosvbras.robomarket.flows.home.interfaces.HomeActivityCallback
 import com.marcosvbras.robomarket.flows.home.ui.fragment.ProfileFragment
 import com.marcosvbras.robomarket.flows.home.ui.fragment.RobotsFragment
 import com.marcosvbras.robomarket.flows.home.ui.fragment.SalesFragment
 import com.marcosvbras.robomarket.utils.Constants
 import com.marcosvbras.robomarket.viewmodels.BaseViewModel
 
-class HomeViewModel(private val callback: HomeActivityCallbacks) : BaseViewModel() {
+class HomeViewModel(private val callback: HomeActivityCallback) : BaseViewModel() {
 
-    private val salesFragment: SalesFragment = SalesFragment()
-    private val robotsFragment: RobotsFragment = RobotsFragment()
-    private val profileFragment: ProfileFragment = ProfileFragment()
+    private val salesFragment: SalesFragment = SalesFragment.newInstance(callback)
+    private val robotsFragment: RobotsFragment = RobotsFragment.newInstance(callback)
+    private val profileFragment: ProfileFragment = ProfileFragment.newInstance(callback)
 
     init {
         callback.replaceFragment(salesFragment, Constants.Other.SALES_FRAGMENT_TAG)
@@ -34,7 +34,5 @@ class HomeViewModel(private val callback: HomeActivityCallbacks) : BaseViewModel
         super.onCleared()
     }
 
-    override fun cleanupSubscriptions() {
-
-    }
+    override fun cleanupSubscriptions() {}
 }

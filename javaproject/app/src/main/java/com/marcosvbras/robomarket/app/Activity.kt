@@ -9,9 +9,9 @@ import android.support.v4.app.DialogFragment
 import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import com.marcosvbras.robomarket.R
-import com.marcosvbras.robomarket.interfaces.BaseActivityCallback
+import com.marcosvbras.robomarket.interfaces.ActivityCallback
 
-open class BaseActivity : AppCompatActivity(), BaseActivityCallback {
+open class Activity : AppCompatActivity(), ActivityCallback {
 
     private var alertDialog: AlertDialog.Builder? = null
 

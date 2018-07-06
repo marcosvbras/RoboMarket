@@ -6,12 +6,12 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.marcosvbras.robomarket.R;
-import com.marcosvbras.robomarket.app.BaseActivity;
+import com.marcosvbras.robomarket.app.Activity;
 import com.marcosvbras.robomarket.databinding.ActivityEditProfileBinding;
 import com.marcosvbras.robomarket.flows.profile.viewmodel.EditProfileViewModel;
 import com.marcosvbras.robomarket.flows.profile.viewmodel.EditProfileViewModelFactory;
 
-public class EditProfileActivity extends BaseActivity {
+public class EditProfileActivity extends Activity {
 
     private ActivityEditProfileBinding activityBinding;
 

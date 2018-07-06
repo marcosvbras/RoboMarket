@@ -5,12 +5,12 @@ import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 
 import com.marcosvbras.robomarket.R;
-import com.marcosvbras.robomarket.app.BaseActivity;
+import com.marcosvbras.robomarket.app.Activity;
 import com.marcosvbras.robomarket.databinding.ActivityLoginBinding;
 import com.marcosvbras.robomarket.flows.login.viewmodel.LoginViewModel;
 import com.marcosvbras.robomarket.flows.login.viewmodel.LoginViewModelFactory;
 
-public class LoginActivity extends BaseActivity {
+public class LoginActivity extends Activity {
 
     private ActivityLoginBinding activityBinding;
 

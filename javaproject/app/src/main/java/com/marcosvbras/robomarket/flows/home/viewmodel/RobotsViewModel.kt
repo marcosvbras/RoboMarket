@@ -7,16 +7,16 @@ import android.support.v7.widget.RecyclerView
 import com.marcosvbras.robomarket.app.App
 import com.marcosvbras.robomarket.business.domain.Robot
 import com.marcosvbras.robomarket.business.model.RobotModel
+import com.marcosvbras.robomarket.flows.home.interfaces.HomeActivityCallback
 import com.marcosvbras.robomarket.flows.home.ui.adapter.RobotAdapter
 import com.marcosvbras.robomarket.flows.robotdetail.ui.RobotDetailActivity
-import com.marcosvbras.robomarket.interfaces.BaseActivityCallback
+import com.marcosvbras.robomarket.interfaces.ActivityCallback
 import com.marcosvbras.robomarket.interfaces.OnRecyclerClick
 import com.marcosvbras.robomarket.utils.Constants
 import com.marcosvbras.robomarket.viewmodels.BaseViewModel
 import io.reactivex.disposables.Disposable
-import java.util.ArrayList
 
-class RobotsViewModel(private val callback: BaseActivityCallback) : BaseViewModel(), OnRecyclerClick {
+class RobotsViewModel(private val callback: HomeActivityCallback) : BaseViewModel(), OnRecyclerClick {
 
     private val robotModel: RobotModel = RobotModel()
     private var disposable: Disposable? = null

@@ -4,16 +4,16 @@ import android.databinding.ObservableBoolean
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import com.marcosvbras.robomarket.app.App
-import com.marcosvbras.robomarket.business.domain.Sale
 import com.marcosvbras.robomarket.business.model.SaleModel
+import com.marcosvbras.robomarket.flows.home.interfaces.HomeActivityCallback
 import com.marcosvbras.robomarket.flows.home.ui.adapter.SaleAdapter
-import com.marcosvbras.robomarket.interfaces.BaseActivityCallback
+import com.marcosvbras.robomarket.interfaces.ActivityCallback
 import com.marcosvbras.robomarket.interfaces.OnRecyclerClick
 import com.marcosvbras.robomarket.utils.Constants
 import com.marcosvbras.robomarket.viewmodels.BaseViewModel
 import io.reactivex.disposables.Disposable
 
-class SalesViewModel(private val callback: BaseActivityCallback) : BaseViewModel(), OnRecyclerClick {
+class SalesViewModel(private val callback: HomeActivityCallback) : BaseViewModel(), OnRecyclerClick {
 
     private var disposable: Disposable? = null
     private val saleModel: SaleModel = SaleModel()

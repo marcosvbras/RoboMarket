@@ -8,12 +8,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.marcosvbras.robomarket.R;
-import com.marcosvbras.robomarket.app.BaseActivity;
+import com.marcosvbras.robomarket.app.Activity;
 import com.marcosvbras.robomarket.databinding.ActivitySelectRobotBinding;
 import com.marcosvbras.robomarket.flows.selectrobot.viewmodel.SelectRobotViewModel;
 import com.marcosvbras.robomarket.flows.selectrobot.viewmodel.SelectRobotViewModelFactory;
 
-public class SelectRobotActivity extends BaseActivity {
+public class SelectRobotActivity extends Activity {
 
     private ActivitySelectRobotBinding activityBinding;
     private SearchView searchView;
