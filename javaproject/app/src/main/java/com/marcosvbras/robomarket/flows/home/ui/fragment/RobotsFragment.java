@@ -45,6 +45,7 @@ public class RobotsFragment extends Fragment implements BaseActivityCallback {
         view = fragmentBinding.getRoot();
         fragmentBinding.setViewModel(createViewModel());
         setHasOptionsMenu(true);
+
         return view;
     }
 

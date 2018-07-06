@@ -5,19 +5,25 @@ import com.genius.groupie.GroupAdapter
 import com.genius.groupie.ViewHolder
 import com.marcosvbras.robomarket.business.domain.Robot
 import com.marcosvbras.robomarket.interfaces.OnRecyclerClick
-import java.util.ArrayList
 import android.view.animation.AnimationUtils
 
 class RobotAdapter(private val onRecyclerClick: OnRecyclerClick) : GroupAdapter() {
 
-    private var listRobot: List<Robot>? = null
-    private var lastPosition = -1
+    var lastLoadedPosition = -1
 
-    fun updateItems(listItems: List<Robot>?) {
-        clear()
-        listRobot = listItems ?: ArrayList()
-        listItems?.forEach { add(ItemRobot(it, onRecyclerClick)) }
-        notifyDataSetChanged()
+    fun updateItems(listItems: List<Robot>, justAddValues: Boolean = false) {
+        if (justAddValues) {
+            val lastIndex = itemCount
+
+            for((index, robot) in listItems.withIndex()) {
+                add(ItemRobot(robot, onRecyclerClick))
+                notifyItemInserted(lastIndex + index)
+            }
+        } else {
+            clear()
+            listItems.forEach { add(ItemRobot(it, onRecyclerClick)) }
+            notifyDataSetChanged()
+        }
     }
 
     override fun onBindViewHolder(holder: ViewHolder<*>, position: Int, payloads: MutableList<Any>) {
@@ -26,10 +32,10 @@ class RobotAdapter(private val onRecyclerClick: OnRecyclerClick) : GroupAdapter(
     }
 
     private fun setAnimation(position: Int, viewToAnimate: View) {
-        if (position > lastPosition) {
+        if (position > lastLoadedPosition) {
             val animation = AnimationUtils.loadAnimation(viewToAnimate.context, android.R.anim.slide_in_left)
             viewToAnimate.startAnimation(animation)
-            lastPosition = position
+            lastLoadedPosition = position
         }
     }
 

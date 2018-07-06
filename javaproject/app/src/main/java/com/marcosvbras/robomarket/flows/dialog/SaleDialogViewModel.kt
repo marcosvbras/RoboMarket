@@ -10,7 +10,7 @@ import com.marcosvbras.robomarket.viewmodels.BaseViewModel
 
 class SaleDialogViewModel(private val itemRobotQuantity: ItemRobotQuantity?, private val dialogFormActions: DialogFormActions) : BaseViewModel() {
 
-    val itemQuantity = ObservableField("0")
+    val itemQuantity = ObservableField("1")
     val totalValue = ObservableField("Total: $ 0")
     val model = ObservableField<String>()
     val error = ErrorObservable()
@@ -60,7 +60,7 @@ class SaleDialogViewModel(private val itemRobotQuantity: ItemRobotQuantity?, pri
 
         var quantityInt = Integer.parseInt(itemQuantity.get()!!)
 
-        if (quantityInt > 0)
+        if (quantityInt > 1)
             quantityInt--
 
         itemQuantity.set(quantityInt.toString())

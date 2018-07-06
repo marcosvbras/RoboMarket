@@ -11,10 +11,19 @@ class SaleAdapter(private val onRecyclerClick: OnRecyclerClick) : GroupAdapter()
 
     private var lastPosition = -1
 
-    fun updateItems(listSale: MutableList<Sale>) {
-        clear()
-        listSale.forEach { add(ItemSale(it, onRecyclerClick)) }
-        notifyDataSetChanged()
+    fun updateItems(listSale: MutableList<Sale>, justAddValues: Boolean = false) {
+        if (justAddValues) {
+            val lastIndex = itemCount
+
+            for ((index, sale) in listSale.withIndex()) {
+                add(ItemSale(sale, onRecyclerClick))
+                notifyItemInserted(lastIndex + index)
+            }
+        } else {
+            clear()
+            listSale.forEach { add(ItemSale(it, onRecyclerClick)) }
+            notifyDataSetChanged()
+        }
     }
 
     override fun onBindViewHolder(holder: ViewHolder<*>, position: Int, payloads: MutableList<Any>) {
@@ -28,6 +37,11 @@ class SaleAdapter(private val onRecyclerClick: OnRecyclerClick) : GroupAdapter()
             viewToAnimate.startAnimation(animation)
             lastPosition = position
         }
+    }
+
+    override fun onViewDetachedFromWindow(holder: ViewHolder<*>) {
+        holder.itemView.clearAnimation()
+        super.onViewDetachedFromWindow(holder)
     }
 
 }
