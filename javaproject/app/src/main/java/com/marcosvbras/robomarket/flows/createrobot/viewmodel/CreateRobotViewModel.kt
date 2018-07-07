@@ -5,13 +5,11 @@ import android.databinding.ObservableField
 import android.os.Bundle
 import android.text.TextUtils
 import com.marcosvbras.robomarket.R
-import com.marcosvbras.robomarket.app.App
-import com.marcosvbras.robomarket.business.domain.Robot
+import com.marcosvbras.robomarket.app.*
+import com.marcosvbras.robomarket.business.beans.Robot
 import com.marcosvbras.robomarket.business.model.RobotModel
 import com.marcosvbras.robomarket.interfaces.ActivityCallback
-import com.marcosvbras.robomarket.utils.Constants
 import com.marcosvbras.robomarket.utils.ErrorObservable
-import com.marcosvbras.robomarket.viewmodels.BaseViewModel
 import io.reactivex.disposables.Disposable
 import java.util.*
 
@@ -93,7 +91,7 @@ class CreateRobotViewModel(private val callback: ActivityCallback, private var s
                 robot.year = Integer.parseInt(year.get()!!)
 
             if (savedRobot == null) {
-                robot.userId = App.getInstance().user.objectId
+                robot.userId = App.instance.user?.objectId
                 robotModel.createRobot(robot)!!
                         .subscribe({
 
@@ -116,7 +114,7 @@ class CreateRobotViewModel(private val callback: ActivityCallback, private var s
                         }, {
                             isLoading.set(false)
                             val bundle = Bundle()
-                            bundle.putParcelable(Constants.Other.ROBOT_TAG, savedRobot)
+                            bundle.putParcelable(ROBOT_TAG, savedRobot)
                             callback.setActivityResult(RESULT_OK, bundle)
                             callback.finishCurrentActivity()
                         }, { d ->
@@ -128,7 +126,7 @@ class CreateRobotViewModel(private val callback: ActivityCallback, private var s
     }
 
     fun changeAvatarImg() {
-        imageUrl.set(Constants.Other.ROBOHASH_API + Random().nextInt(500) + Constants.Other.ROBOHASH_SET_1_PARAM)
+        imageUrl.set(ROBOHASH_API + Random().nextInt(500) + ROBOHASH_SET_1_PARAM)
     }
 
     fun increaseQuantity() {

@@ -4,13 +4,13 @@ import android.databinding.ObservableBoolean
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import com.marcosvbras.robomarket.app.App
+import com.marcosvbras.robomarket.business.api.APIService.Companion.DEFAULT_ITEM_PAGINATION
+import com.marcosvbras.robomarket.business.api.APIService.Companion.DEFAULT_ITEM_SKIP
 import com.marcosvbras.robomarket.business.model.SaleModel
 import com.marcosvbras.robomarket.flows.home.interfaces.HomeActivityCallback
 import com.marcosvbras.robomarket.flows.home.ui.adapter.SaleAdapter
-import com.marcosvbras.robomarket.interfaces.ActivityCallback
 import com.marcosvbras.robomarket.interfaces.OnRecyclerClick
-import com.marcosvbras.robomarket.utils.Constants
-import com.marcosvbras.robomarket.viewmodels.BaseViewModel
+import com.marcosvbras.robomarket.app.BaseViewModel
 import io.reactivex.disposables.Disposable
 
 class SalesViewModel(private val callback: HomeActivityCallback) : BaseViewModel(), OnRecyclerClick {
@@ -35,8 +35,8 @@ class SalesViewModel(private val callback: HomeActivityCallback) : BaseViewModel
                     val lastVisibleItem = layoutManager.findLastVisibleItemPosition() + 1
 
                     if (!isLoadingMore.get() && saleAdapter.itemCount == lastVisibleItem &&
-                            lastItemCountResponse == Constants.Api.DEFAULT_ITEM_PAGINATION) {
-                        skip += Constants.Api.DEFAULT_ITEM_SKIP
+                            lastItemCountResponse == DEFAULT_ITEM_PAGINATION) {
+                        skip += DEFAULT_ITEM_SKIP
                         loadMoreSales()
                     }
                 }
@@ -46,7 +46,7 @@ class SalesViewModel(private val callback: HomeActivityCallback) : BaseViewModel
         skip = 0
         cleanupSubscriptions()
 
-        saleModel.listSales(App.getInstance().user.objectId!!, skip)
+        saleModel.listSales(App.instance.user?.objectId!!, skip)
                 ?.subscribe({ next ->
                     lastItemCountResponse = next.results?.size ?: 0
                     saleAdapter.updateItems(next.results?: mutableListOf())
@@ -62,7 +62,7 @@ class SalesViewModel(private val callback: HomeActivityCallback) : BaseViewModel
     fun loadMoreSales() {
         cleanupSubscriptions()
 
-        saleModel.listSales(App.getInstance().user.objectId!!, skip)
+        saleModel.listSales(App.instance.user?.objectId!!, skip)
                 ?.subscribe({ next ->
                     lastItemCountResponse = next.results?.size ?: 0
                     saleAdapter.updateItems(next.results?: mutableListOf(), true)

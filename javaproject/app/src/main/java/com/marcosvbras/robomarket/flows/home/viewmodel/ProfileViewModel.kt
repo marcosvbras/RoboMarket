@@ -6,7 +6,7 @@ import com.marcosvbras.robomarket.business.model.UserModel
 import com.marcosvbras.robomarket.flows.home.interfaces.HomeActivityCallback
 import com.marcosvbras.robomarket.flows.login.ui.LoginActivity
 import com.marcosvbras.robomarket.flows.profile.ui.EditProfileActivity
-import com.marcosvbras.robomarket.viewmodels.BaseViewModel
+import com.marcosvbras.robomarket.app.BaseViewModel
 import io.reactivex.disposables.Disposable
 
 class ProfileViewModel(private val callback: HomeActivityCallback) : BaseViewModel() {
@@ -21,7 +21,7 @@ class ProfileViewModel(private val callback: HomeActivityCallback) : BaseViewMod
     fun requestPasswordReset() {
         cleanupSubscriptions()
 
-        userModel.resetPassword(App.getInstance().user)
+        userModel.resetPassword(App.instance.user!!)
                 ?.subscribe({
 
                 }, { error ->
@@ -39,7 +39,7 @@ class ProfileViewModel(private val callback: HomeActivityCallback) : BaseViewMod
     fun deleteAccount() {
         cleanupSubscriptions()
 
-        userModel.deleteUser(App.getInstance().user.objectId!!)
+        userModel.deleteUser(App.instance.user?.objectId!!)
                 ?.subscribe({
 
                 }, { error ->

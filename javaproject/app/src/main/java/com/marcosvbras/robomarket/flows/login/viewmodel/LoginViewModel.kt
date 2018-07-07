@@ -9,7 +9,7 @@ import com.marcosvbras.robomarket.flows.home.ui.activity.HomeActivity
 import com.marcosvbras.robomarket.flows.register.ui.RegisterActivity
 import com.marcosvbras.robomarket.interfaces.ActivityCallback
 import com.marcosvbras.robomarket.utils.ErrorObservable
-import com.marcosvbras.robomarket.viewmodels.BaseViewModel
+import com.marcosvbras.robomarket.app.BaseViewModel
 import io.reactivex.disposables.Disposable
 
 class LoginViewModel(private val callback: ActivityCallback) : BaseViewModel() {
@@ -42,8 +42,8 @@ class LoginViewModel(private val callback: ActivityCallback) : BaseViewModel() {
 
             userModel.login(username.get()!!, password.get()!!)!!
                     .subscribe({ next ->
-                        App.getInstance().user = next
-                        App.getInstance().writeUserCredentials(next.objectId, next.sessionToken)
+                        App.instance.user = next
+                        App.instance.writeUserCredentials(next.objectId!!, next.sessionToken!!)
                     }, { error ->
                         cleanupSubscriptions()
                         callback.showDialogMessage(error.message!!)

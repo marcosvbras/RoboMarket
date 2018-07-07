@@ -4,9 +4,9 @@ import android.databinding.Observable
 import android.databinding.ObservableField
 import android.text.TextUtils
 import com.marcosvbras.robomarket.R
-import com.marcosvbras.robomarket.business.domain.ItemRobotQuantity
+import com.marcosvbras.robomarket.business.beans.ItemRobotQuantity
 import com.marcosvbras.robomarket.utils.ErrorObservable
-import com.marcosvbras.robomarket.viewmodels.BaseViewModel
+import com.marcosvbras.robomarket.app.BaseViewModel
 
 class SaleDialogViewModel(private val itemRobotQuantity: ItemRobotQuantity?, private val dialogFormActions: DialogFormActions) : BaseViewModel() {
 

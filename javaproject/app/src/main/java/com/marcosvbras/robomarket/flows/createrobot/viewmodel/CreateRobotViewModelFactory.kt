@@ -2,7 +2,7 @@ package com.marcosvbras.robomarket.flows.createrobot.viewmodel
 
 import android.arch.lifecycle.ViewModel
 import android.arch.lifecycle.ViewModelProvider
-import com.marcosvbras.robomarket.business.domain.Robot
+import com.marcosvbras.robomarket.business.beans.Robot
 import com.marcosvbras.robomarket.interfaces.ActivityCallback
 
 @Suppress("UNCHECKED_CAST")

@@ -6,13 +6,15 @@ import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import com.marcosvbras.robomarket.app.App
-import com.marcosvbras.robomarket.business.domain.Robot
+import com.marcosvbras.robomarket.app.ROBOT_TAG
+import com.marcosvbras.robomarket.business.api.APIService.Companion.DEFAULT_ITEM_PAGINATION
+import com.marcosvbras.robomarket.business.api.APIService.Companion.DEFAULT_ITEM_SKIP
+import com.marcosvbras.robomarket.business.beans.Robot
 import com.marcosvbras.robomarket.business.model.RobotModel
 import com.marcosvbras.robomarket.flows.home.ui.adapter.RobotAdapter
 import com.marcosvbras.robomarket.interfaces.ActivityCallback
 import com.marcosvbras.robomarket.interfaces.OnRecyclerClick
-import com.marcosvbras.robomarket.utils.Constants
-import com.marcosvbras.robomarket.viewmodels.BaseViewModel
+import com.marcosvbras.robomarket.app.BaseViewModel
 import io.reactivex.disposables.Disposable
 
 class SelectRobotViewModel(private val callback: ActivityCallback) : BaseViewModel(), OnRecyclerClick {
@@ -38,8 +40,8 @@ class SelectRobotViewModel(private val callback: ActivityCallback) : BaseViewMod
                     val lastVisibleItem = layoutManager.findLastVisibleItemPosition() + 1
 
                     if (!isLoadingMore.get() && robotAdapter.itemCount == lastVisibleItem &&
-                            lastItemCountResponse == Constants.Api.DEFAULT_ITEM_PAGINATION) {
-                        skip += Constants.Api.DEFAULT_ITEM_SKIP
+                            lastItemCountResponse == DEFAULT_ITEM_PAGINATION) {
+                        skip += DEFAULT_ITEM_SKIP
                         loadMoreRobots()
                     }
                 }
@@ -50,7 +52,7 @@ class SelectRobotViewModel(private val callback: ActivityCallback) : BaseViewMod
         skip = 0
         cleanupSubscriptions()
 
-        robotModel.listRobots(App.getInstance().user.objectId!!, query, skip)
+        robotModel.listRobots(App.instance.user?.objectId!!, query, skip)
                 ?.subscribe({ next ->
                     lastItemCountResponse = next.results?.size ?: 0
                     robotAdapter.updateItems(next.results?: mutableListOf())
@@ -64,7 +66,7 @@ class SelectRobotViewModel(private val callback: ActivityCallback) : BaseViewMod
     fun loadMoreRobots() {
         cleanupSubscriptions()
 
-        robotModel.listRobots(App.getInstance().user.objectId!!, query, skip)
+        robotModel.listRobots(App.instance.user?.objectId!!, query, skip)
                 ?.subscribe({ next ->
                     lastItemCountResponse = next.results?.size ?: 0
                     robotAdapter.updateItems(next.results?: mutableListOf(), true)
@@ -90,7 +92,7 @@ class SelectRobotViewModel(private val callback: ActivityCallback) : BaseViewMod
 
     override fun onClick(obj: Any) {
         val bundle = Bundle()
-        bundle.putParcelable(Constants.Other.ROBOT_TAG, obj as Robot)
+        bundle.putParcelable(ROBOT_TAG, obj as Robot)
         callback.setActivityResult(RESULT_OK, bundle)
         callback.finishCurrentActivity()
     }

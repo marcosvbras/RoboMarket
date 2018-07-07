@@ -6,11 +6,11 @@ import android.os.Bundle
 import android.view.MenuItem
 import com.marcosvbras.robomarket.R
 import com.marcosvbras.robomarket.app.BaseActivity
-import com.marcosvbras.robomarket.business.domain.Robot
+import com.marcosvbras.robomarket.app.ROBOT_TAG
+import com.marcosvbras.robomarket.business.beans.Robot
 import com.marcosvbras.robomarket.databinding.ActivityCreateRobotBinding
 import com.marcosvbras.robomarket.flows.createrobot.viewmodel.CreateRobotViewModel
 import com.marcosvbras.robomarket.flows.createrobot.viewmodel.CreateRobotViewModelFactory
-import com.marcosvbras.robomarket.utils.Constants
 
 class CreateRobotActivity : BaseActivity() {
 
@@ -20,8 +20,8 @@ class CreateRobotActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val bundle = intent.extras
-        if (bundle != null && bundle.containsKey(Constants.Other.ROBOT_TAG))
-            robot = intent.extras!!.getParcelable(Constants.Other.ROBOT_TAG)
+        if (bundle != null && bundle.containsKey(ROBOT_TAG))
+            robot = intent.extras!!.getParcelable(ROBOT_TAG)
         activityBinding = DataBindingUtil.setContentView(this, R.layout.activity_create_robot)
         activityBinding!!.viewModel = createRobotViewModel()
         activityBinding!!.executePendingBindings()

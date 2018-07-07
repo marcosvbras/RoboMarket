@@ -13,8 +13,6 @@ import com.marcosvbras.robomarket.interfaces.ActivityCallback
 
 open class BaseActivity : AppCompatActivity(), ActivityCallback {
 
-    private var alertDialog: AlertDialog.Builder? = null
-
     override fun showDialogMessage(message: String) {
         showAlertDialog(message)
     }
@@ -24,10 +22,7 @@ open class BaseActivity : AppCompatActivity(), ActivityCallback {
     }
 
     private fun showAlertDialog(message: String) {
-        if (alertDialog == null)
-            alertDialog = AlertDialog.Builder(this)
-
-        alertDialog!!
+        AlertDialog.Builder(this)
                 .setMessage(message)
                 .setPositiveButton(getString(R.string.ok), null)
                 .show()
@@ -76,7 +71,7 @@ open class BaseActivity : AppCompatActivity(), ActivityCallback {
 
     override fun setToolbar(viewId: Int, displayHomeAsUpEnabled: Boolean) {
         setSupportActionBar(findViewById(viewId))
-        supportActionBar!!.setDisplayHomeAsUpEnabled(displayHomeAsUpEnabled)
+        supportActionBar?.setDisplayHomeAsUpEnabled(displayHomeAsUpEnabled)
     }
 
     override fun finishCurrentActivity() {
@@ -98,10 +93,10 @@ open class BaseActivity : AppCompatActivity(), ActivityCallback {
     }
 
     override fun showSnackBar(message: String, length: Int) {
-        Snackbar.make(findViewById(android.R.id.content), message, length).show()
+        showSnackBar(message, length)
     }
 
     override fun showSnackBar(message: Int, length: Int) {
-        Snackbar.make(findViewById(android.R.id.content), getString(message), length).show()
+        showSnackBar(getString(message), length)
     }
 }

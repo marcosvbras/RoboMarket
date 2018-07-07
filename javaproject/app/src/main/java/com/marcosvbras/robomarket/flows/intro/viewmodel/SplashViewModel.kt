@@ -6,7 +6,7 @@ import com.marcosvbras.robomarket.business.model.UserModel
 import com.marcosvbras.robomarket.flows.home.ui.activity.HomeActivity
 import com.marcosvbras.robomarket.flows.login.ui.LoginActivity
 import com.marcosvbras.robomarket.interfaces.ActivityCallback
-import com.marcosvbras.robomarket.viewmodels.BaseViewModel
+import com.marcosvbras.robomarket.app.BaseViewModel
 import io.reactivex.disposables.Disposable
 
 class SplashViewModel(private val callback: ActivityCallback) : BaseViewModel() {
@@ -18,7 +18,7 @@ class SplashViewModel(private val callback: ActivityCallback) : BaseViewModel() 
         cleanupSubscriptions()
 
         userModel.getAuthenticatedUser()!!
-                .subscribe({ next -> App.getInstance().user = next }, {
+                .subscribe({ next -> App.instance.user = next }, {
                     cleanupSubscriptions()
                     callback.openActivityWithAnimation(
                             LoginActivity::class.java, null,true, R.anim.zoom_enter, R.anim.zoom_exit

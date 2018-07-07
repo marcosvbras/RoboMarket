@@ -49,7 +49,7 @@ class SalesFragment : BaseFragment() {
         when (item!!.itemId) {
             R.id.menu_add -> (activity as HomeActivity).openActivity(CreateSaleActivity::class.java, null, false)
             R.id.menu_logout -> {
-                App.getInstance().deleteCredentials()
+                App.instance.deleteCredentials()
                 activityCallback?.openActivity(LoginActivity::class.java, null, true)
             }
         }

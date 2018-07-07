@@ -3,7 +3,7 @@ package com.marcosvbras.robomarket.flows.home.viewmodel
 import android.annotation.SuppressLint
 import android.support.v4.os.ConfigurationCompat
 import com.marcosvbras.robomarket.app.App
-import com.marcosvbras.robomarket.business.domain.Sale
+import com.marcosvbras.robomarket.business.beans.Sale
 import java.text.NumberFormat
 import java.text.SimpleDateFormat
 
@@ -19,11 +19,11 @@ class ItemSaleViewModel(private val sale: Sale) {
 
     val total: String
         get() {
-            val locale = ConfigurationCompat.getLocales(App.getInstance().resources.configuration)[0]
-            return NumberFormat.getNumberInstance(locale).format(sale.getTotalPrice()).toString()
+            val locale = ConfigurationCompat.getLocales(App.instance.resources.configuration)[0]
+            return NumberFormat.getNumberInstance(locale).format(sale.totalPrice).toString()
         }
 
     val itemCount: String
-        get() = sale.getItemCount().toString()
+        get() = sale.itemCount.toString()
 
 }

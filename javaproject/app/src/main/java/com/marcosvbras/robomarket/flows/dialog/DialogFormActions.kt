@@ -1,6 +1,6 @@
 package com.marcosvbras.robomarket.flows.dialog
 
-import com.marcosvbras.robomarket.business.domain.ItemRobotQuantity
+import com.marcosvbras.robomarket.business.beans.ItemRobotQuantity
 
 interface DialogFormActions {
 

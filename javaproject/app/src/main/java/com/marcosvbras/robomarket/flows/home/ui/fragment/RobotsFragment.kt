@@ -10,13 +10,13 @@ import android.view.*
 import com.marcosvbras.robomarket.R
 import com.marcosvbras.robomarket.app.App
 import com.marcosvbras.robomarket.app.BaseFragment
+import com.marcosvbras.robomarket.app.NEW_ROBOT_REQUEST_CODE
 import com.marcosvbras.robomarket.databinding.FragmentRobotsBinding
 import com.marcosvbras.robomarket.flows.createrobot.ui.CreateRobotActivity
 import com.marcosvbras.robomarket.flows.home.interfaces.HomeActivityCallback
 import com.marcosvbras.robomarket.flows.home.viewmodel.RobotsViewModel
 import com.marcosvbras.robomarket.flows.home.viewmodel.RobotsViewModelFactory
 import com.marcosvbras.robomarket.flows.login.ui.LoginActivity
-import com.marcosvbras.robomarket.utils.Constants
 
 class RobotsFragment : BaseFragment() {
 
@@ -73,10 +73,10 @@ class RobotsFragment : BaseFragment() {
         when (item!!.itemId) {
             R.id.menu_add -> startActivityForResult(
                     Intent(activity!!.baseContext, CreateRobotActivity::class.java),
-                    Constants.Other.NEW_ROBOT_REQUEST_CODE
+                    NEW_ROBOT_REQUEST_CODE
             )
             R.id.menu_logout -> {
-                App.getInstance().deleteCredentials()
+                App.instance.deleteCredentials()
                 activityCallback!!.openActivity(LoginActivity::class.java, null, true)
             }
         }
@@ -85,7 +85,7 @@ class RobotsFragment : BaseFragment() {
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        if (requestCode == Constants.Other.NEW_ROBOT_REQUEST_CODE && resultCode == RESULT_OK)
+        if (requestCode == NEW_ROBOT_REQUEST_CODE && resultCode == RESULT_OK)
             fragmentBinding!!.viewModel?.listRobots(null)
     }
 

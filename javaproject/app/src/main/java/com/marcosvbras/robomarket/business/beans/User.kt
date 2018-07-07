@@ -1,4 +1,4 @@
-package com.marcosvbras.robomarket.business.domain
+package com.marcosvbras.robomarket.business.beans
 
 data class User(
         var objectId: String? = null,

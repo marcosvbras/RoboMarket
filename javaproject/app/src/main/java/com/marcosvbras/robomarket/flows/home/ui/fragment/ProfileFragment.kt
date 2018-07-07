@@ -33,7 +33,7 @@ class ProfileFragment : BaseFragment() {
     }
 
     fun showInfo() {
-        fragmentBinding!!.user = App.getInstance().user
+        fragmentBinding!!.user = App.instance.user
     }
 
     override fun onResume() {
@@ -55,7 +55,7 @@ class ProfileFragment : BaseFragment() {
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         if (item!!.itemId == R.id.menu_logout) {
-            App.getInstance().deleteCredentials()
+            App.instance.deleteCredentials()
             activityCallback!!.openActivity(LoginActivity::class.java, null, true)
         }
 

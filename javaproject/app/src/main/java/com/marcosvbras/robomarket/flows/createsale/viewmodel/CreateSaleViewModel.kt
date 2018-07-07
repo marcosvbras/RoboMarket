@@ -4,7 +4,8 @@ import android.annotation.SuppressLint
 import android.databinding.ObservableField
 import com.marcosvbras.robomarket.R
 import com.marcosvbras.robomarket.app.App
-import com.marcosvbras.robomarket.business.domain.*
+import com.marcosvbras.robomarket.app.SELECT_ROBOT_REQUEST_CODE
+import com.marcosvbras.robomarket.business.beans.*
 import com.marcosvbras.robomarket.business.model.RobotModel
 import com.marcosvbras.robomarket.business.model.SaleModel
 import com.marcosvbras.robomarket.flows.createsale.ui.adapter.RobotSaleAdapter
@@ -13,8 +14,7 @@ import com.marcosvbras.robomarket.flows.dialog.SaleDialogFragment
 import com.marcosvbras.robomarket.flows.selectrobot.ui.SelectRobotActivity
 import com.marcosvbras.robomarket.interfaces.ActivityCallback
 import com.marcosvbras.robomarket.interfaces.OnRecyclerClick
-import com.marcosvbras.robomarket.utils.Constants
-import com.marcosvbras.robomarket.viewmodels.BaseViewModel
+import com.marcosvbras.robomarket.app.BaseViewModel
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
@@ -32,7 +32,7 @@ class CreateSaleViewModel(private val callback: ActivityCallback) : BaseViewMode
 
     fun select() {
         callback.openActivityForResult(
-                SelectRobotActivity::class.java, null, Constants.Other.SELECT_ROBOT_REQUEST_CODE
+                SelectRobotActivity::class.java, null, SELECT_ROBOT_REQUEST_CODE
         )
     }
 
@@ -59,7 +59,7 @@ class CreateSaleViewModel(private val callback: ActivityCallback) : BaseViewMode
     fun save() {
         if (listRobotQuantity.size > 0) {
             val sale = Sale()
-            sale.userId = App.getInstance().user.objectId
+            sale.userId = App.instance.user?.objectId
             val items = ArrayList<ItemRobotSale>()
 
             for ((robot, itemQuantity) in listRobotQuantity) {

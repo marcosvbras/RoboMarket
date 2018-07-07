@@ -9,10 +9,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.marcosvbras.robomarket.R
-import com.marcosvbras.robomarket.business.domain.ItemRobotQuantity
-import com.marcosvbras.robomarket.business.domain.Robot
+import com.marcosvbras.robomarket.app.ROBOT_TAG
+import com.marcosvbras.robomarket.business.beans.ItemRobotQuantity
+import com.marcosvbras.robomarket.business.beans.Robot
 import com.marcosvbras.robomarket.databinding.FragmentDialogSaleBinding
-import com.marcosvbras.robomarket.utils.Constants
 
 
 class SaleDialogFragment : AppCompatDialogFragment(), DialogActions {
@@ -32,8 +32,8 @@ class SaleDialogFragment : AppCompatDialogFragment(), DialogActions {
         fragmentBinding!!.viewModel = createViewModel()
         fragmentBinding!!.viewModel?.setActions(this)
 
-        if (bundle != null && bundle.containsKey(Constants.Other.ROBOT_TAG)) {
-            val robot = bundle.getParcelable<Robot>(Constants.Other.ROBOT_TAG)
+        if (bundle != null && bundle.containsKey(ROBOT_TAG)) {
+            val robot = bundle.getParcelable<Robot>(ROBOT_TAG)
             dialog.setTitle(robot!!.model)
         }
 

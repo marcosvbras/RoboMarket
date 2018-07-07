@@ -7,14 +7,15 @@ import android.view.View
 import android.widget.AdapterView
 import com.marcosvbras.robomarket.R
 import com.marcosvbras.robomarket.app.App
-import com.marcosvbras.robomarket.business.domain.User
+import com.marcosvbras.robomarket.app.ROBOHASH_API
+import com.marcosvbras.robomarket.app.ROBOHASH_SET_2_PARAM
+import com.marcosvbras.robomarket.business.beans.User
 import com.marcosvbras.robomarket.business.model.UserModel
 import com.marcosvbras.robomarket.flows.home.ui.activity.HomeActivity
 import com.marcosvbras.robomarket.interfaces.ActivityCallback
-import com.marcosvbras.robomarket.utils.Constants
 import com.marcosvbras.robomarket.utils.ErrorObservable
 import com.marcosvbras.robomarket.utils.MaskWatcher
-import com.marcosvbras.robomarket.viewmodels.BaseViewModel
+import com.marcosvbras.robomarket.app.BaseViewModel
 import io.reactivex.disposables.Disposable
 import java.util.*
 
@@ -98,7 +99,7 @@ class RegisterViewModel(private val callback: ActivityCallback) : BaseViewModel(
             newUser.username = username.get()
 
             userModel.signUp(newUser)!!
-                    .subscribe({ next -> App.getInstance().user = next }, { error ->
+                    .subscribe({ next -> App.instance.user = next }, { error ->
                         cleanupSubscriptions()
                         callback.showDialogMessage(error.message!!)
                     }, {
@@ -120,7 +121,7 @@ class RegisterViewModel(private val callback: ActivityCallback) : BaseViewModel(
     }
 
     fun changeAvatarImg() {
-        avatarUrl.set(Constants.Other.ROBOHASH_API + Random().nextInt(500) + Constants.Other.ROBOHASH_SET_2_PARAM)
+        avatarUrl.set(ROBOHASH_API + Random().nextInt(500) + ROBOHASH_SET_2_PARAM)
     }
 
     override fun onCleared() {

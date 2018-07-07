@@ -1,4 +1,4 @@
-package com.marcosvbras.robomarket.business.domain
+package com.marcosvbras.robomarket.business.beans
 
 import android.os.Parcel
 import android.os.Parcelable
@@ -51,28 +51,6 @@ class Robot : Parcelable {
         parcel.writeString(userId)
     }
 
-//    companion object {
-//
-//        val CREATOR: Parcelable.Creator<Robot> = object : Parcelable.Creator<Robot> {
-//            override fun createFromParcel(`in`: Parcel): Robot {
-//                return Robot(`in`)
-//            }
-//
-//            override fun newArray(size: Int): Array<Robot?> {
-//                return arrayOfNulls(size)
-//            }
-//        }
-//    }
-
-//    companion object CREATOR : Parcelable.Creator<Robot> {
-//        override fun createFromParcel(parcel: Parcel): Robot {
-//            return Robot(parcel)
-//        }
-//
-//        override fun newArray(size: Int): Array<Robot?> {
-//            return arrayOfNulls(size)
-//        }
-//    }
     companion object {
         @JvmField val CREATOR = object : Parcelable.Creator<Robot> {
             override fun createFromParcel(parcel: Parcel): Robot {

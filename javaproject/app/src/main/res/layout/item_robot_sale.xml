@@ -5,7 +5,7 @@
     <data>
         <variable
             name="itemRobotQuantity"
-            type="com.marcosvbras.robomarket.business.domain.ItemRobotQuantity"/>
+            type="com.marcosvbras.robomarket.business.beans.ItemRobotQuantity"/>
     </data>
     <android.support.constraint.ConstraintLayout
         android:padding="7dp"

@@ -6,7 +6,7 @@
         <import type="java.lang.String"/>
         <variable
             name="robot"
-            type="com.marcosvbras.robomarket.business.domain.Robot"/>
+            type="com.marcosvbras.robomarket.business.beans.Robot"/>
     </data>
     <android.support.constraint.ConstraintLayout
         android:id="@+id/list_item"

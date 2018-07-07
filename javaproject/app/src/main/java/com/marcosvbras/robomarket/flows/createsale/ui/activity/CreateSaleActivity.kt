@@ -8,11 +8,12 @@ import android.os.Bundle
 import android.view.MenuItem
 import com.marcosvbras.robomarket.R
 import com.marcosvbras.robomarket.app.BaseActivity
-import com.marcosvbras.robomarket.business.domain.Robot
+import com.marcosvbras.robomarket.app.ROBOT_TAG
+import com.marcosvbras.robomarket.app.SELECT_ROBOT_REQUEST_CODE
+import com.marcosvbras.robomarket.business.beans.Robot
 import com.marcosvbras.robomarket.databinding.ActivityCreateSaleBinding
 import com.marcosvbras.robomarket.flows.createsale.viewmodel.CreateSaleViewModel
 import com.marcosvbras.robomarket.flows.createsale.viewmodel.CreateSaleViewModelFactory
-import com.marcosvbras.robomarket.utils.Constants
 
 class CreateSaleActivity : BaseActivity() {
 
@@ -31,8 +32,8 @@ class CreateSaleActivity : BaseActivity() {
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent) {
-        if (requestCode == Constants.Other.SELECT_ROBOT_REQUEST_CODE && resultCode == Activity.RESULT_OK)
-            activityBinding!!.viewModel?.addRobot(data.extras!!.getParcelable<Robot>(Constants.Other.ROBOT_TAG))
+        if (requestCode == SELECT_ROBOT_REQUEST_CODE && resultCode == Activity.RESULT_OK)
+            activityBinding!!.viewModel?.addRobot(data.extras!!.getParcelable<Robot>(ROBOT_TAG))
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

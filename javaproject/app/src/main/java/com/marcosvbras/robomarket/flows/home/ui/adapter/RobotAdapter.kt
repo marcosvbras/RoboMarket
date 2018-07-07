@@ -3,7 +3,7 @@ package com.marcosvbras.robomarket.flows.home.ui.adapter
 import android.view.View
 import com.genius.groupie.GroupAdapter
 import com.genius.groupie.ViewHolder
-import com.marcosvbras.robomarket.business.domain.Robot
+import com.marcosvbras.robomarket.business.beans.Robot
 import com.marcosvbras.robomarket.interfaces.OnRecyclerClick
 import android.view.animation.AnimationUtils
 

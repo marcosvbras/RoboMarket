@@ -8,13 +8,14 @@ import android.view.View
 import android.widget.AdapterView
 import com.marcosvbras.robomarket.R
 import com.marcosvbras.robomarket.app.App
-import com.marcosvbras.robomarket.business.domain.User
+import com.marcosvbras.robomarket.app.ROBOHASH_API
+import com.marcosvbras.robomarket.app.ROBOHASH_SET_2_PARAM
+import com.marcosvbras.robomarket.business.beans.User
 import com.marcosvbras.robomarket.business.model.UserModel
 import com.marcosvbras.robomarket.interfaces.ActivityCallback
-import com.marcosvbras.robomarket.utils.Constants
 import com.marcosvbras.robomarket.utils.ErrorObservable
 import com.marcosvbras.robomarket.utils.MaskWatcher
-import com.marcosvbras.robomarket.viewmodels.BaseViewModel
+import com.marcosvbras.robomarket.app.BaseViewModel
 import io.reactivex.disposables.Disposable
 import java.util.*
 
@@ -68,7 +69,7 @@ class EditProfileViewModel(private val callback: ActivityCallback) : BaseViewMod
     }
 
     private fun setUserData() {
-        val (objectId, name1, email1, username1, password1, emailVerified, sessionToken, avatarUrl1, phone1, genre1, address1) = App.getInstance().user
+        val (objectId, name1, email1, username1, password1, emailVerified, sessionToken, avatarUrl1, phone1, genre1, address1) = App.instance.user!!
         user = User()
         user!!.address = address1
         user!!.username = username1
@@ -107,7 +108,7 @@ class EditProfileViewModel(private val callback: ActivityCallback) : BaseViewMod
                 newUserData.username = username.get()
 
             userModel.updateUser(newUserData, user!!.objectId!!)!!
-                    .subscribe({ next -> App.getInstance().user = next }, { error ->
+                    .subscribe({ next -> App.instance.user = next }, { error ->
                         isLoading.set(false)
                         cleanupSubscriptions()
                         callback.showDialogMessage(error.message!!)
@@ -127,7 +128,7 @@ class EditProfileViewModel(private val callback: ActivityCallback) : BaseViewMod
     }
 
     fun changeAvatarImg() {
-        avatarUrl.set(Constants.Other.ROBOHASH_API + Random().nextInt(500) + Constants.Other.ROBOHASH_SET_2_PARAM)
+        avatarUrl.set(ROBOHASH_API + Random().nextInt(500) + ROBOHASH_SET_2_PARAM)
     }
 
     override fun onCleared() {

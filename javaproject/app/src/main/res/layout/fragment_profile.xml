@@ -8,7 +8,7 @@
             type="com.marcosvbras.robomarket.flows.home.viewmodel.ProfileViewModel"/>
         <variable
             name="user"
-            type="com.marcosvbras.robomarket.business.domain.User"/>
+            type="com.marcosvbras.robomarket.business.beans.User"/>
     </data>
     <ScrollView
         android:layout_width="match_parent"

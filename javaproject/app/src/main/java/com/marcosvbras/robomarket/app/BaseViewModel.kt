@@ -1,4 +1,4 @@
-package com.marcosvbras.robomarket.viewmodels
+package com.marcosvbras.robomarket.app
 
 import android.arch.lifecycle.ViewModel
 import android.databinding.ObservableBoolean
@@ -9,7 +9,6 @@ abstract class BaseViewModel : ViewModel() {
 
     val toolbarTitle = ObservableField<String>()
     val isLoading = ObservableBoolean(false)
-    val activityCallback: ActivityCallback? = null
 
     abstract fun cleanupSubscriptions()
 

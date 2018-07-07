@@ -2,7 +2,7 @@ package com.marcosvbras.robomarket.business.model
 
 import com.marcosvbras.robomarket.app.App
 import com.marcosvbras.robomarket.business.api.APIService
-import com.marcosvbras.robomarket.business.domain.User
+import com.marcosvbras.robomarket.business.beans.User
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
@@ -24,8 +24,8 @@ class UserModel {
     fun signUp(newUser: User): Observable<User>? {
         return APIService.getService()?.signUp(newUser)
                 ?.flatMap { (objectId, _, _, _, _, _, sessionToken) ->
-                    App.getInstance().writeUserCredentials(
-                            objectId, sessionToken)
+                    App.instance.writeUserCredentials(
+                            objectId!!, sessionToken!!)
                     APIService.getService()?.getUser(objectId!!)
                 }
                 ?.subscribeOn(Schedulers.io())

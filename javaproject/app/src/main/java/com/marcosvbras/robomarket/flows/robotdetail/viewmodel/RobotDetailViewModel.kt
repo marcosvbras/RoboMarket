@@ -3,12 +3,13 @@ package com.marcosvbras.robomarket.flows.robotdetail.viewmodel
 import android.app.Activity.RESULT_OK
 import android.databinding.ObservableField
 import android.os.Bundle
-import com.marcosvbras.robomarket.business.domain.Robot
+import com.marcosvbras.robomarket.app.EDIT_ROBOT_REQUEST_CODE
+import com.marcosvbras.robomarket.app.ROBOT_TAG
+import com.marcosvbras.robomarket.business.beans.Robot
 import com.marcosvbras.robomarket.business.model.RobotModel
 import com.marcosvbras.robomarket.flows.createrobot.ui.CreateRobotActivity
 import com.marcosvbras.robomarket.interfaces.ActivityCallback
-import com.marcosvbras.robomarket.utils.Constants
-import com.marcosvbras.robomarket.viewmodels.BaseViewModel
+import com.marcosvbras.robomarket.app.BaseViewModel
 import io.reactivex.disposables.Disposable
 
 class RobotDetailViewModel(private val callback: ActivityCallback) : BaseViewModel() {
@@ -40,10 +41,10 @@ class RobotDetailViewModel(private val callback: ActivityCallback) : BaseViewMod
 
     fun edit() {
         val bundle = Bundle()
-        bundle.putParcelable(Constants.Other.ROBOT_TAG, robot)
+        bundle.putParcelable(ROBOT_TAG, robot)
 
         callback.openActivityForResult(
-                CreateRobotActivity::class.java, bundle, Constants.Other.EDIT_ROBOT_REQUEST_CODE
+                CreateRobotActivity::class.java, bundle, EDIT_ROBOT_REQUEST_CODE
         )
     }
 

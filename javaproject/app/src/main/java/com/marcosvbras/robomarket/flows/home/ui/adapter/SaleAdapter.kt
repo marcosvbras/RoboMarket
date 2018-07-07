@@ -4,7 +4,7 @@ import android.view.View
 import android.view.animation.AnimationUtils
 import com.genius.groupie.GroupAdapter
 import com.genius.groupie.ViewHolder
-import com.marcosvbras.robomarket.business.domain.Sale
+import com.marcosvbras.robomarket.business.beans.Sale
 import com.marcosvbras.robomarket.interfaces.OnRecyclerClick
 
 class SaleAdapter(private val onRecyclerClick: OnRecyclerClick) : GroupAdapter() {

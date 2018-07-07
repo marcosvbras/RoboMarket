@@ -8,11 +8,12 @@ import android.os.Bundle
 import android.view.MenuItem
 import com.marcosvbras.robomarket.R
 import com.marcosvbras.robomarket.app.BaseActivity
-import com.marcosvbras.robomarket.business.domain.Robot
+import com.marcosvbras.robomarket.app.EDIT_ROBOT_REQUEST_CODE
+import com.marcosvbras.robomarket.app.ROBOT_TAG
+import com.marcosvbras.robomarket.business.beans.Robot
 import com.marcosvbras.robomarket.databinding.ActivityRobotDetailBinding
 import com.marcosvbras.robomarket.flows.robotdetail.viewmodel.RobotDetailViewModel
 import com.marcosvbras.robomarket.flows.robotdetail.viewmodel.RobotDetailViewModelFactory
-import com.marcosvbras.robomarket.utils.Constants
 
 class RobotDetailActivity : BaseActivity() {
 
@@ -21,7 +22,7 @@ class RobotDetailActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        robot = intent.extras!!.getParcelable(Constants.Other.ROBOT_TAG)
+        robot = intent.extras!!.getParcelable(ROBOT_TAG)
         activityBinding = DataBindingUtil.setContentView(this, R.layout.activity_robot_detail)
         activityBinding!!.viewModel = createViewModel()
         activityBinding!!.executePendingBindings()
@@ -39,8 +40,8 @@ class RobotDetailActivity : BaseActivity() {
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent) {
-        if (requestCode == Constants.Other.EDIT_ROBOT_REQUEST_CODE && resultCode == Activity.RESULT_OK)
-            robot = data.extras!!.getParcelable(Constants.Other.ROBOT_TAG)
+        if (requestCode == EDIT_ROBOT_REQUEST_CODE && resultCode == Activity.RESULT_OK)
+            robot = data.extras!!.getParcelable(ROBOT_TAG)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
