@@ -34,7 +34,7 @@ class UserModel {
 
     fun updateUser(newData: User, objectId: String): Observable<User>? {
         return APIService.getService()?.updateUser(newData, objectId)
-                ?.flatMap { (updatedAt) -> APIService.getService()?.getUserByToken() }
+                ?.flatMap { APIService.getService()?.getUserByToken() }
                 ?.subscribeOn(Schedulers.io())
                 ?.observeOn(AndroidSchedulers.mainThread())
     }

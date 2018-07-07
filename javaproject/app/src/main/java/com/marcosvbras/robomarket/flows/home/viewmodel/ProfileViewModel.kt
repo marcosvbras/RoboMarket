@@ -6,7 +6,6 @@ import com.marcosvbras.robomarket.business.model.UserModel
 import com.marcosvbras.robomarket.flows.home.interfaces.HomeActivityCallback
 import com.marcosvbras.robomarket.flows.login.ui.LoginActivity
 import com.marcosvbras.robomarket.flows.profile.ui.EditProfileActivity
-import com.marcosvbras.robomarket.interfaces.ActivityCallback
 import com.marcosvbras.robomarket.viewmodels.BaseViewModel
 import io.reactivex.disposables.Disposable
 

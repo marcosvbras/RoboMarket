@@ -95,7 +95,7 @@ class CreateRobotViewModel(private val callback: ActivityCallback, private var s
             if (savedRobot == null) {
                 robot.userId = App.getInstance().user.objectId
                 robotModel.createRobot(robot)!!
-                        .subscribe({ next ->
+                        .subscribe({
 
                         }, { error ->
                             isLoading.set(false)

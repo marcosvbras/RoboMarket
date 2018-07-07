@@ -10,7 +10,6 @@ import com.marcosvbras.robomarket.business.model.RobotModel
 import com.marcosvbras.robomarket.flows.home.interfaces.HomeActivityCallback
 import com.marcosvbras.robomarket.flows.home.ui.adapter.RobotAdapter
 import com.marcosvbras.robomarket.flows.robotdetail.ui.RobotDetailActivity
-import com.marcosvbras.robomarket.interfaces.ActivityCallback
 import com.marcosvbras.robomarket.interfaces.OnRecyclerClick
 import com.marcosvbras.robomarket.utils.Constants
 import com.marcosvbras.robomarket.viewmodels.BaseViewModel
@@ -56,7 +55,10 @@ class RobotsViewModel(private val callback: HomeActivityCallback) : BaseViewMode
                     lastItemCountResponse = next.results?.size ?: 0
                     robotAdapter.updateItems(next.results?: mutableListOf())
                     isListEmpty.set(robotAdapter.itemCount == 0)
-                }, { error -> cleanupSubscriptions() }, { this.cleanupSubscriptions() }, { d ->
+                }, { error ->
+                    callback.showDialogMessage(error.message!!)
+                    cleanupSubscriptions()
+                }, { this.cleanupSubscriptions() }, { d ->
                     isLoading.set(true)
                     disposable = d
                 })

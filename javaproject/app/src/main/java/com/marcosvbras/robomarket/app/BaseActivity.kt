@@ -11,7 +11,7 @@ import android.support.v7.app.AppCompatActivity
 import com.marcosvbras.robomarket.R
 import com.marcosvbras.robomarket.interfaces.ActivityCallback
 
-open class Activity : AppCompatActivity(), ActivityCallback {
+open class BaseActivity : AppCompatActivity(), ActivityCallback {
 
     private var alertDialog: AlertDialog.Builder? = null
 
@@ -93,10 +93,7 @@ open class Activity : AppCompatActivity(), ActivityCallback {
 
     override fun setActivityResult(resultCode: Int, bundle: Bundle) {
         val intent = intent
-
-        if (bundle != null)
-            intent.putExtras(bundle)
-
+        intent.putExtras(bundle)
         setResult(resultCode, intent)
     }
 

@@ -66,7 +66,10 @@ class SalesViewModel(private val callback: HomeActivityCallback) : BaseViewModel
                 ?.subscribe({ next ->
                     lastItemCountResponse = next.results?.size ?: 0
                     saleAdapter.updateItems(next.results?: mutableListOf(), true)
-                }, { error -> cleanupSubscriptions() }, { this.cleanupSubscriptions() }, { d ->
+                }, { error ->
+                    callback.showDialogMessage(error.message!!)
+                    cleanupSubscriptions()
+                }, { this.cleanupSubscriptions() }, { d ->
                     isLoadingMore.set(true)
                     disposable = d
                 })

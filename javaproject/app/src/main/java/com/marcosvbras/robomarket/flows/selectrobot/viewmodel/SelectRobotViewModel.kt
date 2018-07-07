@@ -68,7 +68,10 @@ class SelectRobotViewModel(private val callback: ActivityCallback) : BaseViewMod
                 ?.subscribe({ next ->
                     lastItemCountResponse = next.results?.size ?: 0
                     robotAdapter.updateItems(next.results?: mutableListOf(), true)
-                }, { error -> cleanupSubscriptions() }, { this.cleanupSubscriptions() }, { d ->
+                }, { error ->
+                    callback.showDialogMessage(error.message!!)
+                    cleanupSubscriptions()
+                }, { this.cleanupSubscriptions() }, { d ->
                     isLoadingMore.set(true)
                     disposable = d
                 })

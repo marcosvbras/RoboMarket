@@ -58,7 +58,6 @@ class LoginViewModel(private val callback: ActivityCallback) : BaseViewModel() {
     }
 
     fun register() {
-        // callback.openActivityForResult(RegisterActivity.class, null, Constants.Other.FINISH_LOGIN_ACTIVITY);
         callback.openActivity(RegisterActivity::class.java, null,false)
     }
 

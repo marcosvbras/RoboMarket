@@ -7,8 +7,8 @@ import okhttp3.Response
 
 class RequestInterceptor : Interceptor {
 
-    override fun intercept(chain: Interceptor.Chain?): Response? {
-        var request = chain?.request()?.newBuilder()
+    override fun intercept(chain: Interceptor.Chain): Response {
+        var request = chain.request()?.newBuilder()
                 ?.header(Constants.Api.HEADER_APP_ID, Constants.Api.APP_ID)
                 ?.header(Constants.Api.HEADER_REST_API_KEY, Constants.Api.REST_API_KEY)
                 ?.method(chain.request().method(), chain.request()?.body())
@@ -24,6 +24,6 @@ class RequestInterceptor : Interceptor {
                     ?.build()
         }
 
-        return chain?.proceed(request)
+        return chain.proceed(request)
     }
 }
