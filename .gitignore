@@ -3,6 +3,7 @@
 /local.properties
 javaproject/.idea/*
 .DS_Store
+project/.idea/*
 /build
 /captures
 .externalNativeBuild

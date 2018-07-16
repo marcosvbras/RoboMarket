@@ -5,13 +5,17 @@ A fictitious robot market to practice MVVM design pattern in Android.
 <p align="center">
   <img src="img/screen1.png" alt="Login screen"/>
   <img src="img/screen2.png" alt="Register screen"/>
-  <img src="img/screen3.png" alt="Sales screen"/>
 </p>
 
 <p align="center">
+  <img src="img/screen3.png" alt="Sales screen"/>
   <img src="img/screen4.png" alt="Robots screen"/>
+</p>
+
+<p align="center">
   <img src="img/screen5.png" alt="Search robots screen"/>
   <img src="img/screen6.png" alt="Profile screen"/>
+  <img src="img/screen7.png" alt="Create Robot screen"/>
 </p>
 
 <p align="center">
